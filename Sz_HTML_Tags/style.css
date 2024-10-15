@@ -12,6 +12,10 @@ body {
     color: red;
 }
 
+ul.d {
+    list-style-type: disc;
+}
+
 summary {
     padding: 5px;
     color: #30353b;
@@ -20,6 +24,7 @@ summary {
     list-style: none;
     align-items: center;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 summary::-webkit-details-marker {
@@ -43,7 +48,7 @@ details[open]>summary::after {
 details {
     padding: 3px;
     margin: 5px;
-    cursor: pointer;
+    /*cursor: pointer;*/
     background: #6ab6f4;
     border-radius: 2px;
 }
