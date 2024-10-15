@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>HTML Form Elements</title>
+	<link rel="stylesheet" href="styles.css">
+	<script> 
+		function chBorderColor() {
+			document.getElementById("demonst_field").style.border = "3px solid red"; 
+		} 
+	</script>
+</head>
+<body>
+	<h1>HTML &lt;Form&gt; Elements</h1>
+	<form action="#" method="post">
+		<fieldset>
+			<legend>&lt;input&gt;</legend>
+			<p>HTML &lt;input&gt; Tag:</p>
+			<fieldset>
+				<legend>&lt;input type="..."&gt;</legend>
+				<p>Input types:</p>
+				<ol>
+					<li>button <input type="button" onclick="alert('button')" value="button" title="button"></li>
+					<li>checkbox <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1" title="Check the Box"></li>
+					<li>color <input type="color" id="color1" name="color1" title="color"></li>
+					<li>date <input type="date" id="date1" name="date1" title="date"></li>
+					<li>datetime-local <input type="datetime-local" id="datetime-local1" name="datetime-local1" title="datetime-local"></li>
+					<li>email <input type="email" id="email1" name="email1" placeholder='&lt;input type="email"&gt;' title="@"></li>
+					<li>file <input type="file" id="file1" name="file1"></li>
+					<li>hidden <input type="hidden" id="hidden1" name="hidden1" value="hidden1">
+						<img src="inp_t_hidden.png" width="35" alt='input type="hidden"' title='&lt;input type="hidden"&gt; - this is not that...' class="becauseOfTheDesign">
+					</li>
+					<li>image <input type="image" src="submit.png" alt="Submit" width="35" title='&lt;input type="image"&gt; - actually Submit'></li>
+					<li>month <input type="month" id="month1" name="month1"></li>
+					<li>number <input type="number" id="number1" name="number1" min="1" max="5"></li>
+					<li>password <input type="password" id="password1" name="password1" placeholder='&lt;input type="password"&gt;'></li>
+					<li>radio <input type="radio" id="radio1" name="radio" value="radio_val"><input type="radio" id="radio2" name="radio" value="radio_val2"></li>
+					<li>range <input type="range" id="range1" name="range1" min="0" max="100" value="75"></li>
+					<li>reset <input type="reset" value="Reset"></li>
+					<li>search <input type="search" id="search1" name="search1" placeholder='&lt;input type="search"&gt;'></li>
+					<li>submit <input type="submit" id="submit1" name="submit1" value="Submit"></li>
+					<li>tel <input type="tel" id="tel1" name="tel1" placeholder='&lt;input type="tel"&gt;' title="pattern: 123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required></li>
+					<li>text <input type="text" id="text1" name="text1" placeholder='&lt;input type="text"&gt;'></li>
+					<li>time <input type="time" id="time1" name="time1" title="time"></li>
+					<li>url <input type="url" id="url1" name="url1" placeholder='&lt;input type="url"&gt;' title="url"></li>
+					<li>week <input type="week" id="week1" name="week1" title="week"></li>
+				</ol>
+			</fieldset>
+		</fieldset>
+		<fieldset>
+			<legend>&lt;label&gt;</legend>
+			<p>HTML &lt;label&gt; Tag:</p>
+			<p>label <label for="text1" class="becauseOfTheDesign">label</label></p>
+		</fieldset>
+		<fieldset>
+			<legend><a id="select">&lt;select&gt;</a></legend>
+			<p>HTML &lt;select&gt; Tag:</p>
+			<p>select <select id="select1" name="select1" class="becauseOfTheDesign">
+				<option value="option_1">option 1</option>
+				<option value="option_2">option 2</option>
+				<option value="optiondotdotdot">...</option>
+				<option value="option_n">option n</option>
+			</select></p>
+			<fieldset>
+				<legend>&lt;option&gt;</legend>
+				<p>The &lt;option&gt; tag defines alternatives in a <a href="#select" title="&lt;select&gt;">select list</a> (inside the <a href="#select" title="&lt;select&gt;">&lt;select&gt;</a> element).</p>
+			</fieldset>
+			<fieldset>
+				<legend>&lt;optgroup&gt;</legend>
+				<p>optgroup
+					<select name="select2" id="select2">
+						<optgroup label="optgroup 1 label">
+							<option value="option_value1">option 11 value</option>
+							<option value="option_value2">option 12 value</option>
+						</optgroup>
+						<optgroup label="optgroup 2 label">
+							<option value="option_value1">option 21 value</option>
+							<option value="option_value2">option 22 value</option>
+						</optgroup>
+					</select>
+				</p>
+			</fieldset>
+		</fieldset>
+		<fieldset>
+			<legend>&lt;textarea&gt;</legend>
+			<p>HTML &lt;textarea&gt; Tag:</p>
+			<p>textarea <textarea name="textarea1" rows="3" cols="20">text text text ...</textarea></p>
+		</fieldset>
+		<fieldset>
+			<legend>&lt;button&gt;</legend>
+			<p>HTML &lt;button&gt; Tag:</p>
+			<p>button <button type="button" onclick="alert('button')">Click Me!</button></p>
+		</fieldset>
+		<fieldset id="demonst_field">
+			<legend>&lt;fieldset&gt;</legend>
+			<p>HTML &lt;fieldset&gt; Tag:</p>
+			<p><a href="#demonst_field" onclick="chBorderColor()">THIS</a> is a fieldset...</p>
+			<fieldset>
+				<legend>&lt;legend&gt;</legend>
+				<p>...and the legend is the title of the fieldset.</p>
+			</fieldset>
+		</fieldset>
+		<fieldset>
+			<legend>&lt;datalist&gt;</legend>
+			<p>HTML &lt;datalist&gt; Tag:</p>
+			<p>datalist <input list="datalist1" class="becauseOfTheDesign">
+				<datalist id="datalist1">
+					<option value="datalist option 1">
+					<option value="datalist option 2">
+					<option value="datalist option ...">
+					<option value="datalist option n">
+				</datalist>
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend>&lt;output&gt;</legend>
+			<p>HTML &lt;output&gt; Tag:</p>
+			<p>output <output name="x" for="a b">&nbsp;&nbsp;</output></p>
+			<hr>
+			<p>Set a number to the output value (for example): <input type="number" id="a" name="a" min="0" max="500" onchange="x.value=parseInt(a.value)"></p>
+		</fieldset>
+	</form>
+</body>
+</html>

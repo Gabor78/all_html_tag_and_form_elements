@@ -1,0 +1,63 @@
+p,li {
+	margin-bottom: 35px;
+}
+h1 {
+	text-align: center;
+}
+form {
+	width: 550px;
+	margin: 0 auto;
+	padding: 11px;
+	border: 1px solid #ddd;
+}
+
+fieldset {
+	margin-bottom: 20px;
+}
+
+legend {
+	font-weight: bold;
+	padding: 10px;
+	border: 1px solid #000;
+}
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 500;
+}
+/*a design miatt felülbíráló class*/
+.becauseOfTheDesign,
+input[type="button"],
+input[type="checkbox"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="file"],
+input[type="image"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="radio"],
+input[type="range"],
+input[type="reset"],
+input[type="search"],
+input[type="submit"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+button,
+output,
+select {
+	border: 1px solid #000;
+	float: right;
+}
+textarea {
+	min-width: 200px;
+	max-width: 400px;
+	min-height: 40px;
+	max-height: 200px;
+}
