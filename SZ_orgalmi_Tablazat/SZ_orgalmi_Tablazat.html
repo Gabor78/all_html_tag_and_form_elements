@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		th {
+			background-color: bisque;
+		}
+		.btm {vertical-align:bottom;}
+    </style>
+    <title>SZ orgalmi Táblázat</title>
+  </head>
+  <body>
+    <table border="1">
+      <caption>
+        Számla
+      </caption>
+      <tr>
+        <th></th>
+        <th colspan="2">Megnevezés</th>
+        <th>Mennyiség</th>
+        <th>Nettó egységár</th>
+        <th>Nettó ár</th>
+        <th>Nettó csoportösszeg</th>
+        <th>Áfa (27%)</th>
+        <th>Csoportösszeg Áfa (27%)</th>
+        <th>Bruttó ár</th>
+        <th>Bruttó csoportösszeg</th>
+      </tr>
+      <tr>
+        <th rowspan="12" style="width: 30px">
+          T<br />é<br />t<br />e<br />l<br />e<br />k<br />
+        </th>
+        <td rowspan="3">Árucsoport 1</td>
+        <td>Áru11</td>
+        <td>100</td>
+        <td>1,15</td>
+        <td>115,00</td>
+        <td rowspan="4" class="btm">664,85</td>
+        <td>31,05</td>
+        <td rowspan="4" class="btm">179,5095</td>
+        <td>146,05</td>
+        <td rowspan="4" class="btm">844,3595</td>
+      </tr>
+      <tr>
+        <td>Áru12</td>
+        <td>10</td>
+        <td>45,99</td>
+        <td>459,90</td>
+        <td>124,173</td>
+        <td>584,073</td>
+      </tr>
+      <tr>
+        <td>Áru13</td>
+        <td>5</td>
+        <td>17,99</td>
+        <td>89,95</td>
+        <td>24,2865</td>
+        <td>114,2365</td>
+      </tr>
+      <tr>
+        <td colspan="5">Árucsoport 1 összesen:</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="3">Árucsoport 2</td>
+        <td>Áru21</td>
+        <td>2</td>
+        <td>17,99</td>
+        <td>35,98</td>
+        <td rowspan="4" class="btm">53,97</td>
+        <td>9,7146</td>
+        <td rowspan="4" class="btm">14,5719</td>
+        <td>45,6946</td>
+        <td rowspan="4" class="btm">68,5419</td>
+      </tr>
+      <tr>
+        <td>Áru22</td>
+        <td>1</td>
+        <td>17,99</td>
+        <td>17,99</td>
+        <td>4,8573</td>
+        <td>22,8473</td>
+      </tr>
+      <tr>
+        <td>Áru23</td>
+        <td>0</td>
+        <td>0,00</td>
+        <td>0,00</td>
+        <td>0,00</td>
+        <td>0,00</td>
+      </tr>
+      <tr>
+        <td colspan="5">Árucsoport 2 összesen:</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="3">Árucsoport 3</td>
+        <td>Áru31</td>
+        <td>2</td>
+        <td>17,99</td>
+        <td>35,98</td>
+        <td rowspan="4" class="btm">53,97</td>
+        <td>9,7146</td>
+        <td rowspan="4" class="btm">14,5719</td>
+        <td>45,6946</td>
+        <td rowspan="4" class="btm">68,5419</td>
+      </tr>
+      <tr>
+        <td>Áru32</td>
+        <td>1</td>
+        <td>17,99</td>
+        <td>17,99</td>
+        <td>4,8573</td>
+        <td>22,8473</td>
+      </tr>
+      <tr>
+        <td>Áru33</td>
+        <td>0</td>
+        <td>0,00</td>
+        <td>0,00</td>
+        <td>0,00</td>
+        <td>0,00</td>
+      </tr>
+      <tr>
+        <td colspan="5">Árucsoport 3 összesen:</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="5"><b>Nettó összeg:</b></td>
+        <td colspan="6" rowspan="2"><b>772,79</b></td>
+      </tr>
+      <tr>
+        <td colspan="5"><b>(Nettó csoportösszegek:)</b></td>
+      </tr>
+      <tr>
+        <td colspan="7"><b>Áfa (27%):</b></td>
+        <td colspan="4" rowspan="2"><b>208,6533</b></td>
+      </tr>
+      <tr>
+        <td colspan="7"><b>(Csoportösszegek Áfája (27%):)</b></td>
+      </tr>
+      <tr>
+        <td colspan="9"><b>Bruttó végösszeg:</b></td>
+        <td colspan="2" rowspan="2"><b>981,4433</b></td>
+      </tr>
+      <tr>
+        <td colspan="9"><b>(Bruttó Csoportvégösszegek:)</b></td>
+      </tr>
+    </table>
+  </body>
+</html>
