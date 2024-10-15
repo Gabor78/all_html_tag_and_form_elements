@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="w3schools - https://www.w3schools.com/">
 	<title>HTML Tags</title>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -16,30 +17,64 @@
 					<details>
 						<summary>&lt;!-- ... --&gt; comment</summary>
 						<p>The comment tag is used to insert comments in the source code. Comments are not displayed in the browsers.</p>
+						<p>You can use comments to explain your code, which can help you when you edit the source code at a later date. This is especially useful if you have a lot of code.</p>
 					</details>
 				</li>
 				<li>
 					<details>
 						<summary>&lt;!DOCTYPE&gt; document type</summary>
 						<p>All HTML documents must start with a &lt;!DOCTYPE&gt; declaration.</p>
+						<p>The declaration is not an HTML tag. It is an "information" to the browser about what document type to expect.</p>
 					</details>
 				</li>
 				<li>
 					<details>
 						<summary>&lt;html&gt; HTML document</summary>
 						<p>The &lt;html&gt; tag represents the root of an HTML document.</p>
+						<p>The &lt;html&gt; tag is the container for all other HTML elements (except for the &lt;!DOCTYPE&gt; tag).</p>
+						<p>Note: You should always include the lang attribute inside the &lt;html&gt; tag, to declare the language of the Web page. This is meant to assist search engines and browsers.</p>
 					</details>
 				</li>
 				<li>
 					<details>
 						<summary>&lt;head&gt; document head</summary>
 						<p>The &lt;head&gt; element is a container for metadata (data about data) and is placed between the &lt;html&gt; tag and the &lt;body&gt; tag.</p>
+						<p>Metadata is data about the HTML document. Metadata is not displayed.</p>
+							<p>Metadata typically define the document title, character set, styles, scripts, and other meta information.</p>
+							<p>The following elements can go inside the &lt;head&gt; element:<br>
+								&lt;title&gt; (required in every HTML document)<br>
+								&lt;style&gt;<br>
+								&lt;base&gt;<br>
+								&lt;link&gt;<br>
+								&lt;meta&gt;<br>
+								&lt;script&gt;<br>
+								&lt;noscript&gt;<br>
+							</p>
 					</details>
 				</li>
 				<li>
 					<details>
 						<summary>&lt;title&gt; document title</summary>
 						<p>The &lt;title&gt; tag defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.</p>
+						<p>The &lt;title&gt; tag is required in HTML documents!
+							The contents of a page title is very important for search engine optimization (SEO)! The page title is used by search engine algorithms to decide the order when listing pages in search results.
+							
+							The &lt;title&gt; element:
+							<ul class="d">
+								<li>defines a title in the browser toolbar</li>
+								<li>provides a title for the page when it is added to favorites</li>
+								<li>displays a title for the page in search-engine results</li>
+							</ul>
+							<p>Here are some tips for creating good titles:</p>
+							
+							<ul class="d">
+								<li>Go for a longer, descriptive title (avoid one- or two-word titles)</li>
+								<li>Search engines will display about 50-60 characters of the title, so try not to have titles longer than that</li>
+								<li>Do not use just a list of words as the title (this may reduce the page's position in search results)</li>
+							</ul>
+							<p>So, try to make the title as accurate and meaningful as possible!</p>
+							
+							<p><b>Note:</b> You can NOT have more than one &lt;title&gt; element in an HTML document.</p>
 					</details>
 				</li>
 				<li>
@@ -142,7 +177,9 @@
 			<li>
 				<details>
 					<summary>&lt;cite&gt;</summary>
-					<p>aaa</p>
+					<p>The &lt;cite&gt; tag defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).</p>
+					<p><b>Note:</b> A person's name is not the title of a work.</p>
+					<p>The text in the &lt;cite&gt; element usually renders in <i>italic</i>.</p>
 				</details>
 			</li>
 			<li>
@@ -420,5 +457,8 @@
 			</li>
 		</ol>
 	</details>
+	<footer>
+		<address></address>
+	</footer>
 </body>
 </html>
