@@ -6,30 +6,32 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="author" content="w3schools - https://www.w3schools.com/">
 	<title>HTML Tags</title>
+	<link rel="import" href="footer.html">
+	<script src="script.js"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<h1>HTML Tags</h1>
 	<details>
-		<summary>Basic HTML</summary>
+		<summary>Basic HTML (10)</summary>
 			<ol>
 				<li>
 					<details>
-						<summary>&lt;!-- ... --&gt; comment</summary>
+						<summary>&lt;!-- ... --&gt; - comment</summary>
 						<p>The comment tag is used to insert comments in the source code. Comments are not displayed in the browsers.</p>
 						<p>You can use comments to explain your code, which can help you when you edit the source code at a later date. This is especially useful if you have a lot of code.</p>
 					</details>
 				</li>
 				<li>
 					<details>
-						<summary>&lt;!DOCTYPE&gt; document type</summary>
+						<summary>&lt;!DOCTYPE&gt; - document type</summary>
 						<p>All HTML documents must start with a &lt;!DOCTYPE&gt; declaration.</p>
 						<p>The declaration is not an HTML tag. It is an "information" to the browser about what document type to expect.</p>
 					</details>
 				</li>
 				<li>
 					<details>
-						<summary>&lt;html&gt; HTML document</summary>
+						<summary>&lt;html&gt; - HTML document</summary>
 						<p>The &lt;html&gt; tag represents the root of an HTML document.</p>
 						<p>The &lt;html&gt; tag is the container for all other HTML elements (except for the &lt;!DOCTYPE&gt; tag).</p>
 						<p>Note: You should always include the lang attribute inside the &lt;html&gt; tag, to declare the language of the Web page. This is meant to assist search engines and browsers.</p>
@@ -37,7 +39,7 @@
 				</li>
 				<li>
 					<details>
-						<summary>&lt;head&gt; document head</summary>
+						<summary>&lt;head&gt; - document head</summary>
 						<p>The &lt;head&gt; element is a container for metadata (data about data) and is placed between the &lt;html&gt; tag and the &lt;body&gt; tag.</p>
 						<p>Metadata is data about the HTML document. Metadata is not displayed.</p>
 							<p>Metadata typically define the document title, character set, styles, scripts, and other meta information.</p>
@@ -54,7 +56,7 @@
 				</li>
 				<li>
 					<details>
-						<summary>&lt;title&gt; document title</summary>
+						<summary>&lt;title&gt; - document title</summary>
 						<p>The &lt;title&gt; tag defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.</p>
 						<p>The &lt;title&gt; tag is required in HTML documents!
 							The contents of a page title is very important for search engine optimization (SEO)! The page title is used by search engine algorithms to decide the order when listing pages in search results.
@@ -79,56 +81,58 @@
 				</li>
 				<li>
 					<details>
-						<summary>&lt;body&gt; document body</summary>
+						<summary>&lt;body&gt; - document body</summary>
 						<p>The &lt;body&gt; tag defines the document's body. The &lt;body&gt; element contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.</p>
 					</details>
 				</li>
 				<li>
 					<details>
-						<summary>&lt;h1&gt; to &lt;h6&gt; headings</summary>
+						<summary>&lt;h1&gt; to &lt;h6&gt; - headings</summary>
 						<p>The &lt;h1&gt; to &lt;h6&gt; tags are used to define HTML headings. &lt;h1&gt; defines the most important heading. &lt;h6&gt; defines the least important heading.</p>
+						<p><b>Note:</b> Only use one &lt;h1&gt; per page - this should represent the main heading/subject for the whole page. Also, do not skip heading levels - start with &lt;h1&gt;, then use &lt;h2&gt;, and so on.</p>
 					</details>
 				</li>
 				<li>
 					<details>
-						<summary>&lt;p&gt; paragraph</summary>
+						<summary>&lt;p&gt; - paragraph</summary>
 						<p>The &lt;p&gt; tag defines a paragraph. Browsers automatically add a single blank line before and after each &lt;p&gt; element.</p>
 					</details>
 				</li>
 				<li>
 					<details>
-						<summary>&lt;br&gt; line break</summary>
+						<summary>&lt;br&gt; - line break</summary>
 						<p>The &lt;br&gt; tag inserts a single line break. The &lt;br&gt; tag is an empty tag which means that it has no end tag.</p>
 					</details>
 				</li>
 				<li>
 					<details>
-						<summary>&lt;hr&gt; horizontal rule</summary>
+						<summary>&lt;hr&gt; - horizontal rule</summary>
 						<p>Just a horizontal line on the page. Like this one down here:</p>
 						<hr>
+						<p>The &lt;hr&gt; tag defines a thematic break in an HTML page (e.g. a shift of topic).</p>
 						<p>The &lt;hr&gt; element is most often displayed as a horizontal rule that is used to separate content (or define a change) in an HTML page.</p>
 					</details>
 				</li>
 			</ol>
 	</details>
 	<details>
-		<summary>Formatting</summary>
+		<summary>Formatting (39)</summary>
 		<ol>
 			<li>
 				<details>
-				<summary class="r">&lt;acronym&gt;</summary>
+				<summary class="r">&lt;acronym&gt; - define an acronym</summary>
 				<p><span class="r">Not supported in HTML5. Use &lt;abbr&gt; instead.</span> Defines an acronym</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;abr&gt;</summary>
+					<summary>&lt;abr&gt; - abbreviation</summary>
 					<p>The &lt;abbr&gt; tag defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;address&gt;</summary>
+					<summary>&lt;address&gt; - contact information</summary>
 					<p>The &lt;address&gt; tag defines the contact information for the author/owner of a document or an article.</p>
 					<p>The contact information can be an email address, URL, physical address, phone number, social media handle, etc.</p>
 					<p>The text in the &lt;address&gt; element usually renders in italic, and browsers will always add a line break before and after the &lt;address&gt; element.</p>
@@ -136,13 +140,13 @@
 			</li>
 			<li>
 				<details>
-					<summary>&lt;b&gt;</summary>
+					<summary>&lt;b&gt; - bold text</summary>
 					<p>The &lt;b&gt; tag specifies bold text without any extra importance.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;bdi&gt;</summary>
+					<summary>&lt;bdi&gt; - Bi-Directional Isolation</summary>
 					<p>BDI stands for Bi-Directional Isolation.</p>
 					<p>The &lt;bdi&gt; tag isolates a part of text that might be formatted in a different direction from other text outside it.</p>
 					<p>This element is useful when embedding user-generated content with an unknown text direction.</p>
@@ -150,33 +154,33 @@
 			</li>
 			<li>
 				<details>
-					<summary>&lt;bdo&gt;</summary>
+					<summary>&lt;bdo&gt; - Bi-Directional Override</summary>
 					<p>BDO stands for Bi-Directional Override.</p>
 					<p>The &lt;bdo&gt; tag is used to override the current text direction.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary class="r">&lt;big&gt;</summary>
+					<summary class="r">&lt;big&gt; - bigger text</summary>
 					<p><span class="r">Not Supported in HTML5.</span> The <span class="r">&lt;big&gt;</span> tag was used in HTML 4 to define bigger text.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;blockquote&gt;</summary>
+					<summary>&lt;blockquote&gt; - quotation</summary>
 					<p>The &lt;blockquote&gt; tag specifies a section that is quoted from another source.</p>
 					<p>Browsers usually indent &lt;blockquote&gt; elements (look at example below to see how to remove the indentation).</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary class="r">&lt;center&gt;</summary>
+					<summary class="r">&lt;center&gt; - center-align text</summary>
 					<p><span class="r">Not Supported in HTML5.</span> The <span class="r">&lt;center&gt;</span> tag was used in HTML4 to center-align text.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;cite&gt;</summary>
+					<summary>&lt;cite&gt; - the title of a creative work</summary>
 					<p>The &lt;cite&gt; tag defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).</p>
 					<p><b>Note:</b> A person's name is not the title of a work.</p>
 					<p>The text in the &lt;cite&gt; element usually renders in <i>italic</i>.</p>
@@ -184,7 +188,7 @@
 			</li>
 			<li>
 				<details>
-					<summary>&lt;code&gt;</summary>
+					<summary>&lt;code&gt; - piece of computer code</summary>
 					<p>aaa</p>
 				</details>
 			</li>
@@ -359,7 +363,7 @@
 		</ol>
 	</details>
 	<details>
-		<summary>Forms and Input</summary>
+		<summary>Forms and Input (12)</summary>
 		<ol>
 			<li>
 				<details>
@@ -370,7 +374,7 @@
 		</ol>
 	</details>
 	<details>
-		<summary>Frames</summary>
+		<summary>Frames (4)</summary>
 		<ol>
 			<li>
 				<details>
@@ -381,7 +385,7 @@
 		</ol>
 	</details>
 	<details>
-		<summary>Images</summary>
+		<summary>Images (8)</summary>
 		<ol>
 			<li>
 				<details>
@@ -392,7 +396,7 @@
 		</ol>
 	</details>
 	<details>
-		<summary>Links</summary>
+		<summary>Audio/Video (4)</summary>
 		<ol>
 			<li>
 				<details>
@@ -403,7 +407,7 @@
 		</ol>
 	</details>
 	<details>
-		<summary>Lists</summary>
+		<summary>Links (3)</summary>
 		<ol>
 			<li>
 				<details>
@@ -414,7 +418,7 @@
 		</ol>
 	</details>
 	<details>
-		<summary>Tables</summary>
+		<summary>Lists (8)</summary>
 		<ol>
 			<li>
 				<details>
@@ -425,7 +429,7 @@
 		</ol>
 	</details>
 	<details>
-		<summary>Styles and Semantics</summary>
+		<summary>Tables (10)</summary>
 		<ol>
 			<li>
 				<details>
@@ -436,7 +440,7 @@
 		</ol>
 	</details>
 	<details>
-		<summary>Meta Info</summary>
+		<summary>Styles and Semantics (15)</summary>
 		<ol>
 			<li>
 				<details>
@@ -447,7 +451,18 @@
 		</ol>
 	</details>
 	<details>
-		<summary>Programming</summary>
+		<summary>Meta Info (4)</summary>
+		<ol>
+			<li>
+				<details>
+					<summary>&lt;aaa&gt;</summary>
+					<p>aaa</p>
+				</details>
+			</li>
+		</ol>
+	</details>
+	<details>
+		<summary>Programming (6)</summary>
 		<ol>
 			<li>
 				<details>
