@@ -4,7 +4,7 @@
 
 body {
     font-family: Tahoma;
-    margin: 25px;
+    margin: 20px;
     background: #c5f1ff;
 }
 
@@ -15,7 +15,16 @@ body {
     color: red;
 }
 
+h4 {
+    margin: .75em;
+}
+
 hr {
+    width: 99%;
+    border: 1px solid black;
+}
+
+.redhr {
     width: 99%;
     border: 1px solid red;
 }
