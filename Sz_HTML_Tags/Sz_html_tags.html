@@ -107,7 +107,7 @@
 					<details>
 						<summary>&lt;hr&gt; - horizontal rule</summary>
 						<p>Just a horizontal line on the page. Like this one down here:</p>
-						<hr>
+						<hr class="redhr">
 						<p>The &lt;hr&gt; tag defines a thematic break in an HTML page (e.g. a shift of topic).</p>
 						<p>The &lt;hr&gt; element is most often displayed as a horizontal rule that is used to separate content (or define a change) in an HTML page.</p>
 					</details>
@@ -119,8 +119,11 @@
 		<ol>
 			<li>
 				<details>
-				<summary class="r">&lt;acronym&gt; - define an acronym</summary>
-				<p><span class="r">Not supported in HTML5. Use &lt;abbr&gt; instead.</span> Defines an acronym</p>
+					<summary class="r">&lt;acronym&gt; - define an acronym</summary>
+					<p><span class="r">Not supported in HTML5. Use &lt;abbr&gt; instead.</span> Defines an acronym</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>An acronym or abbreviation should be marked up with the &lt;abbr&gt; tag</p>
 				</details>
 			</li>
 			<li>
@@ -162,6 +165,9 @@
 				<details>
 					<summary class="r">&lt;big&gt; - bigger text</summary>
 					<p><span class="r">Not Supported in HTML5.</span> The <span class="r">&lt;big&gt;</span> tag was used in HTML 4 to define bigger text.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Specify different font-sizes for HTML elements with CSS</p>
 				</details>
 			</li>
 			<li>
@@ -175,6 +181,9 @@
 				<details>
 					<summary class="r">&lt;center&gt; - center-align text</summary>
 					<p><span class="r">Not Supported in HTML5.</span> The <span class="r">&lt;center&gt;</span> tag was used in HTML4 to center-align text.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Center-align text with CSS</p>
 				</details>
 			</li>
 			<li>
@@ -214,9 +223,12 @@
 			</li>
 			<li>
 				<details>
-					<summary><span class="r">&lt;font&gt; - specify the font</span></summary>
+					<summary class="r">&lt;font&gt; - specify the font</summary>
 					<p><span class="r">Not Supported in HTML5.</span></p>
-					<p>The &lt;font&gt; tag was used in HTML 4 to specify the font face, font size, and color of text.</p>
+					<p>The <span class="r">&lt;font&gt;</span> tag was used in HTML 4 to specify the font face, font size, and color of text.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Set the font of text with CSS - font-family, font-size, font-weight</p>
 				</details>
 			</li>
 			<li>
@@ -287,21 +299,21 @@
 			</li>
 			<li>
 				<details>
-					<summary>&lt;rp&gt; - a ruby annotation</summary>
+					<summary>&lt;rp&gt; - ruby annotation</summary>
 					<p>The &lt;rp&gt; tag can be used to provide parentheses around a ruby text, to be shown by browsers that do not support ruby annotations.</p>
 					<p>Use &lt;rp&gt; together with &lt;ruby&gt; and &lt;rt&gt;: The &lt;ruby&gt; element consists of one or more characters that needs an explanation/pronunciation, and an &lt;rt&gt; element that gives that information, and an optional &lt;rp&gt; element that defines what to show for browsers that not support ruby annotations.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;rt&gt; - a ruby annotation</summary>
+					<summary>&lt;rt&gt; - ruby annotation</summary>
 					<p>The &lt;rt&gt; tag defines an explanation or pronunciation of characters (for East Asian typography) in a ruby annotation.</p>
 					<p>Use &lt;rt&gt; together with &lt;ruby&gt; and &lt;rp&gt;: The &lt;ruby&gt; element consists of one or more characters that needs an explanation/pronunciation, and an &lt;rt&gt; element that gives that information, and an optional &lt;rp&gt; element that defines what to show for browsers that not support ruby annotations.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;ruby&gt; - a ruby annotation</summary>
+					<summary>&lt;ruby&gt; - ruby annotation</summary>
 					<p>The &lt;ruby&gt; tag specifies a ruby annotation.</p>
 					<p>A ruby annotation is a small extra text, attached to the main text to indicate the pronunciation or meaning of the corresponding characters. This kind of annotation is often used in Japanese publications.</p>
 					<p>Use &lt;ruby&gt; together with &lt;rt&gt; and &lt;rp&gt;: The &lt;ruby&gt; element consists of one or more characters that needs an explanation/pronunciation, and an &lt;rt&gt; element that gives that information, and an optional &lt;rp&gt; element that defines what to show for browsers that do not support ruby annotations.</p>
@@ -309,80 +321,102 @@
 			</li>
 			<li>
 				<details>
-					<summary>&lt;s&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;s&gt; - text that is no longer correct</summary>
+					<p>The &lt;s&gt; tag specifies text that is no longer correct, accurate or relevant. The text will be displayed with a line through it.</p>
+					<p>The &lt;s&gt; tag should not be used to define deleted text in a document, use the &lt;del&gt; tag for that.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;samp&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;samp&gt; - sample output</summary>
+					<p>The &lt;samp&gt; tag is used to define sample output from a computer program. The content inside is displayed in the browser's default monospace font.</p>
+					<p><b>Tip:</b> This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;small&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;small&gt; - smaller text</summary>
+					<p>The &lt;small&gt; tag defines smaller text (like copyright and other side-comments).</p>
+					<p><b>Tip:</b> This tag is not deprecated, but it is possible to achieve richer (or the same) effect with CSS.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;strike&gt;</summary>
-					<p>aaa</p>
+					<summary class="r">&lt;strike&gt; - strikethrough text</summary>
+					<p><span class="r">Not Supported in HTML5.</span></p>
+					<p>The <span class="r">&lt;strike&gt;</span> tag was used in HTML 4 to define strikethrough text.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Use the &lt;del&gt; tag to define deleted text.</p>
+					<p>Use the &lt;s&gt; tag to mark up text that is no longer correct</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;strong&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;strong&gt; - important text</summary>
+					<p>The &lt;strong&gt; tag is used to define text with strong importance. The content inside is typically displayed in bold.</p>
+					<p><b>Tip:</b> Use the &lt;b&gt; tag to specify bold text without any extra importance!</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;sub&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;sub&gt; - subscripted text</summary>
+					<p>The &lt;sub&gt; tag defines subscript text. Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font. Subscript text can be used for chemical formulas, like H<sub>2</sub>O</p>
+					<p><b>Tip:</b> Use the &lt;sup&gt; tag to define superscripted text.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;sup&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;sup&gt; - superscripted text</summary>
+					<p>The &lt;sup&gt; tag defines superscript text. Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font. Superscript text can be used for footnotes, like WWW<sup>[1]</sup>.</p>
+					<p><b>Tip:</b> Use the &lt;sub&gt; tag to define subscript text.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;template&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;template&gt; - container for content</summary>
+					<p>Defines a container for content that should be hidden when the page loads</p>
+					<p>The &lt;template&gt; tag is used as a container to hold some HTML content hidden from the user when the page loads.</p>
+					<p>The content inside &lt;template&gt; can be rendered later with a JavaScript.</p>
+					<p>You can use the &lt;template&gt; tag if you have some HTML code you want to use over and over again, but not until you ask for it. To do this without the &lt;template&gt; tag, you have to create the HTML code with JavaScript to prevent the browser from rendering the code.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;time&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;time&gt; - specific time (or datetime)</summary>
+					<p>The &lt;time&gt; tag defines a specific time (or datetime).</p>
+					<p>The datetime attribute of this element is used translate the time into a machine-readable format so that browsers can offer to add date reminders through the user's calendar, and search engines can produce smarter search results.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;tt&gt;</summary>
-					<p>aaa</p>
+					<summary class="r">&lt;tt&gt; - teletype text</summary>
+					<p><span class="r">Not Supported in HTML5.</span></p>
+					<p>The <span class="r">&lt;tt&gt;</span> tag was used in HTML 4 to define teletype text.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Consider the &lt;kbd&gt; element (for keyboard input), the &lt;var&gt; element (for variables), the &lt;code&gt; element (for computer code), the &lt;samp&gt; element (for computer output), or use CSS instead.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;u&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;u&gt; - underlined (misspelled) word</summary>
+					<p>The &lt;u&gt; tag represents some text that is unarticulated and styled differently from normal text, such as misspelled words or proper names in Chinese text. The content inside is typically displayed with an underline. You can change this with CSS.</p>
+					<p><b>Tip:</b> Avoid using the &lt;u&gt; element where it could be confused for a hyperlink!</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;var&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;var&gt; - variable</summary>
+					<p>The &lt;var&gt; tag is used to defines a variable in programming or in a mathematical expression. The content inside is typically displayed in <i>italic</i>.</p>
+					<p><b>Tip:</b> This tag is not deprecated. However, it is possible to achieve richer effect by using CSS.</p>
 				</details>
 			</li>
 			<li>
 				<details>
-					<summary>&lt;wbr&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;wbr&gt; - word break opportunities</summary>
+					<p>The &lt;wbr&gt; (Word Break Opportunity) tag specifies where in a text it would be ok to add a line-break.</p>
+					<p><b>Tip:</b> When a word is too long, the browser might break it at the wrong place. You can use the &lt;wbr&gt; element to add word break opportunities.</p>
 				</details>
 			</li>
 		</ol>

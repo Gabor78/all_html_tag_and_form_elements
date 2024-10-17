@@ -6,13 +6,87 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="author" content="https://www.namecheap.com/blog/16-css-units-that-every-developer-should-know/">
 	<title>CSS units</title>
-	<link rel="stylesheet" href="style_a.css">
+	<link rel="stylesheet" href="style_css_units.css">
 </head>
 <body>
-    <div class="h1card"><h1>All 16 CSS units</h1></div>
-    <h2>There are 3 different types of CSS units:</h2>
-    <h3>Absolute Units:</h3><div class="card"><h1>VW, vh, vmin, vmax</h1></div>
-    <h3>Relative Units:</h3><div class="card"><h1>em, rem, %, ex, ch, fr</h1></div>
-    <h3>Viewport Units:</h3><div class="card"><h1>px, pt, PC, in, cm, mm</h1></div>
+    <h1>All CSS units</h1>
+	<p class="cir">px, pt, PC, in, cm, mm, em, rem, %, ex, ch, fr, VW, vh, vmin, vmax</p>
+	<p class="hx">There are <b>16</b> unique types of <b>css units</b>. We can classify them into 3 different groups:</p>
+    <div class="card" title="NEVER hide the cursor and animate the border! :D"><h2>Absolute Units:</h2><h3>px, pt, PC, in, cm, mm</h3></div>
+    <div class="card" title="Realy!"><h2>Relative Units:</h2><h3>em, rem, %, ex, ch, fr</h3></div>
+    <div class="card" title="Never"><h2>Viewport Units:</h2><h3>VW, vh, vmin, vmax</h3></div>
+	<p>CSS has several different units for expressing a length.</p>
+	<p>Many CSS properties take "length" values, such as width, margin, padding, font-size, etc.</p>
+	<h4>Responsive design:</h4>
+	<p>Relative units, such as <b>em</b>, <b>rem</b>, and viewport units (<b>vw</b>, <b>vh</b>), help with responsive design because they flexibly adapt to different screen sizes.</p>
+	<h4>Consistency:</h4>
+	<p>Absolute units (<b>px</b>, <b>pt</b>, etc.) are stable, but do not always respond well to user settings, so they are not ideal for responsive design.</p>
+	<hr>
+	<details>
+		<summary>Absolute units</summary>
+		<p>Let's begin with the most basic units. Absolute units should only be used in specific parts of website design or when printing. </p>
+		<details>
+			<summary>Pixels (px)</summary>
+			<p>A pixel is the smallest unit of measurement in digital design. Pixels are to digital design what inches are to traditional print design. A pixel can be defined as 1/96th of an inch.</p>
+			<p>This unit is designed specifically for CSS. Its value depends on the screen's resolution, which affects the size of the pixels on the screen. For example, if you have two screens with different screen sizes, but both have the same resolution, then the pixels will look similar on both screens.</p>
+			<p>While the CSS pixel isn't the same as a physical pixel, it's close enough that we can use it for measurements.</p>
+		</details>
+		<details>
+			<summary>Points (pt) and picas (pc)</summary>
+			<p>Next, we have points and picas. These units are still used in print design but are slowly being replaced by pixels. Even though they aren't currently very popular in the virtual and real world, they date back to the typeface and are mostly used with things like font size.</p>
+			<p>A point is 1/72nd of an inch, and pica is 1/6th of an inch.</p>
+		</details>
+		<details>
+			<summary>Inches (in), centimeters (cm), and millimeters (mm)</summary>
+			<p>These three units are similar and are used for measuring things in the real world. They're most suited for styling your website to look good when it's printed rather than when it's viewed on a screen. They make certain that the components, layouts, spacing, and typefaces are spot on for every online application user.</p>
+			<p>However, the downside to these units is that different devices can have different screen sizes and densities, affecting how people see your website. For example, a website viewed on a mobile device will look different from the desktop version.</p>
+			<p>For this reason, you might want to use other relative units instead of absolute ones to ensure everyone has a good experience on your website.</p>
+		</details>
+	</details>
+	<details>
+		<summary>Relative units</summary>
+		<p>Now that we've covered absolute units, it's time to tackle relative ones. Relative units make responsive design easier for the ever-increasing need for adaptable interfaces.</p>
+		<details>
+			<summary>Percentage (%)</summary>
+			<p>Let's start with the most well-known relative unit, the percentage. Anything that is represented in CSS with this unit is relative to:</p>
+				<ul>
+					<li>The parent (the containing element that encloses 'child' elements) that is connected to </li>
+					<li>When a child element has a position set to absolute, the last parental element with relative positioning will determine its position.</li>
+					<li>The root element (top level element from which all other elements descend)  when the position is set to "fixed."</li>
+				</ul>
+		</details>
+		<details>
+			<summary>Ex/Ch</summary>
+			<p>Next, we have ex and ch, specific units that are only useful when dealing with monospaced fonts.</p>
+			<p>Ex is relative to the height of the letter x in the current font. Ch is relative to the width of the letter 0 in the current font. So both are measurements of a character's size, either on the x or y-axis. And yes, these measurements are affected by the font size of an element.</p>
+		</details>
+		<details>
+			<summary>Fr</summary>
+			<p>Fr is a new CSS unit representing a fraction of a container's free space. It is relative to how much space is left over after other elements have been placed.</p>
+			<p>This can be useful for creating responsive interfaces because it allows you to allocate space for different elements based on the available space. The fr unit is supported by all major browsers, so feel free to use it in your projects.</p>
+		</details>
+		<details>
+			<summary>Em/Rem</summary>
+			<p>Finally, here are two units favored by most developers — em and rem. If you've ever created a modern, well-developed website, you're undoubtedly familiar with them.</p>
+			<p>Em is a unit of measurement equal to the element's font size. So if you have a font size of 17px, then 1em would be 17px. This way, when you design things, they will look the same on different devices and browsers.</p>
+		</details>
+	</details>
+	<details>
+		<summary>Viewport units</summary>
+		<details>
+			<summary>VW, vh, vmin, vmax</summary>
+			<p>Lastly, we've got the viewport units. These units are fairly easy to understand and offer some great new functionalities that were not possible before.</p>
+			<p>The "v" in each of them stands for "viewport" because that is the main part of their relativity. After that, it states what part of the viewport the unit is relative to, including height, weight, minimum, and maximum.</p>
+			<p>When working with fixed-positioned components like pop-ups, these viewport units are quite useful because they make the component resize itself according to how big or small the viewport is.</p>
+		</details>
+	</details>
+	<p>We've covered the essential CSS units that every developer should know and provided examples of how to use them in your projects, so don't be afraid to experiment and see what works best for you. With a little practice, you'll be using these units like a pro in no time!</p>
+	<footer class="c">
+		<article>
+			<address>
+				<a rel="author" href="https://www.namecheap.com/blog/16-css-units-that-every-developer-should-know/" target="_blank">namecheap</a>
+			</address>
+		</article>
+	</footer>
 </body>
 </html>
