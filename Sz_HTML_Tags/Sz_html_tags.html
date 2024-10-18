@@ -426,8 +426,145 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;form&gt; - HTML form</summary>
+					<p>The &lt;form&gt; tag is used to create an HTML form for user input.</p>
+					<p>The &lt;form&gt; element can contain one or more of the following form elements:</p>
+						<ul class="d">
+							<li>&lt;input&gt;</li>
+							<li>&lt;textarea&gt;</li>
+							<li>&lt;button&gt;</li>
+							<li>&lt;select&gt;</li>
+							<li>&lt;option&gt;</li>
+							<li>&lt;optgroup&gt;</li>
+							<li>&lt;fieldset&gt;</li>
+							<li>&lt;label&gt;</li>
+							<li>&lt;output&gt;</li>
+						</ul>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;input&gt; - input field</summary>
+					<p>The &lt;input&gt; tag specifies an input field where the user can enter data.</p>
+					<p>The &lt;input&gt; element is the most important form element.</p>
+					<p>The &lt;input&gt; element can be displayed in several ways, depending on the type attribute.</p>
+					<hr>
+					<h4>Tips and Notes</h4>
+					<p><b>Tip:</b> Always use the &lt;label&gt; tag to define labels for &lt;input type="text"&gt;, &lt;input type="checkbox"&gt;, &lt;input type="radio"&gt;, &lt;input type="file"&gt;, and &lt;input type="password"&gt;.</p>
+					<p>Visit <a href="https://github.com/Gabor78/all_html_tag_and_form_elements/tree/main/Sz_form_elements" title="HTML &lt;Form&gt; Elements" target="_blank">this</a> repo for more detailed and intriguing information about all 22 input types!</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;textarea&gt; - multiline input control</summary>
+					<p>The &lt;textarea&gt; tag defines a multi-line text input control.</p>
+					<p>The &lt;textarea&gt; element is often used in a form, to collect user inputs like comments or reviews.</p>
+					<p>A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually Courier).</p>
+					<p>The size of a text area is specified by the cols and rows attributes (or with CSS).</p>
+					<p>The name attribute is needed to reference the form data after the form is submitted (if you omit the name attribute, no data from the text area will be submitted).</p>
+					<p>The id attribute is needed to associate the text area with a label.</p>
+					<p><b>Tip:</b> Always add the &lt;label&gt; tag for best accessibility practices!</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;button&gt; - button</summary>
+					<p>The &lt;button&gt; tag defines a clickable button.</p>
+					<p>Inside a &lt;button&gt; element you can put text (and tags like &lt;i&gt;, &lt;b&gt;, &lt;strong&gt;, &lt;br&gt;, &lt;img&gt;, etc.). That is not possible with a button created with the &lt;input&gt; element!</p>
+					<p><b>Tip:</b> Always specify the type attribute for a &lt;button&gt; element, to tell browsers what type of button it is.</p>
+					<p><b>Tip:</b> You can easily style buttons with CSS! Look at the examples below or visit our CSS Buttons tutorial.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;select&gt; - drop-down list</summary>
+					<p>The &lt;select&gt; element is used to create a drop-down list.</p>
+					<p>The &lt;select&gt; element is most often used in a form, to collect user input.</p>
+					<p>The name attribute is needed to reference the form data after the form is submitted (if you omit the name attribute, no data from the drop-down list will be submitted).</p>
+					<p>The id attribute is needed to associate the drop-down list with a label.</p>
+					<p>The &lt;option&gt; tags inside the &lt;select&gt; element define the available options in the drop-down list.</p>
+					<p><b>Tip:</b> Always add the &lt;label&gt; tag for best accessibility practices!</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;optgroup&gt; - group of options in a drop-down list</summary>
+					<p>The &lt;optgroup&gt; tag is used to group related options in a &lt;select&gt; element (drop-down list).</p>
+					<p>If you have a long list of options, groups of related options are easier to handle for a user.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;option&gt; - an option in a drop-down list</summary>
+					<p>The &lt;option&gt; tag defines an option in a select list.</p>
+					<p>&lt;option&gt; elements go inside a &lt;select&gt;, &lt;optgroup&gt;, or &lt;datalist&gt; element.</p>
+					<p><b>Note:</b> The &lt;option&gt; tag can be used without any attributes, but you usually need the value attribute, which indicates what is sent to the server on form submission.</p>
+					<p><b>Tip:</b> If you have a long list of options, you can group related options within the &lt;optgroup&gt; tag.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;label&gt; - label for inputs</summary>
+					<p>The &lt;label&gt; tag defines a label for several elements:</p>
+					<ul class="d">
+						<li>&lt;input type="checkbox"&gt;</li>
+						<li>&lt;input type="color"&gt;</li>
+						<li>&lt;input type="date"&gt;</li>
+						<li>&lt;input type="datetime-local"&gt;</li>
+						<li>&lt;input type="email"&gt;</li>
+						<li>&lt;input type="file"&gt;</li>
+						<li>&lt;input type="month"&gt;</li>
+						<li>&lt;input type="number"&gt;</li>
+						<li>&lt;input type="password"&gt;</li>
+						<li>&lt;input type="radio"&gt;</li>
+						<li>&lt;input type="range"&gt;</li>
+						<li>&lt;input type="search"&gt;</li>
+						<li>&lt;input type="tel"&gt;</li>
+						<li>&lt;input type="text"&gt;</li>
+						<li>&lt;input type="time"&gt;</li>
+						<li>&lt;input type="url"&gt;</li>
+						<li>&lt;input type="week"&gt;</li>
+						<li>&lt;meter&gt;</li>
+						<li>&lt;progress&gt;</li>
+						<li>&lt;select&gt;</li>
+						<li>&lt;textarea&gt;</li>
+					</ul>
+					<p>Proper use of labels with the elements above will benefit:</p>
+					<p>Screen reader users (will read out loud the label, when the user is focused on the element)</p>
+					<p>Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user clicks the text within the &lt;label&gt; element, it toggles the input (this increases the hit area).</p>
+					<hr>
+					<h4>Tips and Notes</h4>
+					<p><b>Tip:</b> The for attribute of &lt;label&gt; must be equal to the id attribute of the related element to bind them together. A label can also be bound to an element by placing the element inside the &lt;label&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;fieldset&gt; - groups of form elements</summary>
+					<p>The &lt;fieldset&gt; tag is used to group related elements in a form.</p>
+					<p>The &lt;fieldset&gt; tag draws a box around the related elements.</p>
+					<hr>
+					<h4>Tips and Notes</h4>
+					<p><b>Tip:</b> The &lt;legend&gt; tag is used to define a caption for the &lt;fieldset&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;legend&gt; - title (caption) of the fieldset</summary>
+					<p>The &lt;legend&gt; tag defines a caption for the &lt;fieldset&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;datalist&gt; - pre-defined options</summary>
+					<p>The &lt;datalist&gt; tag specifies a list of pre-defined options for an &lt;input&gt; element.</p>
+					<p>The &lt;datalist&gt; tag is used to provide an "autocomplete" feature for &lt;input&gt; elements. Users will see a drop-down list of pre-defined options as they input data.</p>
+					<p>The &lt;datalist&gt; element's id attribute must be equal to the &lt;input&gt; element's list attribute (this binds them together).</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;output&gt; - result of a calculation</summary>
+					<p>The &lt;output&gt; tag is used to represent the result of a calculation (like one performed by a script).</p>
 				</details>
 			</li>
 		</ol>
