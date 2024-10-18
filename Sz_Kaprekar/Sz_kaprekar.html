@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kaprekar - 6174</title>
+	<style>
+		label{display:inline-block;width:50px;}
+		.r{color:red;}
+		.gre{color:green;}
+		.bld{font-weight:bold;}
+		.pl5{padding-left: 5em;}
+	</style>
+</head>
+<body>
+	<a href="https://www.youtube.com/watch?v=xtyNuOikdE4" title="Kaprekar's Constant" target="_blank">Kaprekar's Constant</a>
+	<p>Set the number range:</p>
+	<!-- nem is kell form... :-P -->
+	<p>
+		<label for="num1">From:</label>
+		<input type="number" id="num1" min="1000" max="9999" required><br>
+		<label for="num2">To:</label>
+		<input type="number" id="num2" min="1000" max="9999" required><br>
+	</p>
+	<p>
+		<button onclick="Kaprekar()">Find 6174</button>
+	</p>
+	<p id="error"></p>
+	<p id="results"></p>
+	<script>
+		function Kaprekar() {
+			const num1 = parseInt(document.getElementById('num1').value);
+			const num2 = parseInt(document.getElementById('num2').value);
+			const res0 = document.getElementById('results');
+			res0.innerHTML = "";
+			if (num1 < 1000 || num2 > 9999 || num1 >= num2) {
+				document.getElementById('error').innerText = 'Wrong input numbers!';
+				return;
+			}
+			for (let allNum = num1; allNum < num2; allNum++) {
+				let currentNum = allNum;
+				let currentTry = 0;
+				let history = "";
+				while (currentNum !== 6174) {
+					const numMax = findMax(currentNum);
+					const numMin = findMin(currentNum);
+					const numDelta = numMax - numMin;
+					currentTry++;
+					if (numDelta === 0) {
+						history += `${currentTry}. try -> ${numMax} - ${numMin} = <u>${numDelta}</u><span class='r pl5'>-*-*-*-*-*- Loop detected! (same digits) -*-*-*-*-*-</span>`;
+						//alert('LOOP - All four digits are the same: '+currentNum);
+						//return;
+						break;
+					}
+					history += `${currentTry}. try -> ${numMax} - ${numMin} = <u>${numDelta}</u><br>`;
+					currentNum = numDelta;
+					if (currentNum == 6174) {
+						history += `<br><span class='r bld'>${currentNum}</span> ...again<br>`;
+					}
+				}
+				res0.innerHTML += `<hr>Let's try this number: <span class='gre bld'>${allNum}</span><br> <br>${history}<br>`;
+			}
+		}
+		function findMin(num) {
+			const sortedDigitsMin = String(num).padStart(4, '0').split('').sort().join('');
+			return parseInt(sortedDigitsMin);
+		}
+		function findMax(num) {
+			const sortedDigitsMax = String(num).padStart(4, '0').split('').sort((a, b) => b - a).join('');
+			return parseInt(sortedDigitsMax);
+		}
+	</script>
+</body>
+</html>
