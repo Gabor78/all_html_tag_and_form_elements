@@ -49,12 +49,12 @@
 					const numDelta = numMax - numMin;
 					currentTry++;
 					if (numDelta === 0) {
-						history += `${currentTry}. try -> ${numMax} - ${numMin} = <u>${numDelta}</u><span class='r pl5'>-*-*-*-*-*- Loop detected! (same digits) -*-*-*-*-*-</span>`;
+						history += `${currentTry}. attempt -> ${numMax} - ${numMin} = <u>${numDelta}</u><span class='r pl5'>-*-*-*-*-*- Loop detected! (same digits) -*-*-*-*-*-</span>`;
 						//alert('LOOP - All four digits are the same: '+currentNum);
 						//return;
 						break;
 					}
-					history += `${currentTry}. try -> ${numMax} - ${numMin} = <u>${numDelta}</u><br>`;
+					history += `${currentTry}. attempt -> ${numMax} - ${numMin} = <u>${numDelta}</u><br>`;
 					currentNum = numDelta;
 					if (currentNum == 6174) {
 						history += `<br><span class='r bld'>${currentNum}</span> ...again<br>`;
