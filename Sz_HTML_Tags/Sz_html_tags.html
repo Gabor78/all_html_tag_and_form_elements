@@ -574,10 +574,43 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;frame&gt; - a window (a frame)</summary>
+					<p><span class="r">Not Supported in HTML5.</span></p>
+					<p>The <span class="r">&lt;frame&gt;</span> tag was used in HTML 4 to define one particular window (frame) within a &lt;frameset&gt;.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Use the &lt;iframe&gt; tag to embed another document within the current HTML document.</p>
 				</details>
 			</li>
+			<li>
+				<details>
+					<summary>&lt;frameset&gt; - a set of frames</summary>
+					<p><span class="r">Not Supported in HTML5.</span></p>
+					<p>The <span class="r">&lt;frameset&gt;</span> tag was used in HTML 4 to define a frameset.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Use the &lt;iframe&gt; tag to embed another document within the current HTML document.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;noframes&gt; - alternate content</summary>
+					<p><span class="r">Not Supported in HTML5.</span></p>
+					<p>The <span class="r">&lt;noframes&gt;</span> tag was used in HTML 4 to act as a fallback tag for browsers that did not support frames.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Use the &lt;iframe&gt; tag to embed another document within the current HTML document.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;iframe&gt; - inline frame</summary>
+					<p>The &lt;iframe&gt; tag specifies an inline frame.</p>
+					<p>An inline frame is used to embed another document within the current HTML document.</p>
+					<p><b>Tip:</b> Use CSS to style the &lt;iframe&gt; (see example below).</p>
+					<p><b>Tip:</b> It is a good practice to always include a title attribute for the &lt;iframe&gt;. This is used by screen readers to read out what the content of the &lt;iframe&gt; is.</p>
+				</details>
+			</li>			
 		</ol>
 	</details>
 	<details>
@@ -585,7 +618,63 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
+					<summary>&lt;img&gt; - image</summary>
+					<p>The &lt;img&gt; tag is used to embed an image in an HTML page.</p>
+					<p>Images are not technically inserted into a web page; images are linked to web pages. The &lt;img&gt; tag creates a holding space for the referenced image.</p>
+					<p>The &lt;img&gt; tag has two required attributes:</p>
+					<ul class="d">
+						<li>src - Specifies the path to the image</li>
+						<li>alt - Specifies an alternate text for the image, if the image for some reason cannot be displayed</li>
+					</ul>
+					<p><b>Note:</b> Also, always specify the width and height of an image. If width and height are not specified, the page might flicker while the image loads.</p>
+					<p><b>Tip:</b> To link an image to another document, simply nest the &lt;img&gt; tag inside an <a> tag (see example below).</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;map&gt; - image map</summary>
+					<p>The &lt;map&gt; tag is used to define an image map. An image map is an image with clickable areas.</p>
+					<p>The required name attribute of the &lt;map&gt; element is associated with the &lt;img&gt;'s usemap attribute and creates a relationship between the image and the map.</p>
+					<p>The &lt;map&gt; element contains a number of &lt;area&gt; elements, that defines the clickable areas in the image map.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;area&gt; - area inside an image map</summary>
+					<p>The &lt;area&gt; tag defines an area inside an image map (an image map is an image with clickable areas).</p>
+					<p>&lt;area&gt; elements are always nested inside a <map> tag.</p>
+					<p><b>Note:</b> The usemap attribute in &lt;img&gt; is associated with the &lt;map&gt; element's name attribute, and creates a relationship between the image and the map.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;canvas&gt; - used to draw graphics</summary>
+					<p>The &lt;canvas&gt; tag is used to draw graphics, on the fly, via scripting (usually JavaScript).</p>
+					<p>The &lt;canvas&gt; tag is transparent, and is only a container for graphics, you must use a script to actually draw the graphics.</p>
+					<p>Any text inside the &lt;canvas&gt; element will be displayed in browsers with JavaScript disabled and in browsers that do not support &lt;canvas&gt;.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;figcaption&gt; - caption for a &lt;figure&gt; element</summary>
+					<p>aaa</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;figure&gt; - to mark up a photo</summary>
+					<p>aaa</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;picture&gt; - a container for multiple image resources</summary>
+					<p>aaa</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;svg&gt; - a container for SVG graphics</summary>
 					<p>aaa</p>
 				</details>
 			</li>
