@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitScreen</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            height: 100vh;
+        }
+        .menu {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+        }
+        .menu button, .menu input {
+            margin-right: 10px;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .frame {
+            flex: 1;
+            border: 1px solid #ccc;
+            min-width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu">
+    <button onclick="loadUrl('https://www.wikipedia.org', 0)">Link1</button>
+    <button onclick="loadUrl('https://www.example.com', 0)">Link2</button>
+    <button onclick="loadUrl('https://www.ruander.hu/tananyagok/', 0)">Link3</button>
+    <button onclick="loadUrl(document.getElementById('urlInput').value, 0)">Load (left)</button>
+    <input type="text" id="urlInput" placeholder="URL">
+    <button onclick="loadUrl(document.getElementById('urlInput').value, 1)">Load (right)</button>
+    <button onclick="loadUrl('https://www.wikipedia.org', 1)">Link1</button>
+    <button onclick="loadUrl('https://www.example.com', 1)">Link2</button>
+    <button onclick="loadUrl('https://www.ruander.hu/tananyagok/', 1)">Link3</button>
+</div>
+
+<div class="container">
+    <iframe id="iframe1" class="frame" src="https://www.wikipedia.org" id="iframe1" title="frame1"></iframe>
+    <iframe id="iframe2" class="frame" src="https://www.wikipedia.org" id="iframe2" title="frame2"></iframe>
+</div>
+
+<script>
+    function loadUrl(url, frameIndex) {
+        const iframe = frameIndex === 0 ? document.getElementById('iframe1') : document.getElementById('iframe2');
+        iframe.src = url;
+    }
+</script>
+
+</body>
+</html>
