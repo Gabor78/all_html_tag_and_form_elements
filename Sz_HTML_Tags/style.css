@@ -84,3 +84,10 @@ summary::after {
     background-size: cover;
     transition: 0.75s;
 }
+
+/*DisplayExampleDiv*/
+.ded{
+    float: right;
+    border: 3px solid silver;
+    padding: 3px;
+}
