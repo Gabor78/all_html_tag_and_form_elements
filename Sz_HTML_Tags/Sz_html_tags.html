@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>HTML Tags</h1>
+	<h1>All HTML Tags</h1>
 	<details>
 		<summary>Basic HTML (10)</summary>
 			<ol>
@@ -607,7 +607,7 @@
 					<summary>&lt;iframe&gt; - inline frame</summary>
 					<p>The &lt;iframe&gt; tag specifies an inline frame.</p>
 					<p>An inline frame is used to embed another document within the current HTML document.</p>
-					<p><b>Tip:</b> Use CSS to style the &lt;iframe&gt; (see example below).</p>
+					<p><b>Tip:</b> Use CSS to style the &lt;iframe&gt;.</p>
 					<p><b>Tip:</b> It is a good practice to always include a title attribute for the &lt;iframe&gt;. This is used by screen readers to read out what the content of the &lt;iframe&gt; is.</p>
 				</details>
 			</li>			
@@ -627,7 +627,7 @@
 						<li>alt - Specifies an alternate text for the image, if the image for some reason cannot be displayed</li>
 					</ul>
 					<p><b>Note:</b> Also, always specify the width and height of an image. If width and height are not specified, the page might flicker while the image loads.</p>
-					<p><b>Tip:</b> To link an image to another document, simply nest the &lt;img&gt; tag inside an <a> tag (see example below).</p>
+					<p><b>Tip:</b> To link an image to another document, simply nest the &lt;img&gt; tag inside an <a> tag.</p>
 				</details>
 			</li>
 			<li>
@@ -657,25 +657,33 @@
 			<li>
 				<details>
 					<summary>&lt;figcaption&gt; - caption for a &lt;figure&gt; element</summary>
-					<p>aaa</p>
+					<p>The &lt;figcaption&gt; tag defines a caption for a &lt;figure&gt; element.</p>
+					<p>The &lt;figcaption&gt; element can be placed as the first or last child of the &lt;figure&gt; element.</p>
 				</details>
 			</li>
 			<li>
 				<details>
 					<summary>&lt;figure&gt; - to mark up a photo</summary>
-					<p>aaa</p>
+					<p>The &lt;figure&gt; tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.</p>
+					<p>While the content of the &lt;figure&gt; element is related to the main flow, its position is independent of the main flow, and if removed it should not affect the flow of the document.</p>
+					<p><b>Tip:</b> The &lt;figcaption&gt; element is used to add a caption for the &lt;figure&gt; element.</p>
 				</details>
 			</li>
 			<li>
 				<details>
 					<summary>&lt;picture&gt; - a container for multiple image resources</summary>
-					<p>aaa</p>
+					<p>The &lt;picture&gt; tag gives web developers more flexibility in specifying image resources.</p>
+					<p>The most common use of the &lt;picture&gt; element will be for art direction in responsive designs. Instead of having one image that is scaled up or down based on the viewport width, multiple images can be designed to more nicely fill the browser viewport.</p>
+					<p>The &lt;picture&gt; element contains two tags: one or more &lt;source&gt; tags and one &lt;img&gt; tag.</p>
+					<p>The browser will look for the first <source> element where the media query matches the current viewport width, and then it will display the proper image (specified in the srcset attribute). The &lt;img&gt; element is required as the last child of the &lt;picture&gt; element, as a fallback option if none of the source tags matches.</p>
+					<p><b>Tip:</b> The &lt;picture&gt; element works "similar" to &lt;video&gt; and &lt;audio&gt;. You set up different sources, and the first source that fits the preferences is the one being used.</p>
 				</details>
 			</li>
 			<li>
 				<details>
 					<summary>&lt;svg&gt; - a container for SVG graphics</summary>
-					<p>aaa</p>
+					<p>The &lt;svg&gt; tag defines a container for SVG graphics.</p>
+					<p>SVG has several methods for drawing paths, boxes, circles, text, and graphic images.</p>
 				</details>
 			</li>
 		</ol>
@@ -685,8 +693,35 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;audio&gt; - sound content</summary>
+					<p>The &lt;audio&gt; tag is used to embed sound content in a document, such as music or other audio streams.</p>
+					<p>The &lt;audio&gt; tag contains one or more &lt;source&gt; tags with different audio sources. The browser will choose the first source it supports.</p>
+					<p>The text between the &lt;audio&gt; and &lt;/audio&gt; tags will only be displayed in browsers that do not support the &lt;audio&gt; element.</p>
+					<p>There are all supported audio formats in HTML: WAV, MP3, MP4, ADTS, OGG, WebM, CAF, FLAC.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;source&gt; - multiple media resources for media elements (&lt;video&gt;, &lt;audio&gt; and &lt;picture&gt;)</summary>
+					<p>The &lt;source&gt; tag is used to specify multiple media resources for media elements, such as &lt;video&gt;, &lt;audio&gt;, and &lt;picture&gt;.</p>
+					<p>The &lt;source&gt; tag allows you to specify alternative video/audio/image files which the browser may choose from, based on browser support or viewport width. The browser will choose the first &lt;source&gt; it supports.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;track&gt; - text tracks for media elements (&lt;video&gt; and &lt;audio&gt;)</summary>
+					<p>The &lt;track&gt; tag specifies text tracks for &lt;audio&gt; or &lt;video&gt; elements.</p>
+					<p>This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.</p>
+					<p>Tracks are formatted in WebVTT format (.vtt files).</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;video&gt; - video or movie</summary>
+					<p>The &lt;video&gt; tag is used to embed video content in a document, such as a movie clip or other video streams.</p>
+					<p>The &lt;video&gt; tag contains one or more &lt;source&gt; tags with different video sources. The browser will choose the first source it supports.</p>
+					<p>The text between the &lt;video&gt; and &lt;/video&gt; tags will only be displayed in browsers that do not support the &lt;video&gt; element.</p>
+					<p>There are three supported video formats in HTML: MP4, WebM, and OGG.</p>
 				</details>
 			</li>
 		</ol>
@@ -696,8 +731,36 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;a&gt; - hyperlink</summary>
+					<p>The &lt;a&gt; tag defines a hyperlink, which is used to link from one page to another.</p>
+					<p>The most important attribute of the &lt;a&gt; element is the href attribute, which indicates the link's destination.</p>
+					<p>By default, links will appear as follows in all browsers:</p>
+					<ul class="d">
+						<li>An unvisited link is underlined and blue</li>
+						<li>A visited link is underlined and purple</li>
+						<li>An active link is underlined and red</li>
+					</ul>
+					<hr>
+					<h4>Tips and Notes</h4>
+					<p><b>Tip:</b> If the &lt;a&gt; tag has no href attribute, it is only a placeholder for a hyperlink.</p>
+					<p><b>Tip:</b> A linked page is normally displayed in the current browser window, unless you specify another target.</p>
+					<p><b>Tip:</b> Use CSS to style links: CSS Links and CSS Buttons.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;link&gt; - relationship between document and external resource</summary>
+					<p>The &lt;link&gt; tag defines the relationship between the current document and an external resource.</p>
+					<p>The &lt;link&gt; tag is most often used to link to external style sheets or to add a favicon to your website.</p>
+					<p>The &lt;link&gt; element is an empty element, it contains attributes only.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;nav&gt; - navigation links container</summary>
+					<p>The &lt;nav&gt; tag defines a set of navigation links.</p>
+					<p>Notice that NOT all links of a document should be inside a &lt;nav&gt; element. The &lt;nav&gt; element is intended only for major blocks of navigation links.</p>
+					<p>Browsers, such as screen readers for disabled users, can use this element to determine whether to omit the initial rendering of this content.</p>
 				</details>
 			</li>
 		</ol>
@@ -707,8 +770,70 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;menu&gt; - alternative unordered list</summary>
+					<p>The &lt;menu&gt; tag defines an unordered list of content.</p>
+					<p>Use the &lt;menu&gt; tag together with the &lt;li&gt; tag to create menu items.</p>
+					<p><b>Note:</b> &lt;menu&gt; tag is an alternative to the &lt;ul&gt; tag and <b>browsers will treat these two lists equally</b>.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;ul&gt; - unordered list</summary>
+					<p>The &lt;ul&gt; tag defines an unordered (bulleted) list.</p>
+					<p>Use the &lt;ul&gt; tag together with the &lt;li&gt; tag to create unordered lists.</p>
+					<p><b>Tip:</b> Use CSS to style lists.</p>
+					<p><b>Tip:</b> For ordered lists, use the &lt;ol&gt; tag.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;ol&gt; - ordered list</summary>
+					<p>The &lt;ol&gt; tag defines an ordered list. An ordered list can be numerical or alphabetical.</p>
+					<p>The &lt;li&gt; tag is used to define each list item.</p>
+					<p><b>Tip:</b> Use CSS to style lists.</p>
+					<p><b>Tip:</b> For unordered list, use the &lt;ul&gt; tag.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;li&gt; - list item</summary>
+					<p>The &lt;li&gt; tag defines a list item.</p>
+					<p>The &lt;li&gt; tag is used inside ordered lists(&lt;ol&gt;), unordered lists (&lt;ul&gt;), and in menu lists (&lt;menu&gt;).</p>
+					<p>In &lt;ul&gt; and &lt;menu&gt;, the list items will usually be displayed with bullet points.</p>
+					<p>In &lt;ol&gt;, the list items will usually be displayed with numbers or letters.</p>
+					<p><b>Tip:</b> Use CSS to style lists.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary class="r">&lt;dir&gt; - directory list</summary>
+					<p><span class="r">Not supported in HTML5.</span></p>
+					<p>The &lt;dir&gt; tag was used in HTML 4 to list directory titles.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Use &lt;ul&gt; to create a directory list.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;dl&gt; - description list</summary>
+					<p>The &lt;dl&gt; tag defines a description list.
+					<p>The &lt;dl&gt; tag is used in conjunction with &lt;dt&gt; (defines terms/names) and &lt;dd&gt; (describes each term/name).</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;dt&gt; - term/name in a description list</summary>
+					<p>The &lt;dt&gt; tag defines a term/name in a description list.</p>
+					<p>The &lt;dt&gt; tag is used in conjunction with &lt;dl&gt; (defines a description list) and &lt;dd&gt; (describes each term/name).</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;dd&gt; - description of a term/name in a description list</summary>
+					<p>The &lt;dd&gt; tag is used to describe a term/name in a description list.</p>
+					<p>The &lt;dd&gt; tag is used in conjunction with &lt;dl&gt; (defines a description list) and &lt;dt&gt; (defines terms/names).</p>
+					<p>Inside a &lt;dd&gt; tag you can put paragraphs, line breaks, images, links, lists, etc.</p>
 				</details>
 			</li>
 		</ol>
@@ -718,8 +843,101 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;table&gt; - HTML table</summary>
+					<p>The &lt;table&gt; tag defines an HTML table.</p>
+					<p>An HTML table consists of one &lt;table&gt; element and one or more &lt;tr&gt;, &lt;th&gt;, and &lt;td&gt; elements.</p>
+					<p>The &lt;tr&gt; element defines a table row, the &lt;th&gt; element defines a table header, and the &lt;td&gt; element defines a table cell.</p>
+					<p>An HTML table may also include &lt;caption&gt;, &lt;colgroup&gt;, &lt;thead&gt;, &lt;tfoot&gt;, and &lt;tbody&gt; elements.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;caption&gt; - table caption</summary>
+					<p>The &lt;caption&gt; tag defines a table caption.</p>
+					<p>The &lt;caption&gt; tag must be inserted immediately after the &lt;table&gt; tag.</p>
+					<p><b>Tip:</b> By default, a table caption will be center-aligned above a table. However, the CSS properties text-align and caption-side can be used to align and place the caption.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;th&gt; - header cell in a table</summary>
+					<p>The &lt;th&gt; tag defines a header cell in an HTML table.</p>
+					<p>An HTML table has two kinds of cells:</p>
+						<ul class="d">
+							<li>Header cells - contains header information (created with the &lt;th&gt; element)</li>
+							<li>Data cells - contains data (created with the &lt;td&gt; element)</li>
+						</ul>
+					<p>The text in &lt;th&gt; elements are bold and centered by default.
+					<p>The text in &lt;td&gt; elements are regular and left-aligned by default.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;tr&gt; - row in a table</summary>
+					<p>The &lt;tr&gt; tag defines a row in an HTML table.</p>
+					<p>A &lt;tr&gt; element contains one or more &lt;th&gt; or &lt;td&gt; elements.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;td&gt; - cell in a table</summary>
+					<p>The &lt;td&gt; tag defines a standard data cell in an HTML table.</p>
+					<p>An HTML table has two kinds of cells:</p>
+						<ul class="d">
+							<li>Header cells - contains header information (created with the &lt;th&gt; element)</li>
+							<li>Data cells - contains data (created with the &lt;td&gt; element)</li>
+						</ul>
+					<p>The text in &lt;td&gt; elements are regular and left-aligned by default.
+					<p>The text in &lt;th&gt; elements are bold and centered by default.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;thead&gt; - header content in a table</summary>
+					<p>The &lt;thead&gt; tag is used to group header content in an HTML table.</p>
+					<p>The &lt;thead&gt; element is used in conjunction with the &lt;tbody&gt; and &lt;tfoot&gt; elements to specify each part of a table (header, body, footer).</p>
+					<p>Browsers can use these elements to enable scrolling of the table body independently of the header and footer. Also, when printing a large table that spans multiple pages, these elements can enable the table header and footer to be printed at the top and bottom of each page.</p>
+					<p><b>Note:</b> The &lt;thead&gt; element must have one or more &lt;tr&gt; tags inside.</p>
+					<p>The &lt;thead&gt; tag must be used in the following context: As a child of a &lt;table&gt; element, after any &lt;caption&gt; and &lt;colgroup&gt; elements, and before any &lt;tbody&gt;, &lt;tfoot&gt;, and &lt;tr&gt; elements.</p>
+					<p><b>Tip:</b> The &lt;thead&gt;, &lt;tbody&gt;, and &lt;tfoot&gt; elements will not affect the layout of the table by default. However, you can use CSS to style these elements!</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;tbody&gt; - body content in a table</summary>
+					<p>The &lt;tbody&gt; tag is used to group the body content in an HTML table.</p>
+					<p>The &lt;tbody&gt; element is used in conjunction with the &lt;thead&gt; and &lt;tfoot&gt; elements to specify each part of a table (body, header, footer).</p>
+					<p>Browsers can use these elements to enable scrolling of the table body independently of the header and footer. Also, when printing a large table that spans multiple pages, these elements can enable the table header and footer to be printed at the top and bottom of each page.</p>
+					<p><b>Note:</b> The &lt;tbody&gt; element must have one or more &lt;tr&gt; tags inside.</p>
+					<p>The &lt;tbody&gt; tag must be used in the following context: As a child of a &lt;table&gt; element, after any &lt;caption&gt;, &lt;colgroup&gt;, and &lt;thead&gt; elements.</p>
+					<p><b>Tip:</b> The &lt;thead&gt;, &lt;tbody&gt;, and &lt;tfoot&gt; elements will not affect the layout of the table by default. However, you can use CSS to style these elements (see example below)!</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;tfoot&gt; - footer content in a table</summary>
+					<p>The &lt;tfoot&gt; tag is used to group footer content in an HTML table.</p>
+					<p>The &lt;tfoot&gt; element is used in conjunction with the &lt;thead&gt; and &lt;tbody&gt; elements to specify each part of a table (footer, header, body).</p>
+					<p>Browsers can use these elements to enable scrolling of the table body independently of the header and footer. Also, when printing a large table that spans multiple pages, these elements can enable the table header and footer to be printed at the top and bottom of each page.</p>
+					<p><b>Note:</b> The &lt;tfoot&gt; element must have one or more &lt;tr&gt; tags inside.</p>
+					<p>The &lt;tfoot&gt; tag must be used in the following context: As a child of a &lt;table&gt; element, after any &lt;caption&gt;, &lt;colgroup&gt;, &lt;thead&gt;, and &lt;tbody&gt; elements.</p>
+					<p><b>Tip:</b> The &lt;thead&gt;, &lt;tbody&gt;, and &lt;tfoot&gt; elements will not affect the layout of the table by default. However, you can use CSS to style these elements!</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;col&gt; - column properties in a &lt;colgroup&gt;</summary>
+					<p>The &lt;col&gt; tag specifies column properties for each column within a &lt;colgroup&gt; element.</p>
+					<p>The &lt;col&gt; tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;colgroup&gt; - group of columns in a table</summary>
+					<p>The &lt;colgroup&gt; tag specifies a group of one or more columns in a table for formatting.</p>
+					<p>The &lt;colgroup&gt; tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.</p>
+					<p><b>Note:</b> The &lt;colgroup&gt; tag must be a child of a &lt;table&gt; element, after any &lt;caption&gt; elements and before any &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;, and &lt;tr&gt; elements.</p>
+					<p><b>Tip:</b> To define different properties to a column within a &lt;colgroup&gt;, use the &lt;col&gt; tag within the &lt;colgroup&gt; tag.</p>
 				</details>
 			</li>
 		</ol>
@@ -729,8 +947,141 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;style&gt; - style information for document</summary>
+					<p>The &lt;style&gt; tag is used to define style information (CSS) for a document.</p>
+					<p>Inside the &lt;style&gt; element you specify how HTML elements should render in a browser.</p>
+					<p>The &lt;style&gt; element must be included inside the &lt;head&gt; section of the document.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;div&gt; - section in document</summary>
+					<p>The &lt;div&gt; tag defines a division or a section in an HTML document.</p>
+					<p>The &lt;div&gt; tag is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript.</p>
+					<p>The &lt;div&gt; tag is easily styled by using the class or id attribute.</p>
+					<p>Any sort of content can be put inside the &lt;div&gt; tag!</p>
+					<p><b>Note:</b> By default, browsers always place a line break before and after the &lt;div&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;span&gt; - section in document</summary>
+					<p>The &lt;span&gt; tag is an inline container used to mark up a part of a text, or a part of a document.</p>
+					<p>The &lt;span&gt; tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.</p>
+					<p>The &lt;span&gt; tag is much like the &lt;div&gt; element, but &lt;div&gt; is a block-level element and &lt;span&gt; is an inline element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;header&gt; - header for the document</summary>
+					<p>The &lt;header&gt; element represents a container for introductory content or a set of navigational links.</p>
+					<p>A &lt;header&gt; element typically contains:</p>
+					<ul class="d">
+						<li>one or more heading elements (&lt;h1&gt; - &lt;h6&gt;)</li>
+						<li>logo or icon</li>
+						<li>authorship information</li>
+					</ul>
+					<p><b>Note:</b> You can have several &lt;header&gt; elements in one HTML document. However, &lt;header&gt; cannot be placed within a &lt;footer&gt;, &lt;address&gt; or another &lt;header&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;hgroup&gt; - header and related content</summary>
+					<p>The &lt;hgroup&gt; tag is used to surround a heading and one or more &lt;p&gt; elements.</p>
+					<p>The heading inside the &lt;hgroup&gt; element can be any of the &lt;h1&gt; to &lt;h6&gt; headings.</p>
+					<p><b>Note:</b> The &lt;hgroup&gt; element does not render as anything special in a browser. However, you can use CSS to style the &lt;hgroup&gt; element and its content.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;footer&gt; - footer for document or section</summary>
+					<p>The &lt;footer&gt; tag defines a footer for a document or section.</p>
+					<p>A &lt;footer&gt; element typically contains:</p>
+					<ul class="d">
+						<li>authorship information</li>
+						<li>copyright information</li>
+						<li>contact information</li>
+						<li>sitemap</li>
+						<li>back to top links</li>
+						<li>related documents</li>
+					</ul>
+					<p>You can have several &lt;footer&gt; elements in one document.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;main&gt; - main content of the document</summary>
+					<p>The &lt;main&gt; tag specifies the main content of a document.</p>
+					<p>The content inside the &lt;main&gt; element should be unique to the document. It should not contain any content that is repeated across documents such as sidebars, navigation links, copyright information, site logos, and search forms.</p>
+					<p><b>Note:</b> There must not be more than one &lt;main&gt; element in a document. The &lt;main&gt; element must NOT be a descendant of an &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, &lt;header&gt;, or &lt;nav&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;section&gt; - section in the document</summary>
+					<p>The &lt;section&gt; tag defines a section in a document.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;search&gt; - search section</summary>
+					<p>The &lt;search&gt; tag is used to specify that here comes a set of elements that is related to search.</p>
+					<p>Elements inside a &lt;search&gt; elements can typically be form elements used to perform a search.</p>
+					<p><b>Note:</b> The &lt;search&gt; element does not render as anything special in a browser. However, you can use CSS to style the &lt;search&gt; element and its content.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;article&gt; - article</summary>
+					<p>The &lt;article&gt; tag specifies independent, self-contained content.</p>
+					<p>An article should make sense on its own and it should be possible to distribute it independently from the rest of the site.</p>
+					<p>Potential sources for the &lt;article&gt; element:</p>
+					<ul class="d">
+						<li>Forum post</li>
+						<li>Blog post</li>
+						<li>News story</li>
+					</ul>
+					<p><b>Note:</b> The &lt;article&gt; element does not render as anything special in a browser. However, you can use CSS to style the &lt;article&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;aside&gt; - content aside from the page content</summary>
+					<p>The &lt;aside&gt; tag defines some content aside from the content it is placed in.</p>
+					<p>The aside content should be indirectly related to the surrounding content.</p>
+					<p><b>Tip:</b> The &lt;aside&gt; content is often placed as a sidebar in a document.</p>
+					<p><b>Note:</b> The &lt;aside&gt; element does not render as anything special in a browser. However, you can use CSS to style the &lt;aside&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;details&gt; - additional details that the user can view or hide</summary>
+					<p>The &lt;details&gt; tag specifies additional details that the user can open and close on demand.</p>
+					<p>The &lt;details&gt; tag is often used to create an interactive widget that the user can open and close. By default, the widget is closed. When open, it expands, and displays the content within.</p>
+					<p>Any sort of content can be put inside the &lt;details&gt; tag.</p>
+					<p><b>Tip:</b> The &lt;summary&gt; tag is used in conjunction with &lt;details&gt; to specify a visible heading for the details.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;dialog&gt; - dialog box or window</summary>
+					<p>The &lt;dialog&gt; tag defines a dialog box or subwindow.</p>
+					<p>The &lt;dialog&gt; element makes it easy to create popup dialogs and modals on a web page.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;summary&gt; - visible heading for a &lt;details&gt; element</summary>
+					<p>The &lt;summary&gt; tag defines a visible heading for the &lt;details&gt; element. The heading can be clicked to view/hide the details.</p>
+					<p><b>Note:</b> The &lt;summary&gt; element should be the first child element of the &lt;details&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;data&gt; - adds a machine-readable translation of a given content</summary>
+					<p>The &lt;data&gt; tag is used to add a machine-readable translation of a given content.</p>
+					<p>This element provides both a machine-readable value for data processors, and a human-readable value for rendering in a browser.</p>
+					<p><b>Tip:</b> If the content is time- or date-related, use the &lt;time&gt; element instead.</p>
 				</details>
 			</li>
 		</ol>
@@ -740,8 +1091,48 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;head&gt; - information about the document</summary>
+					<p>The &lt;head&gt; element is a container for metadata (data about data) and is placed between the &lt;html&gt; tag and the &lt;body&gt; tag.</p>
+					<p>Metadata is data about the HTML document. Metadata is not displayed.</p>
+					<p>Metadata typically define the document title, character set, styles, scripts, and other meta information.</p>
+					<p>The following elements can go inside the &lt;head&gt; element:</p>
+					<ul class="d">
+						<li>&lt;title&gt; (required in every HTML document)</li>
+						<li>&lt;style&gt;</li>
+						<li>&lt;base&gt;</li>
+						<li>&lt;link&gt;</li>
+						<li>&lt;meta&gt;</li>
+						<li>&lt;script&gt;</li>
+						<li>&lt;noscript&gt;</li>
+					</ul>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;meta&gt; - metadata about an HTML document</summary>
+					<p>The &lt;meta&gt; tag defines metadata about an HTML document. Metadata is data (information) about data.</p>
+					<p>&lt;meta&gt; tags always go inside the &lt;head&gt; element, and are typically used to specify character set, page description, keywords, author of the document, and viewport settings.</p>
+					<p>Metadata will not be displayed on the page, but is machine parsable.</p>
+					<p>Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web services.</p>
+					<p>There is a method to let web designers take control over the viewport (the user's visible area of a web page), through the &lt;meta&gt; tag.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;base&gt; - base URL/target for all relative URLs in the document</summary>
+					<p>The &lt;base&gt; tag specifies the base URL and/or target for all relative URLs in a document.</p>
+					<p>The &lt;base&gt; tag must have either an href or a target attribute present, or both.</p>
+					<p>There can only be one single &lt;base&gt; element in a document, and it must be inside the &lt;head&gt; element.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary class="r">&lt;basefont&gt; - base font for all text in the document</summary>
+					<p><span class="r">Not supported in HTML5.</span></p>
+					<p>The &lt;basefont&gt; tag was used in HTML 4 to specify a default text-color, font-size or font-family for all the text in an HTML document.</p>
+					<hr>
+					<h4>What to Use Instead?</h4>
+					<p>Specify different font for HTML elements with CSS</p>
 				</details>
 			</li>
 		</ol>
@@ -751,8 +1142,43 @@
 		<ol>
 			<li>
 				<details>
-					<summary>&lt;aaa&gt;</summary>
-					<p>aaa</p>
+					<summary>&lt;script&gt; - client-side script</summary>
+					<p>The &lt;script&gt; tag is used to embed a client-side script (JavaScript).</p>
+					<p>The &lt;script&gt; element either contains scripting statements, or it points to an external script file through the src attribute.</p>
+					<p>Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;noscript&gt; - alternate content for users that do not support client-side scripts</summary>
+					<p>The &lt;noscript&gt; tag defines an alternate content to be displayed to users that have disabled scripts in their browser or have a browser that doesn't support script.</p>
+					<p>The &lt;noscript&gt; element can be used in both &lt;head&gt; and &lt;body&gt;. When used inside &lt;head&gt;, the &lt;noscript&gt; element could only contain &lt;link&gt;, &lt;style&gt;, and &lt;meta&gt; elements.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary class="r">&lt;applet&gt; - embedded applet</summary>
+					<p><span class="r">Not supported in HTML5.</span></p>
+					<p>The &lt;applet&gt; tag was used in HTML 4 to define an embedded applet (Plug-in).</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;embed&gt; - container for an external resource</summary>
+					<p>The &lt;embed&gt; tag defines a container for an external resource, such as a web page, a picture, a media player, or a plug-in application.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;object&gt; - container for an external resource</summary>
+					<p>The &lt;object&gt; tag defines a container for an external resource.</p>
+					<p>The external resource can be a web page, a picture, a media player, or a plug-in application.</p>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>&lt;param&gt; - parameter for an object</summary>
+					<p>The &lt;param&gt; tag is used to define parameters for an &lt;object&gt; element.</p>
 				</details>
 			</li>
 		</ol>

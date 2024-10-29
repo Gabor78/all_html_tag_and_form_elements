@@ -23,20 +23,26 @@
 				<p>Input types:</p>
 				<ol>
 					<li>button <input type="button" onclick="alert('button')" value="button" title="button"></li>
-					<li>checkbox <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1" title="Check the Box"></li>
-					<li>color <input type="color" id="color1" name="color1" title="color"></li>
-					<li>date <input type="date" id="date1" name="date1" title="date"></li>
-					<li>datetime-local <input type="datetime-local" id="datetime-local1" name="datetime-local1" title="datetime-local"></li>
-					<li>email <input type="email" id="email1" name="email1" placeholder='&lt;input type="email"&gt;' title="@"></li>
+					<li>checkbox <input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1" title="Check the Box" required></li>
+					<li>color <input type="color" id="color1" name="color1" title="color" required></li>
+					<li>date <input type="date" id="date1" name="date1" title="date" required></li>
+					<li>datetime-local <input type="datetime-local" id="datetime-local1" name="datetime-local1" title="datetime-local" required></li>
+					<li>email <input 
+						type="email" 
+						id="email1" 
+						name="email1" 
+						placeholder='&lt;input type="email"&gt;' 
+						title="email"
+						pattern="^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required></li>
 					<li>file <input type="file" id="file1" name="file1"></li>
 					<li>hidden <input type="hidden" id="hidden1" name="hidden1" value="hidden1">
 						<img src="inp_t_hidden.png" width="35" alt='input type="hidden"' title='&lt;input type="hidden"&gt; - this is not that...' class="becauseOfTheDesign">
 					</li>
 					<li>image <input type="image" src="submit.png" alt="Submit" width="35" title='&lt;input type="image"&gt; - actually Submit'></li>
 					<li>month <input type="month" id="month1" name="month1"></li>
-					<li>number <input type="number" id="number1" name="number1" min="1" max="5"></li>
+					<li>number <input type="number" id="number1" name="number1" min="1" max="5" required></li>
 					<li>password <input type="password" id="password1" name="password1" placeholder='&lt;input type="password"&gt;'></li>
-					<li>radio <input type="radio" id="radio1" name="radio" value="radio_val"><input type="radio" id="radio2" name="radio" value="radio_val2"></li>
+					<li>radio <input type="radio" id="radio1" name="radio" value="radio_val"><input type="radio" id="radio2" name="radio" value="radio_val2" required></li>
 					<li>range <input type="range" id="range1" name="range1" min="0" max="100" value="75"></li>
 					<li>reset <input type="reset" value="Reset"></li>
 					<li>search <input type="search" id="search1" name="search1" placeholder='&lt;input type="search"&gt;'></li>
