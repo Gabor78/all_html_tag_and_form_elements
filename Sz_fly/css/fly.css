@@ -1,0 +1,108 @@
+html{
+    width: 100%;
+    height: 100%;
+    background-color: #006;
+    position: relative;
+}
+#ext_frame{
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+}
+#land{
+    width: 2900px;
+    height: 1000px;
+    display: block;
+    background: #8a8;
+    border-radius: 50%;
+    margin-top: 50%;
+    margin-left: -125%;
+    transition: transform 4s;
+}
+#rgt_btn,
+#lft_btn{
+    width: 400px;
+    height: 300px;
+    cursor: pointer;
+    position: absolute;
+    font-size: 18em;
+    color: rgba(0, 0, 0, .2);
+    text-align: center;
+}
+#lft_btn:hover ~ #land{
+    /*animation: 3s mv_left linear forwards;*/
+    transform: translate(300px, 0);
+}
+#rgt_btn{
+    top: 0;
+    right: 0;
+}
+#rgt_btn ~ #land{
+    transform: translate(0, 0);
+    transition: transform 2s;
+}
+#rgt_btn:hover ~ #land{
+    /*transform: translate(0, -400px);
+    animation: 3s mv_right linear forwards;*/
+    transform: translate(-400px, 0);
+}
+/*@keyframes mv_left {
+    0% { transform: translate(0);background-color: #8a8; }
+    100% { transform: translate(400px, 0);background-color: #5a5; }
+}
+@keyframes mv_right {
+    0% { transform: translate(0);background-color: #8a8; }
+    100% { transform: translate(-400px, 0);background-color: #454; }
+}*/
+#tree,#tree2,#tree3{
+    position: absolute;
+    animation: fly 4s ease-out infinite;
+    color: white;
+    top: 610px;
+}
+#tree{
+    left: 100px;
+    top: 655px;
+    animation-delay: 0.5s;
+}
+#tree2{
+    left: 200px;
+    top: 640px;
+    animation-delay: 0.8s;
+}
+#tree3{
+    left: 350px;
+    animation-delay: 1s;
+}
+@keyframes fly {
+    0% {
+        transform: translate(-50px, -190px);
+    }
+}
+
+#treer,#treer2,#treer3{
+    position: absolute;
+    animation: fly2 4s infinite;
+    color: white;
+    top: 610px;
+}
+#treer{
+    left: 450px;
+    animation-delay: 0s;
+}
+#treer2{
+    left: 550px;
+    animation-delay: 3s;
+}
+#treer3{
+    left: 700px;
+    animation-delay: 5s;
+}
+@keyframes fly2 {
+    0% {
+        transform: translate(50px, -210px);
+    }
+}
