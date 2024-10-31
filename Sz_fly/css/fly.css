@@ -38,12 +38,8 @@ html{
 #lft_btn:hover ~ #land{
     transform: translate(300px, 0);
 }
-#lft_btn:hover ~ #tree, #lft_btn:hover ~ #tree2, #lft_btn:hover ~ #tree3,
-#lft_btn:hover ~ #tree4, #lft_btn:hover ~ #tree5, #lft_btn:hover ~ #tree6,
-#lft_btn:hover ~ #tree7, #lft_btn:hover ~ #tree8, #lft_btn:hover ~ #tree9,
-#lft_btn:hover ~ #treer, #lft_btn:hover ~ #treer2, #lft_btn:hover ~ #treer3,
-#lft_btn:hover ~ #treer4, #lft_btn:hover ~ #treer5, #lft_btn:hover ~ #treer6 {
-    transform: translate(100px, 0);
+#lft_btn:hover ~ .tree {
+    transform: translate(150px, 80px);
 }
 #rgt_btn{
     top: 0;
@@ -56,11 +52,7 @@ html{
 #rgt_btn:hover ~ #land{
     transform: translate(-400px, 0);
 }
-#rgt_btn:hover ~ #tree, #rgt_btn:hover ~ #tree2, #rgt_btn:hover ~ #tree3,
-#rgt_btn:hover ~ #tree4, #rgt_btn:hover ~ #tree5, #rgt_btn:hover ~ #tree6,
-#rgt_btn:hover ~ #tree7, #rgt_btn:hover ~ #tree8, #rgt_btn:hover ~ #tree9,
-#rgt_btn:hover ~ #treer, #rgt_btn:hover ~ #treer2, #rgt_btn:hover ~ #treer3,
-#rgt_btn:hover ~ #treer4, #rgt_btn:hover ~ #treer5, #rgt_btn:hover ~ #treer6 {
+#rgt_btn:hover ~ .tree {
     transform: translate(-100px, 0);
 }
 #tree,#tree2,#tree3,#tree4,#tree5,#tree6,#tree7,#tree8,#tree9{
@@ -71,6 +63,11 @@ html{
 }
 #tree7,#tree8,#tree9{
     animation: fly 10.5s ease-out infinite;
+}
+@keyframes fly {
+    0% {
+        transform: translate(-150px, -190px);
+    }
 }
 #tree{
     left: 100px;
@@ -114,18 +111,20 @@ html{
     left: 350px;
     animation-delay: 0.8s;
 }
-@keyframes fly {
-    0% {
-        transform: translate(-150px, -190px);
-    }
-}
 #treer,#treer2,#treer3,#treer4,#treer5,#treer6{
     position: absolute;
     animation: fly2 6.5s ease-out infinite;
     color: white;
 }
-#tree::after,#tree2::after,#tree3::after,#tree4::after,#tree5::after,#tree6::after,#tree7::after,#tree8::after,#tree9::after,
-#treer::after,#treer2::after,#treer3::after,#treer4::after,#treer5::after,#treer6::after{
+@keyframes fly2 {
+    0% {
+        transform: translate(50px, -210px);
+    }
+}
+.tree {
+    transition: transform 0.5s ease, top 0.5s ease;
+}
+.tree::after{
     /*content: "*";*/
     content: '';
     display: block;
@@ -167,12 +166,6 @@ html{
     left: 610px;
     top: 650px;
     animation-delay: 0.5s;
-}
-
-@keyframes fly2 {
-    0% {
-        transform: translate(50px, -210px);
-    }
 }
 
 /* -*-*-* S T A R S *-*-*- */

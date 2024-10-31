@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS generator</title>
+	<link rel="stylesheet" href="CSS_gen.css">
+</head>
+<body>
+	<h1>CSS and SVG dynamo</h1>
+	<form>
+		<h2>Base CSS generator</h2>
+		<fieldset>
+			<legend>Parameters</legend>
+				<label for="selector_type">Selector type:</label>
+				<select id="selector_type" name="selector_type" class="">
+					<option value="uni">Universal selector - *</option>
+					<option value="element">Element selector - element</option>
+					<option value="class">Class selector - .class</option>
+					<option value="id">ID selector - #id</option>
+					<option value="comb">Grouping selector - element,element</option>
+				</select>
+
+				<label for="float_type">Float:</label>
+				<select id="float_type" name="float_type" class="">
+					<option value="none">none</option>
+					<option value="left">left</option>
+					<option value="right">right</option>
+					<option value="initial">initial</option>
+					<option value="inherit">inherit</option>
+				</select>
+
+				<fieldset>
+					<legend>Font</legend>
+					<label for="">requireds</label>
+					<label for="font-size">font-size:</label><input type="text" id="font-size" name="font-size">
+
+					<label for="font-family">font-family:</label>
+					<select id="font-family" name="font-family" class="">
+						<option value="Times">"Times New Roman", Times, serif</option>
+						<option value="Arial">Arial, Helvetica, sans-serif</option>
+						<option value="Lucida">"Lucida Console", "Courier New", monospace</option>
+					</select>
+	
+				</fieldset>
+		</fieldset>
+		<hr>
+		<h2>Background-image SVG generator</h2>
+		<fieldset>
+			<legend>Parameters</legend>
+			<label for="fill_color">Fill color:</label><input type="color" id="fill_color" name="fill_color" title="Fill color">
+			<label for="stroke_color">Stroke color:</label><input type="color" id="stroke_color" name="stroke_color" title="Stroke color">
+			<label for="stroke-width">Stroke width:</label><input type="text" id="stroke-width" name="stroke-width">
+		</fieldset>
+
+		<code>
+		</code>
+	</form>
+</body>
+</html>
