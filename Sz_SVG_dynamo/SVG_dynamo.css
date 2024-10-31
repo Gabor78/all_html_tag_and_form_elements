@@ -1,37 +1,62 @@
 h1 {
-	text-align: center;
+	/* text-align: center; */
 }
 hr{
 	border-top: 2px dotted red;
 }
 fieldset{
-	width: 535px;
+	width: 800px;
 	padding: 15px;
 }
 fieldset fieldset{
-	width: 500px;
+	width: 600px;
 	float: left;
 }
 legend{
 	font-weight: bold;
 	padding: 5px;
 }
+label{
+	cursor: pointer;
+}
 label,button{
 	min-width: 150px;
-	float: left;
 	clear: left;
 }
-input,label,select{
+input,label,button,select{
 	float: left;
-	margin: 2px 0 10px 3px;
+	margin: 2px 0 10px 0;
 }
 select{
 	min-width: 293px;
 	clear: right;
 }
-input[type="color"],
+textarea{
+	margin-bottom: 20px;
+	clear: left;
+	display: inherit;
+}
+svg{
+	clear: both;
+	display: block;
+	margin-bottom: 15px;
+}
+input[type="number"]{
+	width: 72px;
+}
+input[type="color"]{
+	width: 80px;
+}
 input[type="text"]{
 	width: 285px;
+}
+#bg_color_value{
+	padding: 75px 0 15px 35px;
+	display: inline-block;
+}
+#sunCircle,
+#moonCircle{
+	cursor: move;
 }
 /*
 Shapes:
