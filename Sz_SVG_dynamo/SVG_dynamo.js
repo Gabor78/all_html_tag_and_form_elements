@@ -75,19 +75,17 @@ function regEvents() {
     const sunCheckbox = document.getElementById('sun');
     const moonCheckbox = document.getElementById('moon');
     const svg = document.getElementById('sky_drag');
-    const sun_circle = document.getElementById('sun_circle');
-    const moon_circle = document.getElementById('moon_circle');
-    const sbbox = sun_circle.getBBox();
-    const mbbox = moon_circle.getBBox();
     let isDragging = false;
     let currentElement = null;
     let offsetX, offsetY;
 
     sunCheckbox.addEventListener('change', () => {
+        const sun_circle = document.getElementById('sun_circle');
         sun_circle.style.display = sunCheckbox.checked ? 'block' : 'none';
     });
 
     moonCheckbox.addEventListener('change', () => {
+        const moon_circle = document.getElementById('moon_circle');
         moon_circle.style.display = moonCheckbox.checked ? 'block' : 'none';
     });
 
@@ -107,7 +105,11 @@ function regEvents() {
 
     const dragEnd = () => {
         isDragging = false;
-        let currentElement = null;
+        currentElement = null;
+        const sun_circle = document.getElementById('sun_circle');
+        const moon_circle = document.getElementById('moon_circle');
+        const sbbox = sun_circle.getBBox();
+        const mbbox = moon_circle.getBBox();
         const scx = sbbox.x + sbbox.width / 2;
         const scy = sbbox.y + sbbox.height / 2;
         const mcx = mbbox.x + mbbox.width / 2;
