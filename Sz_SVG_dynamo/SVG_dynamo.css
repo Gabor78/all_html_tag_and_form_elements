@@ -5,33 +5,75 @@ hr{
 	border-top: 2px dotted red;
 }
 fieldset{
-	width: 535px;
+	width: 800px;
 	padding: 15px;
 }
 fieldset fieldset{
-	width: 500px;
+	width: 600px;
 	float: left;
 }
 legend{
 	font-weight: bold;
 	padding: 5px;
 }
+label{
+	cursor: pointer;
+}
 label,button{
 	min-width: 150px;
-	float: left;
 	clear: left;
 }
-input,label,select{
+input,label,button,select{
 	float: left;
-	margin: 2px 0 10px 3px;
+	margin: 2px 0 10px 0;
 }
 select{
 	min-width: 293px;
 	clear: right;
 }
-input[type="color"],
+textarea{
+	margin-bottom: 20px;
+	clear: left;
+	display: inherit;
+}
+svg{
+	display: block;
+	clear: both;
+	margin-bottom: 15px;
+}
+input[type="number"]{
+	width: 72px;
+}
+input[type="color"]{
+	width: 80px;
+}
 input[type="text"]{
 	width: 285px;
+}
+#bg_color_value{
+	/* padding: 15px 0 15px 35px; */
+	/* display: inline-block; */
+}
+#sun_circle,
+#moon_circle{
+	cursor: move;
+}
+.units {
+    margin-left: 5px;
+    float: left;
+    line-height: 20px;
+}
+#sun_pos,
+#moon_pos{
+	float: left;
+	clear: left;
+	width: 100%;
+	margin-bottom: 30px;
+}
+#sun_pos span,
+#moon_pos span{
+	float: left;
+	margin-right: 28px;
 }
 /*
 Shapes:
