@@ -20,7 +20,7 @@ label{
 	cursor: pointer;
 }
 label,button{
-	min-width: 150px;
+	min-width: 175px;
 	clear: left;
 }
 input,label,button,select{
@@ -73,7 +73,7 @@ input[type="text"]{
 #sun_pos span,
 #moon_pos span{
 	float: left;
-	margin-right: 28px;
+	margin-right: 50px;
 }
 /*
 Shapes:
