@@ -1,5 +1,5 @@
 h1 {
-	/* text-align: center; */
+	text-align: center;
 }
 hr{
 	border-top: 2px dotted red;
@@ -37,8 +37,8 @@ textarea{
 	display: inherit;
 }
 svg{
-	clear: both;
 	display: block;
+	clear: both;
 	margin-bottom: 15px;
 }
 input[type="number"]{
@@ -51,12 +51,29 @@ input[type="text"]{
 	width: 285px;
 }
 #bg_color_value{
-	padding: 75px 0 15px 35px;
-	display: inline-block;
+	/* padding: 15px 0 15px 35px; */
+	/* display: inline-block; */
 }
-#sunCircle,
-#moonCircle{
+#sun_circle,
+#moon_circle{
 	cursor: move;
+}
+.units {
+    margin-left: 5px;
+    float: left;
+    line-height: 20px;
+}
+#sun_pos,
+#moon_pos{
+	float: left;
+	clear: left;
+	width: 100%;
+	margin-bottom: 30px;
+}
+#sun_pos span,
+#moon_pos span{
+	float: left;
+	margin-right: 28px;
 }
 /*
 Shapes:

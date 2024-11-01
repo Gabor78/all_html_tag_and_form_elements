@@ -13,16 +13,39 @@
 	<form>
 		<h2>Background-image generator</h2>
 		<fieldset>
-			<legend>Sky</legend>
-			<label for="wdt">Width:</label><input type="number" id="wdt" name="wdt" min="1" max="5000" required value="800">
-			<label for="hgt">Height:</label><input type="number" id="hgt" name="hgt" min="1" max="5000" required value="600">
-			<label for="bg_color">Background color:</label><input type="color" id="bg_color" name="bg_color" title="bg color" value="#000033" onchange="refreshBgColor()">
-			<span id="bg_color_value">#000033</span>
-			<label for="nos">Number of stars:</label><input type="number" id="nos" name="nos" min="1" max="5000" value="80" required>
-			<label for="sun">Sun</label><input type="checkbox" id="sun" name="sun" value="sun" checked>
-			<label for="moon">Moon</label><input type="checkbox" id="moon" name="moon" value="moon" checked>
+		<legend>Sky</legend>
+			<label for="wdt">Width:</label>
+			<input type="number" id="wdt" name="wdt" min="1" max="5000" required value="500">
+			<span class="units">px</span>
+
+			<label for="hgt">Height:</label>
+			<input type="number" id="hgt" name="hgt" min="1" max="5000" required value="375">
+			<span class="units">px</span>
+			
+			<label for="bg_color">Background color:</label>
+			<input type="color" id="bg_color" name="bg_color" title="bg color" value="#000033" onchange="refreshBgColor()">
+			<span id="bg_color_value" class="units">#000033</span>
+			
+			<label for="nos">The number of stars:</label>
+			<input type="number" id="nos" name="nos" min="1" max="5000" value="20" required>
+			<span id="bg_color_value" class="units">pcs.</span>
+			
+			<label for="sun">Sun</label>
+			<input type="checkbox" id="sun" name="sun" value="sun" checked>
+			<div id="sun_pos">
+				<span id="sunx">Sun pos. X: 360px</span>
+				<span id="suny">Sun pos. Y: 40px</span>
+			</div>
+			
+			<label for="moon">Moon</label>
+			<input type="checkbox" id="moon" name="moon" value="moon" checked>
+			<div id="moon_pos">
+				<span id="moonx">Moon pos. X: 50px</span>
+				<span id="moony">Moon pos. Y: 80px</span>
+			</div>
 			<button onclick="gen('sky_out')">Generate sky</button>
-			<svg xmlns="http://www.w3.org/2000/svg" width="800" viewBox="0 0 800 600" style="background-color: #003;" filter="url(#blr)" id="skyDrag">
+			
+			<svg xmlns="http://www.w3.org/2000/svg" width="500" viewBox="0 0 500 375" style="background-color: #003;" filter="url(#blr)" id="skyDrag">
 				<defs>
 					<filter id="blr" x="0" y="0">
 						<feGaussianBlur in="SourceGraphic" stdDeviation="0.5" />
@@ -34,25 +57,25 @@
 				<circle cx="100" cy="100" r="2" fill="#fff" />
 				<circle cx="200" cy="50" r="2" fill="#fff" />
 				<circle cx="300" cy="200" r="2" fill="#fff" />
-				<circle cx="400" cy="150" r="2" fill="#fff" />
-				<circle cx="500" cy="350" r="2" fill="#fff" />
-				<circle cx="600" cy="300" r="2" fill="#fff" />
-				<circle cx="700" cy="400" r="2" fill="#fff" />
-				<circle cx="750" cy="550" r="2" fill="#fff" />
-				<circle cx="750" cy="200" r="2" fill="#fff" />
+				<circle cx="390" cy="150" r="2" fill="#fff" />
+				<circle cx="250" cy="350" r="2" fill="#fff" />
+				<circle cx="300" cy="300" r="2" fill="#fff" />
+				<circle cx="350" cy="400" r="2" fill="#fff" />
+				<circle cx="330" cy="550" r="2" fill="#fff" />
+				<circle cx="250" cy="200" r="2" fill="#fff" />
 				<circle cx="150" cy="450" r="2" fill="#fff" />
 				<circle cx="80" cy="270" r="1" fill="#fff" />
 				<circle cx="160" cy="550"  r="1" fill="#fff" />
 				<circle cx="330" cy="430" r="1" fill="#fff" />
-				<circle cx="450" cy="310" r="1" fill="#fff" />
-				<circle cx="570" cy="385" r="1" fill="#fff" />
-				<circle cx="670" cy="140" r="1" fill="#fff" />
-				<circle cx="700" cy="400" r="1" fill="#fff" />
-				<circle cx="750" cy="550" r="1" fill="#fff" />
-				<circle cx="790" cy="300" r="1" fill="#fff" />
+				<circle cx="350" cy="310" r="1" fill="#fff" />
+				<circle cx="270" cy="385" r="1" fill="#fff" />
+				<circle cx="370" cy="140" r="1" fill="#fff" />
+				<circle cx="350" cy="400" r="1" fill="#fff" />
+				<circle cx="240" cy="550" r="1" fill="#fff" />
+				<circle cx="190" cy="300" r="1" fill="#fff" />
 				<circle cx="150" cy="450" r="1" fill="#fff" />
-				<circle id="sunCircle" cx="700" cy="80" r="40" fill="#ff0" filter="url(#blr2)" />
-				<circle id="moonCircle" cx="100" cy="200" r="40" fill="#fff" filter="url(#blr2)" />
+				<circle id="sun_circle" cx="360" cy="40" r="25" fill="#ff0" filter="url(#blr2)" />
+				<circle id="moon_circle" cx="50" cy="80" r="15" fill="#fff" filter="url(#blr2)" />
 			</svg>
 			<button onclick="copySvg('sky_out')">Copy SVG file</button>
 			<button onclick="copySvgAsCss('sky_out')">Copy as CSS rule</button>

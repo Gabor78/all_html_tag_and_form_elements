@@ -47,13 +47,13 @@ const dragEnd = () => {
     currentElement = null;
 };
 sunCheckbox.addEventListener('change', () => {
-    const sunCircle = document.getElementById('sunCircle');
-    sunCircle.style.display = sunCheckbox.checked ? 'block' : 'none';
+    const sun_circle = document.getElementById('sun_circle');
+    sun_circle.style.display = sunCheckbox.checked ? 'block' : 'none';
 });
 
 moonCheckbox.addEventListener('change', () => {
-    const moonCircle = document.getElementById('moonCircle');
-    moonCircle.style.display = moonCheckbox.checked ? 'block' : 'none';
+    const moon_circle = document.getElementById('moon_circle');
+    moon_circle.style.display = moonCheckbox.checked ? 'block' : 'none';
 });
 svg.addEventListener('mousedown', dragStart);
 svg.addEventListener('mousemove', dragMove);
