@@ -19,7 +19,6 @@ function refreshBgColor() {
     colorValueDisplay.textContent = colorInput.value;
 }
 
-
 function randomStars(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) - min
 }
@@ -50,7 +49,6 @@ function gen(out_svg=""){
     <filter id="blr4" x="0" y="0">
     <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" />
     </filter>
-
     </defs>`;
     for(let i = 0; i < pcs; i++){
         result += `<circle cx="${randomStars(0, svgw)}" cy="${randomStars(0, svgh)}" r="${randomStars(0, 1.3)}" fill="#fff" filter="url(#blr${randomStars(0, 3)})" />`
@@ -73,44 +71,43 @@ document.querySelector('button[onclick="gen()"]').addEventListener('click', func
 });
 
 function regEvents() {
-    
     /* Sun and Moon */
     const sunCheckbox = document.getElementById('sun');
     const moonCheckbox = document.getElementById('moon');
+    const svg = document.getElementById('sky_drag');
+    const sun_circle = document.getElementById('sun_circle');
+    const moon_circle = document.getElementById('moon_circle');
+    const sbbox = sun_circle.getBBox();
+    const mbbox = moon_circle.getBBox();
+    let isDragging = false;
+    let currentElement = null;
+    let offsetX, offsetY;
 
     sunCheckbox.addEventListener('change', () => {
-        const sun_circle = document.getElementById('sun_circle');
         sun_circle.style.display = sunCheckbox.checked ? 'block' : 'none';
     });
 
     moonCheckbox.addEventListener('change', () => {
-        const moon_circle = document.getElementById('moon_circle');
         moon_circle.style.display = moonCheckbox.checked ? 'block' : 'none';
     });
 
-    const svg = document.getElementById('sky_drag');
-    let isDragging = false;
-    let currentElement = null;
-    let offsetX, offsetY;
     const dragStart = (event) => {
         currentElement = event.target;
         isDragging = true;
         offsetX = event.clientX - currentElement.getAttribute('cx');
         offsetY = event.clientY - currentElement.getAttribute('cy');
     };
+
     const dragMove = (event) => {
         if (isDragging && currentElement) {
             currentElement.setAttribute('cx', event.clientX - offsetX);
             currentElement.setAttribute('cy', event.clientY - offsetY);
         }
     };
+
     const dragEnd = () => {
         isDragging = false;
-        currentElement = null;
-        const sun_circle = document.getElementById('sun_circle');
-        const moon_circle = document.getElementById('moon_circle');
-        const sbbox = sun_circle.getBBox();
-        const mbbox = moon_circle.getBBox();
+        let currentElement = null;
         const scx = sbbox.x + sbbox.width / 2;
         const scy = sbbox.y + sbbox.height / 2;
         const mcx = mbbox.x + mbbox.width / 2;
