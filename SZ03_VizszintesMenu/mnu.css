@@ -1,0 +1,54 @@
+#corpus{
+    text-align: center;
+}
+#mnu{
+    margin: 0 auto;
+    padding: 0;
+    background-color: midnightblue;
+    display: inline-block;
+    clear: both;
+}
+#mnu a{
+    margin: 10px;
+    padding: 25px 0;
+    text-align: center;
+    border: 5px solid gray;
+    color: white;
+    background-color: black;
+    min-width: 150px;
+    display: inline-block;
+    transform: translate(0, 0);
+    transition: transform 1.85s;
+}
+#mnu a:link{
+    text-decoration: none;
+}
+#content{
+    padding: 20px;
+}
+#mnu a:hover{
+    padding-bottom: 5px;
+    color: rgb(255, 255, 100);
+    background: linear-gradient(#001, #101a42);
+    transform: translate(0, -10px);
+    animation: 0.5s radi linear infinite;
+    cursor: none;
+}
+@keyframes radi {
+    0%{
+        border-radius: 0 0 0 0;
+        padding: 25px 0;
+        rotate: -1deg;
+    }
+    50%{
+        border-radius: 20px 20px 0 0;
+        padding: 25px 10px;
+        min-width: 130px;
+        rotate: 1deg;
+    }
+    100%{
+        border-radius: 0 0 0 0;
+        padding: 25px 0;
+        rotate: -1deg;
+    }
+}

@@ -20,9 +20,31 @@ function refreshBgColor() {
 }
 
 function randomStars(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) - min
+    return Math.floor(Math.random() * (max - min + 1)) - min + 1
 }
-function gen(out_svg=""){
+function getColor() {
+    switch(randomStars(0, 7)){
+        case 0:
+            return "#fff";
+        case 1:
+            return "#fff";
+        case 2:
+            return "#fff";
+        case 3:
+            return "#88f";
+        case 4:
+            return "#ffc";
+        case 5:
+            return "url(#grad1)";
+        case 6:
+            return "url(#grad2)";
+        case 7:
+        return "url(#grad3)";
+        case 8:
+        return "#fff";
+        }
+}
+function gen(out_svg="") {
     const pcs = document.getElementById('nos').value;
     const svgw = document.getElementById('wdt').value;
     const svgh = document.getElementById('hgt').value;
@@ -41,20 +63,32 @@ function gen(out_svg=""){
     <feGaussianBlur in="SourceGraphic" stdDeviation="0.4" />
     </filter>
     <filter id="blr2" x="0" y="0">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" />
+    <feGaussianBlur in="SourceGraphic" stdDeviation="0.7" />
     </filter>
     <filter id="blr3" x="0" y="0">
     <feGaussianBlur in="SourceGraphic" stdDeviation="0" />
     </filter>
     <filter id="blr4" x="0" y="0">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" />
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
     </filter>
+    <radialGradient id="grad1" cx="25%" cy="25%" r="100%" fx="40%" fy="40%">
+        <stop offset="0%" stop-color="#ff0" />
+        <stop offset="100%" stop-color="#f55" />
+    </radialGradient>
+    <radialGradient id="grad2" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+        <stop offset="0%" stop-color="#fff" />
+        <stop offset="100%" stop-color="#77f" />
+    </radialGradient>
+    <radialGradient id="grad3" cx="17%" cy="19%" r="75%" fx="50%" fy="50%">
+        <stop offset="0%" stop-color="#fff" />
+        <stop offset="100%" stop-color="#922" />
+    </radialGradient>
     </defs>`;
     for(let i = 0; i < pcs; i++){
-        result += `<circle cx="${randomStars(0, svgw)}" cy="${randomStars(0, svgh)}" r="${randomStars(0, 1.3)}" fill="#fff" filter="url(#blr${randomStars(0, 3)})" />`
+        result += `<circle cx="${randomStars(0, svgw)}" cy="${randomStars(0, svgh)}" r="${randomStars(0, 0.05)}" fill="${getColor()}" filter="url(#blr${randomStars(0, 3)})" />`
     }
-    result+=`<circle id="sun_circle" cx="${scx}" cy="${scy}" r="25" fill="#ff0" filter="url(#blr4)" />
-    <circle id="moon_circle" cx="${mcx}" cy="${mcy}" r="15" fill="#fff" filter="url(#blr4)" />
+    result+=`<circle id="sun_circle" cx="${scx}" cy="${scy}" r="25" fill="url(#grad1)" filter="url(#blr2)" />
+    <circle id="moon_circle" cx="${mcx}" cy="${mcy}" r="20" fill="url(#grad2)" filter="url(#blr2)" />
 </svg>`;
     if (!out_svg) {
         document.getElementById('sky_out').value = result;
