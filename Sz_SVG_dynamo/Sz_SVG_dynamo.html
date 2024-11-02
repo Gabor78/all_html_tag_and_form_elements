@@ -28,7 +28,7 @@
 			
 			<label for="nos">The number of stars:</label>
 			<input type="number" id="nos" name="nos" min="1" max="5000" value="20" required>
-			<span id="bg_color_value" class="units">pcs. (actually much more)</span>
+			<span id="nos_value" class="units">pcs. (actually much more)</span>
 			
 			<label for="sun">Sun</label>
 			<input type="checkbox" id="sun" name="sun" value="sun" checked>
@@ -121,20 +121,20 @@
 		<fieldset>
 			<legend>Pine tree</legend>
 			<label for="pine_num">The number of tringles:</label>
-			<input type="number" id="pine_num" name="pine_num" min="3" max="5" required value="3">
+			<input type="number" id="pine_num" name="pine_num" min="3" max="5" value="3">
 			<span class="units">pcs.</span>
 			<button onclick="genPT('pine_tree_out')">Generate pine tree</button>
-			<svg xmlns="http://www.w3.org/2000/svg" width="120" height="250" id="pine_tree_preview">
-				<polygon points="60,80 30,120 90,120" fill="green"/>
-				<polygon points="60,100 20,150 100,150" fill="green"/>
-				<polygon points="60,120 10,190 110,190" fill="green"/>
-				<rect x="50" y="190" width="20" height="60" fill="saddlebrown"/>
+			<svg xmlns="http://www.w3.org/2000/svg" width="125" height="250" id="pine_tree_preview">
+				<polygon points="62,80 32,120 92,120" fill="green"/>
+				<polygon points="62,100 22,150 102,150" fill="green"/>
+				<polygon points="62,120 12,190 112,190" fill="green"/>
+				<rect x="52" y="190" width="20" height="60" fill="saddlebrown"/>
 			</svg>
-			<textarea id="pine_tree_out" rows="10" cols="70" readonly><svg xmlns="http://www.w3.org/2000/svg" width="120" height="250">
-  <polygon points="60,80 30,120 90,120" fill="green"/>
-  <polygon points="60,100 20,150 100,150" fill="green"/>
-  <polygon points="60,120 10,190 110,190" fill="green"/>
-  <rect x="50" y="190" width="20" height="60" fill="saddlebrown"/>
+			<textarea id="pine_tree_out" rows="10" cols="70" readonly><svg xmlns="http://www.w3.org/2000/svg" width="125" height="250" id="pine_tree_preview">
+  <polygon points="62,80 32,120 92,120" fill="green"/>
+  <polygon points="62,100 22,150 102,150" fill="green"/>
+  <polygon points="62,120 12,190 112,190" fill="green"/>
+  <rect x="52" y="190" width="20" height="60" fill="saddlebrown"/>
 </svg>
 			</textarea>
 			<button onclick="copySvg('pine_tree_out')">Copy SVG file</button>
