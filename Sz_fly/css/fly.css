@@ -13,21 +13,31 @@ html{
     border: 1px solid black;
 }
 #land{
-    width: 2900px;
+    width: 3100px;
     height: 900px;
     display: block;
     background: rgb(224, 247, 224);
     border-radius: 50%;
     margin-top: 50%;
-    margin-left: -125%;
+    margin-left: -140%;
     transition: transform 4s;
     box-shadow: 0 0 50px rgba(255, 255, 255, 1);
-    filter: blur(10px);
+    filter: blur(3px);
+}
+#ufo{
+    position: absolute;
+    bottom: 150px;
+    left: 47%;
+    color: #000;
+    font-size: 2em;
+}
+#ufo::after{
+    content: "|-o-|";
 }
 #rgt_btn,
 #lft_btn{
     width: 370px;
-    height: 280px;
+    height: 330px;
     cursor: pointer;
     position: absolute;
     font-size: 18em;
@@ -38,8 +48,11 @@ html{
 #lft_btn:hover ~ #land{
     transform: translate(300px, 0);
 }
+#lft_btn:hover ~ #ufo::after{
+    content: "\\-o-\\";
+}
 #lft_btn:hover ~ .tree {
-    transform: translate(150px, 80px);
+    transform: translate(100px, 80px);
 }
 #rgt_btn{
     top: 0;
@@ -51,6 +64,9 @@ html{
 }
 #rgt_btn:hover ~ #land{
     transform: translate(-400px, 0);
+}
+#rgt_btn:hover ~ #ufo::after{
+    content: "/-o-/";
 }
 #rgt_btn:hover ~ .tree {
     transform: translate(-100px, 0);
@@ -71,31 +87,31 @@ html{
 }
 #tree{
     left: 100px;
-    top: 655px;
+    top: 675px;
 }
 #tree2{
     left: 200px;
-    top: 640px;
+    top: 660px;
     animation-delay: 0.5s;
 }
 #tree3{
     left: 350px;
-    top: 590px;
+    top: 610px;
     animation-delay: 0.17s;
 }
 #tree4{
     left: 370px;
-    top: 595px;
+    top: 615px;
     animation-delay: 0.39s;
 }
 #tree5{
     left: 330px;
-    top: 590px;
+    top: 610px;
     animation-delay: 0.2s;
 }
 #tree6{
     left: 380px;
-    top: 580px;
+    top: 610px;
     animation-delay: 0.3s;
 }
 #tree7{
@@ -139,32 +155,32 @@ html{
 }
 #treer{
     left: 450px;
-    top: 620px;
+    top: 630px;
     animation-delay: 0.52s;
 }
 #treer2{
     left: 580px;
-    top: 625px;
+    top: 645px;
     animation-delay: 0.3s;
 }
 #treer3{
     left: 710px;
-    top: 650px;
+    top: 670px;
     animation-delay: 0.7s;
 }
 #treer4{
     left: 680px;
-    top: 670px;
+    top: 680px;
     animation-delay: 0.2s;
 }
 #treer5{
     left: 740px;
-    top: 650px;
+    top: 680px;
     animation-delay: 0.25s;
 }
 #treer6{
     left: 610px;
-    top: 650px;
+    top: 670px;
     animation-delay: 0.5s;
 }
 
@@ -172,7 +188,7 @@ html{
 #stars{
     position: relative;
     top: 0;
-    left: 10px;
+    left: 50px;
     height: 1px;
     width: 1px;
     background-color: #fff;
@@ -181,14 +197,15 @@ html{
     /*box-shadow: 399px 233px 1px 3px #fff,323px 208px 0px 1px #fff,675px 15px 1px 1px #fff,445px 347px 0px 1px #fff,27px 80px 3px 3px #fff,765px 491px 0px 3px #fff,405px 8px 2px 3px #fff,523px 213px 0px 3px #fff,105px 165px 3px 3px #fff,135px 105px 2px 0px #fff,145px 245px 3px 0px #fff,286px 270px 2px 3px #fff,767px 443px 1px 0px #fff,564px 329px 2px 1px #fff,503px 193px 1px 0px #fff,794px 83px 0px 0px #fff,377px 257px 1px 2px #fff,392px 384px 3px 1px #fff,573px 156px 1px 2px #fff,136px 318px 0px 1px #fff,591px 427px 1px 0px #fff,6px 58px 1px 3px #fff,627px 360px 3px 0px #fff,784px 90px 2px 1px #fff,262px 472px 2px 3px #fff,263px 270px 3px 0px #fff,322px 390px 0px 1px #fff,797px 26px 2px 0px #fff,414px 77px 3px 2px #fff,213px 351px 3px 2px #fff,766px 356px 2px 2px #fff,39px 325px 2px 0px #fff,409px 303px 2px 1px #fff,145px 17px 3px 3px #fff,411px 384px 0px 3px #fff,564px 284px 1px 0px #fff,102px 180px 1px 2px #fff,512px 481px 1px 2px #fff,222px 16px 2px 2px #fff,599px 145px 2px 3px #fff,280px 367px 1px 0px #fff,61px 136px 3px 3px #fff,756px 418px 1px 1px #fff,139px 240px 0px 3px #fff,513px 478px 0px 2px #fff,661px 109px 3px 1px #fff,463px 265px 1px 0px #fff,529px 290px 3px 1px #fff,321px 93px 1px 1px #fff,711px 368px 1px 1px #fff,630px 33px 2px 2px #fff,229px 491px 3px 0px #fff,139px 385px 1px 3px #fff,313px 168px 2px 0px #fff,723px 307px 2px 0px #fff,473px 176px 2px 3px #fff,232px 226px 3px 0px #fff,319px 194px 2px 1px #fff,315px 457px 0px 1px #fff,799px 2px 3px 2px #fff,49px 183px 2px 0px #fff,616px 10px 1px 1px #fff,16px 382px 3px 3px #fff,91px 66px 2px 3px #fff,147px 117px 2px 1px #fff,187px 320px 3px 1px #fff,332px 42px 1px 3px #fff,274px 227px 0px 3px #fff,31px 98px 2px 1px #fff,82px 358px 1px 1px #fff,695px 350px 3px 1px #fff,389px 25px 0px 0px #fff,462px 251px 0px 2px #fff,131px 112px 2px 2px #fff,428px 186px 3px 1px #fff,622px 41px 0px 0px #fff,550px 225px 3px 1px #fff,302px 403px 3px 2px #fff,243px 113px 0px 2px #fff,65px 114px 0px 0px #fff;*/
     /*box-shadow: 57px 281px 0px 2px #fff,731px 367px 2px 3px #fff,153px 223px 0px 2px #fff,692px 204px 0px 0px #fff,201px 351px 3px 2px #fff,430px 231px 2px 3px #fff,106px 332px 1px 1px #fff,701px 533px 1px 1px #fff,275px 65px 0px 0px #fff,327px 551px 0px 0px #fff,620px 437px 1px 2px #fff,224px 241px 2px 0px #fff,521px 132px 3px 0px #fff,461px 468px 0px 1px #fff,535px 517px 0px 3px #fff,210px 91px 0px 0px #fff,632px 550px 1px 0px #fff,244px 590px 3px 0px #fff,796px 24px 3px 2px #fff,652px 124px 0px 2px #fff,164px 51px 0px 3px #fff,769px 372px 1px 3px #fff,231px 396px 1px 2px #fff,388px 186px 2px 2px #fff,127px 280px 1px 3px #fff,262px 391px 0px 3px #fff,646px 396px 1px 1px #fff,777px 587px 0px 0px #fff,321px 256px 2px 3px #fff,123px 235px 1px 0px #fff,431px 225px 2px 3px #fff,487px 244px 0px 0px #fff,734px 550px 0px 3px #fff,663px 526px 1px 2px #fff,359px 497px 2px 0px #fff,396px 417px 3px 2px #fff,351px 66px 1px 1px #fff,226px 460px 0px 0px #fff,713px 361px 1px 2px #fff,470px 335px 0px 1px #fff,727px 305px 1px 0px #fff,674px 19px 3px 2px #fff,363px 284px 3px 1px #fff,245px 60px 1px 3px #fff,412px 228px 0px 0px #fff,249px 600px 2px 2px #fff,719px 0px 0px 2px #fff,331px 92px 2px 2px #fff,71px 585px 2px 0px #fff,343px 445px 2px 2px #fff;*/
     /*box-shadow: 552px 575px 0px 1px #fff,766px 410px 3px 2px #fff,208px 341px 0px 3px #fff,294px 331px 0px 0px #fff,281px 205px 2px 2px #fff,23px 107px 2px 2px #fff,496px 149px 1px 2px #fff,499px 521px 1px 0px #fff,93px 386px 1px 2px #fff,758px 341px 0px 2px #fff,625px 503px 1px 2px #fff,241px 362px 1px 2px #fff,188px 120px 0px 3px #fff,785px 55px 2px 3px #fff,190px 561px 0px 3px #fff,22px 220px 2px 0px #fff,672px 36px 1px 3px #fff,61px 49px 0px 1px #fff,298px 469px 3px 3px #fff,656px 445px 0px 0px #fff,368px 377px 3px 0px #fff,552px 579px 1px 3px #fff,763px 383px 3px 2px #fff,140px 240px 0px 0px #fff,88px 594px 1px 1px #fff,59px 320px 3px 3px #fff,628px 4px 3px 2px #fff,140px 270px 0px 2px #fff,746px 444px 0px 1px #fff,384px 110px 1px 2px #fff,507px 324px 0px 0px #fff,256px 276px 3px 3px #fff,582px 53px 2px 1px #fff,281px 15px 0px 0px #fff,696px 134px 2px 2px #fff,499px 440px 3px 1px #fff,733px 88px 3px 2px #fff,771px 293px 0px 2px #fff,643px 401px 0px 1px #fff,640px 480px 2px 0px #fff,585px 55px 1px 3px #fff,557px 510px 2px 2px #fff,205px 375px 1px 3px #fff,785px 422px 1px 1px #fff,82px 574px 3px 2px #fff,425px 591px 3px 3px #fff,371px 484px 3px 0px #fff,568px 134px 1px 2px #fff,743px 444px 0px 0px #fff,564px 506px 3px 0px #fff,610px 421px 1px 0px #fff,496px 496px 3px 3px #fff,452px 122px 0px 3px #fff,507px 343px 1px 2px #fff,487px 350px 0px 2px #fff,619px 354px 0px 3px #fff,400px 459px 2px 2px #fff,64px 244px 3px 1px #fff,581px 33px 1px 2px #fff,586px 533px 1px 1px #fff,36px 36px 1px 2px #fff,486px 390px 0px 1px #fff,68px 331px 0px 1px #fff,196px 106px 3px 3px #fff,49px 207px 3px 1px #fff,226px 97px 0px 3px #fff,136px 549px 0px 2px #fff,82px 26px 1px 0px #fff,512px 508px 0px 2px #fff,741px 7px 3px 1px #fff,152px 455px 3px 0px #fff,528px 378px 2px 0px #fff,149px 533px 1px 3px #fff,177px 463px 3px 2px #fff,232px 137px 1px 2px #fff,343px 183px 2px 1px #fff,583px 231px 3px 1px #fff,186px 84px 1px 0px #fff,618px 421px 3px 1px #fff,382px 498px 3px 3px #fff,98px 13px 1px 2px #fff,618px 312px 2px 2px #fff,403px 431px 3px 1px #fff,640px 109px 1px 1px #fff,179px 25px 3px 0px #fff,64px 295px 0px 1px #fff,575px 199px 1px 0px #fff,35px 97px 2px 3px #fff,447px 6px 2px 0px #fff,716px 574px 1px 0px #fff,473px 174px 1px 1px #fff,193px 403px 1px 3px #fff,103px 512px 1px 0px #fff,641px 514px 2px 0px #fff,226px 88px 0px 2px #fff,780px 251px 2px 2px #fff,89px 586px 1px 1px #fff,479px 297px 2px 2px #fff,627px 518px 3px 0px #fff,639px 195px 0px 0px #fff;*/
-    animation: go 25s alternate forwards;
-    transform-origin: center center;
+    animation: go 30s alternate forwards;
+    transform-origin: 70% center;
 }
 @keyframes go {
     0%{
-        transform: scale(0.95);
+        transform: scale(0.85);
     }
     100%{
         transform: scale(1.2);
+        left: 0;
     }
 }
