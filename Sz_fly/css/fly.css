@@ -19,10 +19,10 @@ html{
     background: rgb(224, 247, 224);
     border-radius: 50%;
     margin-top: 50%;
-    margin-left: -140%;
+    margin-left: -1150px;
     transition: transform 4s;
     box-shadow: 0 0 50px rgba(255, 255, 255, 1);
-    filter: blur(3px);
+    filter: blur(10px);
 }
 #ufo{
     position: absolute;
@@ -52,7 +52,10 @@ html{
     content: "\\-o-\\";
 }
 #lft_btn:hover ~ .tree {
-    transform: translate(100px, 80px);
+    transform: translate(100px, 0);
+}
+#lft_btn:hover ~ .treer {
+    transform: translate(150px, 0);
 }
 #rgt_btn{
     top: 0;
@@ -69,16 +72,19 @@ html{
     content: "/-o-/";
 }
 #rgt_btn:hover ~ .tree {
-    transform: translate(-100px, 0);
+    transform: translate(-300px, 0);
+}
+#rgt_btn:hover ~ .treer {
+    transform: translate(-150px, 0);
 }
 #tree,#tree2,#tree3,#tree4,#tree5,#tree6,#tree7,#tree8,#tree9{
     position: absolute;
-    animation: fly 8.5s ease-out infinite;
+    animation: fly 6.5s ease-out infinite;
     color: white;
     top: 630px;
 }
 #tree7,#tree8,#tree9{
-    animation: fly 10.5s ease-out infinite;
+    animation: fly 4.5s ease-out infinite;
 }
 @keyframes fly {
     0% {
@@ -102,7 +108,7 @@ html{
 #tree4{
     left: 370px;
     top: 615px;
-    animation-delay: 0.39s;
+    animation-delay: 1.39s;
 }
 #tree5{
     left: 330px;
@@ -112,16 +118,16 @@ html{
 #tree6{
     left: 380px;
     top: 610px;
-    animation-delay: 0.3s;
+    animation-delay: 1.3s;
 }
 #tree7{
     left: 50px;
     top: 670px;
-    animation-delay: 0.43s;
+    animation-delay: 1.43s;
 }
 #tree8{
     left: 250px;
-    animation-delay: 0.5s;
+    animation-delay: 1.5s;
 }
 #tree6{
     left: 350px;
@@ -129,7 +135,7 @@ html{
 }
 #treer,#treer2,#treer3,#treer4,#treer5,#treer6{
     position: absolute;
-    animation: fly2 6.5s ease-out infinite;
+    animation: fly2 4.5s ease-out infinite;
     color: white;
 }
 @keyframes fly2 {
@@ -140,6 +146,7 @@ html{
 .tree {
     transition: transform 0.5s ease, top 0.5s ease;
 }
+.treer::after,
 .tree::after{
     /*content: "*";*/
     content: '';
@@ -156,32 +163,35 @@ html{
 #treer{
     left: 450px;
     top: 630px;
-    animation-delay: 0.52s;
+    animation-delay: 2.52s;
 }
 #treer2{
     left: 580px;
     top: 645px;
-    animation-delay: 0.3s;
+    animation-delay: 1.3s;
 }
 #treer3{
     left: 710px;
     top: 670px;
-    animation-delay: 0.7s;
+    animation-delay: 2.7s;
 }
 #treer4{
     left: 680px;
     top: 680px;
-    animation-delay: 0.2s;
+    animation-delay: 0.9s;
 }
 #treer5{
     left: 740px;
     top: 680px;
-    animation-delay: 0.25s;
+    animation-delay: 1.25s;
 }
 #treer6{
     left: 610px;
     top: 670px;
     animation-delay: 0.5s;
+}
+.treer {
+    transition: transform 0.5s ease, top 0.5s ease;
 }
 
 /* -*-*-* S T A R S *-*-*- */
