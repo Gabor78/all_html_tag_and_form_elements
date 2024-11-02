@@ -63,7 +63,7 @@ function gen(out_svg="") {
     <feGaussianBlur in="SourceGraphic" stdDeviation="0.4" />
     </filter>
     <filter id="blr2" x="0" y="0">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="0.7" />
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1.3" />
     </filter>
     <filter id="blr3" x="0" y="0">
     <feGaussianBlur in="SourceGraphic" stdDeviation="0" />
@@ -71,9 +71,9 @@ function gen(out_svg="") {
     <filter id="blr4" x="0" y="0">
     <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
     </filter>
-    <radialGradient id="grad1" cx="25%" cy="25%" r="100%" fx="40%" fy="40%">
+    <radialGradient id="grad1" cx="33%" cy="33%" r="95%" fx="40%" fy="40%">
         <stop offset="0%" stop-color="#ff0" />
-        <stop offset="100%" stop-color="#f55" />
+        <stop offset="100%" stop-color="#f11" />
     </radialGradient>
     <radialGradient id="grad2" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
         <stop offset="0%" stop-color="#fff" />
@@ -99,9 +99,25 @@ function gen(out_svg="") {
     regEvents();
     return false;
 }
+function genPT(out_svg="") {
+    let result = `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="250" id="pine_tree_preview">
+				<polygon points="60,50 30,90 90,90" fill="green"/>
+				<polygon points="60,67 23,114 97,114" fill="green"/>
+				<polygon points="60,88 14,142 106,142" fill="green"/>
+				<polygon points="60,102 4,173 116,173" fill="green"/>
+				<polygon points="60,113 0,204 120,204" fill="green"/>
+				<rect x="50" y="204" width="20" height="44" fill="saddlebrown"/>
+			</svg>`;
+    document.getElementById('pine_tree_preview').outerHTML = result;
+    document.getElementById('pine_tree_out').value = result;
+}
 document.querySelector('button[onclick="gen()"]').addEventListener('click', function(event) {
     event.preventDefault();
     gen();
+});
+document.querySelector('button[onclick="genPT(\'pine_tree_out\')"]').addEventListener('click', function(event) {
+    event.preventDefault();
+    genPT();
 });
 
 function regEvents() {
