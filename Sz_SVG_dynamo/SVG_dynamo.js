@@ -50,7 +50,9 @@ function gen(out_svg="") {
     const svgh = document.getElementById('hgt').value;
     const bg_color = document.getElementById('bg_color').value;
     const sun_circle = document.getElementById('sun_circle');
+    const sun_diam = document.getElementById('sun_diam').value;
     const moon_circle = document.getElementById('moon_circle');
+    const moon_diam = document.getElementById('moon_diam').value;
     const sbbox = sun_circle.getBBox();
     const mbbox = moon_circle.getBBox();
     const scx = sbbox.x + sbbox.width / 2;
@@ -72,24 +74,24 @@ function gen(out_svg="") {
     <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
     </filter>
     <radialGradient id="grad1" cx="33%" cy="33%" r="95%" fx="40%" fy="40%">
-        <stop offset="0%" stop-color="#ff0" />
-        <stop offset="100%" stop-color="#f11" />
+    <stop offset="0%" stop-color="#ff0" />
+    <stop offset="100%" stop-color="#f11" />
     </radialGradient>
     <radialGradient id="grad2" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
-        <stop offset="0%" stop-color="#fff" />
-        <stop offset="100%" stop-color="#77f" />
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#77f" />
     </radialGradient>
     <radialGradient id="grad3" cx="17%" cy="19%" r="75%" fx="50%" fy="50%">
-        <stop offset="0%" stop-color="#fff" />
-        <stop offset="100%" stop-color="#922" />
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#922" />
     </radialGradient>
     </defs>`;
     for(let i = 0; i < pcs; i++){
         result += `<circle cx="${randomStars(0, svgw)}" cy="${randomStars(0, svgh)}" r="${randomStars(0, 0.05)}" fill="${getColor()}" filter="url(#blr${randomStars(0, 3)})" />`
     }
-    result+=`<circle id="sun_circle" cx="${scx}" cy="${scy}" r="25" fill="url(#grad1)" filter="url(#blr2)" />
-    <circle id="moon_circle" cx="${mcx}" cy="${mcy}" r="20" fill="url(#grad2)" filter="url(#blr2)" />
-</svg>`;
+    result+=`<circle id="sun_circle" cx="${scx}" cy="${scy}" r="${sun_diam}" fill="url(#grad1)" filter="url(#blr2)" />
+    <circle id="moon_circle" cx="${mcx}" cy="${mcy}" r="${moon_diam}" fill="url(#grad2)" filter="url(#blr2)" />
+    </svg>`;
     if (!out_svg) {
         document.getElementById('sky_out').value = result;
         document.getElementById('sky_drag').outerHTML  = result;
@@ -100,16 +102,40 @@ function gen(out_svg="") {
     return false;
 }
 function genPT(out_svg="") {
-    let result = `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="250" id="pine_tree_preview">
-				<polygon points="60,50 30,90 90,90" fill="green"/>
-				<polygon points="60,67 23,114 97,114" fill="green"/>
-				<polygon points="60,88 14,142 106,142" fill="green"/>
-				<polygon points="60,102 4,173 116,173" fill="green"/>
-				<polygon points="60,113 0,204 120,204" fill="green"/>
-				<rect x="50" y="204" width="20" height="44" fill="saddlebrown"/>
-			</svg>`;
+    result = '';
+    const pcs = document.getElementById('pine_num').value;
+    console.log(pcs,out_svg);
+    switch (pcs) {
+        case "3":
+            result = `<svg xmlns="http://www.w3.org/2000/svg" width="125" height="250" id="pine_tree_preview">
+  <polygon points="62,80 32,120 92,120" fill="green"/>
+  <polygon points="62,100 22,150 102,150" fill="green"/>
+  <polygon points="62,120 12,190 112,190" fill="green"/>
+  <rect x="52" y="190" width="20" height="60" fill="saddlebrown"/>
+</svg>`;
+            break;
+        case "4":
+            result = `<svg xmlns="http://www.w3.org/2000/svg" width="125" height="250" id="pine_tree_preview">
+  <polygon points="62,75 32,104 92,104" fill="green"/>
+  <polygon points="62,90 22,130 102,130" fill="green"/>
+  <polygon points="62,105 12,165 112,165" fill="green"/>
+  <polygon points="62,120 2,197 122,197" fill="green"/>
+  <rect x="52" y="197" width="20" height="53" fill="saddlebrown"/>
+</svg>`;
+            break;
+        case "5":
+            result = `<svg xmlns="http://www.w3.org/2000/svg" width="125" height="250" id="pine_tree_preview">
+  <polygon points="62,50 32,90 92,90" fill="green"/>
+  <polygon points="62,68 26,114 98,114" fill="green"/>
+  <polygon points="62,88 18,142 106,142" fill="green"/>
+  <polygon points="62,105 8,173 116,173" fill="green"/>
+  <polygon points="62,116 0,204 124,204" fill="green"/>
+  <rect x="50" y="204" width="20" height="44" fill="saddlebrown"/>
+</svg>`;
+            break;
+    }
     document.getElementById('pine_tree_preview').outerHTML = result;
-    document.getElementById('pine_tree_out').value = result;
+    document.getElementById(out_svg).value = result;
 }
 document.querySelector('button[onclick="gen()"]').addEventListener('click', function(event) {
     event.preventDefault();
@@ -117,7 +143,7 @@ document.querySelector('button[onclick="gen()"]').addEventListener('click', func
 });
 document.querySelector('button[onclick="genPT(\'pine_tree_out\')"]').addEventListener('click', function(event) {
     event.preventDefault();
-    genPT();
+    genPT('pine_tree_out');
 });
 
 function regEvents() {
