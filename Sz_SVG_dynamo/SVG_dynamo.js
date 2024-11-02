@@ -50,7 +50,9 @@ function gen(out_svg="") {
     const svgh = document.getElementById('hgt').value;
     const bg_color = document.getElementById('bg_color').value;
     const sun_circle = document.getElementById('sun_circle');
+    const sun_diam = document.getElementById('sun_diam').value;
     const moon_circle = document.getElementById('moon_circle');
+    const moon_diam = document.getElementById('moon_diam').value;
     const sbbox = sun_circle.getBBox();
     const mbbox = moon_circle.getBBox();
     const scx = sbbox.x + sbbox.width / 2;
@@ -87,8 +89,8 @@ function gen(out_svg="") {
     for(let i = 0; i < pcs; i++){
         result += `<circle cx="${randomStars(0, svgw)}" cy="${randomStars(0, svgh)}" r="${randomStars(0, 0.05)}" fill="${getColor()}" filter="url(#blr${randomStars(0, 3)})" />`
     }
-    result+=`<circle id="sun_circle" cx="${scx}" cy="${scy}" r="25" fill="url(#grad1)" filter="url(#blr2)" />
-    <circle id="moon_circle" cx="${mcx}" cy="${mcy}" r="20" fill="url(#grad2)" filter="url(#blr2)" />
+    result+=`<circle id="sun_circle" cx="${scx}" cy="${scy}" r="${sun_diam}" fill="url(#grad1)" filter="url(#blr2)" />
+    <circle id="moon_circle" cx="${mcx}" cy="${mcy}" r="${moon_diam}" fill="url(#grad2)" filter="url(#blr2)" />
     </svg>`;
     if (!out_svg) {
         document.getElementById('sky_out').value = result;
