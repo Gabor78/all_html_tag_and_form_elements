@@ -55,6 +55,7 @@ input[type="text"]{
 	/* display: inline-block; */
 }
 #sun_circle,
+#sun_circle2,
 #moon_circle{
 	cursor: move;
 }
