@@ -64,7 +64,9 @@ function gen(out_svg="") {
     const svgh = document.getElementById('hgt').value;
     const bg_color = document.getElementById('bg_color').value;
     const sun_circle = document.getElementById('sun_circle');
+    const sun_circle2 = document.getElementById('sun_circle2');
     const sun_diam = document.getElementById('sun_diam').value;
+    const sun_diam2 = document.getElementById('sun_diam').value * 0.75;
     const moon_circle = document.getElementById('moon_circle');
     const moon_diam = document.getElementById('moon_diam').value;
     const sbbox = sun_circle.getBBox();
@@ -75,36 +77,33 @@ function gen(out_svg="") {
     const mcy = mbbox.y + mbbox.height / 2;
     let result = `<svg xmlns="http://www.w3.org/2000/svg" width="${svgw}" viewBox="0 0 ${svgw} ${svgh}" style="background-color: ${bg_color};" id="sky_drag">
     <defs>
-    <filter id="blr1" x="0" y="0">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="0.4" />
-    </filter>
-    <filter id="blr2" x="0" y="0">
+<filter id="blr" x="0" y="0">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" />
+</filter>
+<filter id="blr2" x="0" y="0">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" />
+</filter>
+<filter id="blr3" x="0" y="0">
     <feGaussianBlur in="SourceGraphic" stdDeviation="1.3" />
-    </filter>
-    <filter id="blr3" x="0" y="0">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="0" />
-    </filter>
-    <filter id="blr4" x="0" y="0">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
-    </filter>
-    <radialGradient id="grad1" cx="33%" cy="33%" r="95%" fx="40%" fy="40%">
+</filter>
+<filter id="blr4" x="-100%" y="-100%" width="400%" height="400%">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="${sun_diam2}" />
+</filter>
+<radialGradient id="grad1" cx="33%" cy="33%" r="95%" fx="40%" fy="40%">
     <stop offset="0%" stop-color="#ff0" />
     <stop offset="100%" stop-color="#f11" />
-    </radialGradient>
-    <radialGradient id="grad2" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+</radialGradient>
+<radialGradient id="grad2" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
     <stop offset="0%" stop-color="#fff" />
     <stop offset="100%" stop-color="#77f" />
-    </radialGradient>
-    <radialGradient id="grad3" cx="17%" cy="19%" r="75%" fx="50%" fy="50%">
-    <stop offset="0%" stop-color="#fff" />
-    <stop offset="100%" stop-color="#922" />
-    </radialGradient>
+</radialGradient>
     </defs>`;
     for(let i = 0; i < pcs; i++){
         result += `<circle cx="${randomStars(0, svgw)}" cy="${randomStars(0, svgh)}" r="${randomStars(0, 0.05)}" fill="${getColor()}" filter="url(#blr${randomStars(0, 3)})" />`
     }
-    result+=`<circle id="sun_circle" cx="${scx}" cy="${scy}" r="${sun_diam}" fill="url(#grad1)" filter="url(#blr2)" />
-    <circle id="moon_circle" cx="${mcx}" cy="${mcy}" r="${moon_diam}" fill="url(#grad2)" filter="url(#blr2)" />
+    result+=`<circle id="sun_circle" cx="${scx}" cy="${scy}" r="${sun_diam}" fill="url(#grad1)" filter="url(#blr3) url(#blr4)" />
+    <circle id="sun_circle2" cx="${scx}" cy="${scy}" r="${sun_diam}" fill="url(#grad1)" filter="url(#blr3)" />
+    <circle id="moon_circle" cx="${mcx}" cy="${mcy}" r="${moon_diam}" fill="url(#grad2)" filter="url(#blr3)" />
     </svg>`;
     if (!out_svg) {
         document.getElementById('sky_out').value = result;
@@ -171,7 +170,9 @@ function regEvents() {
 
     sunCheckbox.addEventListener('change', () => {
         const sun_circle = document.getElementById('sun_circle');
+        const sun_circle2 = document.getElementById('sun_circle2');
         sun_circle.style.display = sunCheckbox.checked ? 'block' : 'none';
+        sun_circle2.style.display = sunCheckbox.checked ? 'block' : 'none';
     });
 
     moonCheckbox.addEventListener('change', () => {
@@ -190,6 +191,14 @@ function regEvents() {
         if (isDragging && currentElement) {
             currentElement.setAttribute('cx', event.clientX - offsetX);
             currentElement.setAttribute('cy', event.clientY - offsetY);
+            if(currentElement==sun_circle){
+                sun_circle2.setAttribute('cx', event.clientX - offsetX);
+                sun_circle2.setAttribute('cy', event.clientY - offsetY);
+            }
+            if(currentElement==sun_circle2){
+                sun_circle.setAttribute('cx', event.clientX - offsetX);
+                sun_circle.setAttribute('cy', event.clientY - offsetY);
+            }
         }
     };
 
@@ -197,6 +206,7 @@ function regEvents() {
         isDragging = false;
         currentElement = null;
         const sun_circle = document.getElementById('sun_circle');
+        const sun_circle2 = document.getElementById('sun_circle2');
         const moon_circle = document.getElementById('moon_circle');
         const sbbox = sun_circle.getBBox();
         const mbbox = moon_circle.getBBox();
