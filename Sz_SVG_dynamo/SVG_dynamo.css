@@ -25,7 +25,7 @@ label,button{
 }
 input,label,button,select{
 	float: left;
-	margin: 2px 0 10px 0;
+	margin: 2px 0 5px 0;
 }
 select{
 	min-width: 293px;

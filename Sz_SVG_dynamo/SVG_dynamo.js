@@ -23,7 +23,7 @@ function randomStars(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) - min + 1
 }
 function getColor() {
-    switch(randomStars(0, 7)){
+    switch(randomStars(0, 14)){
         case 0:
             return "#fff";
         case 1:
@@ -41,6 +41,20 @@ function getColor() {
         case 7:
         return "url(#grad3)";
         case 8:
+        return "#fff";
+        case 9:
+        return "#fff";
+        case 10:
+        return "#fff";
+        case 11:
+        return "#fff";
+        case 12:
+        return "#fff";
+        case 13:
+        return "#fff";
+        case 14:
+        return "#fff";
+        case 15:
         return "#fff";
         }
 }
