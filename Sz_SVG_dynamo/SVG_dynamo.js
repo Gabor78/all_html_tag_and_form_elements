@@ -89,7 +89,7 @@ function gen(out_svg="") {
 <filter id="blr4" x="-100%" y="-100%" width="400%" height="400%">
     <feGaussianBlur in="SourceGraphic" stdDeviation="${sun_diam2}" />
 </filter>
-<radialGradient id="grad1" cx="33%" cy="33%" r="95%" fx="40%" fy="40%">
+<radialGradient id="grad1" cx="34%" cy="34%" r="95%" fx="40%" fy="40%">
     <stop offset="0%" stop-color="#ff0" />
     <stop offset="100%" stop-color="#f11" />
 </radialGradient>
