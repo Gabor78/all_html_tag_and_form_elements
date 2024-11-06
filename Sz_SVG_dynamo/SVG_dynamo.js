@@ -97,6 +97,38 @@ function gen(out_svg="") {
     <stop offset="0%" stop-color="#fff" />
     <stop offset="100%" stop-color="#77f" />
 </radialGradient>
+<radialGradient id="grad3" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#A9A9A9" />
+</radialGradient>
+<radialGradient id="grad4" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#FFCC00" />
+</radialGradient>
+<radialGradient id="grad5" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#4682B4" />
+</radialGradient>
+<radialGradient id="grad6" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#FF0000" />
+</radialGradient>
+<radialGradient id="grad7" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#FFA07A" />
+</radialGradient>
+<radialGradient id="grad8" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#FFDF81" />
+</radialGradient>
+<radialGradient id="grad9" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#00FFFF" />
+</radialGradient>
+<radialGradient id="grad10" cx="17%" cy="19%" r="95%" fx="50%" fy="50%">
+    <stop offset="0%" stop-color="#fff" />
+    <stop offset="100%" stop-color="#0000FF" />
+</radialGradient>
     </defs>`;
     for(let i = 0; i < pcs; i++){
         result += `<circle cx="${randomStars(0, svgw)}" cy="${randomStars(0, svgh)}" r="${randomStars(0, 0.05)}" fill="${getColor()}" filter="url(#blr${randomStars(0, 3)})" />`
@@ -104,7 +136,16 @@ function gen(out_svg="") {
     result+=`<circle id="sun_circle" cx="${scx}" cy="${scy}" r="${sun_diam}" fill="url(#grad1)" filter="url(#blr3) url(#blr4)" />
     <circle id="sun_circle2" cx="${scx}" cy="${scy}" r="${sun_diam}" fill="url(#grad1)" filter="url(#blr3)" />
     <circle id="moon_circle" cx="${mcx}" cy="${mcy}" r="${moon_diam}" fill="url(#grad2)" filter="url(#blr3)" />
+
     </svg>`;
+    // <circle id="mercury_circle" cx="50" cy="140" r="2" fill="url(#grad3)" filter="url(#blr3)" />
+    // <circle id="venus_circle" cx="65" cy="140" r="6" fill="url(#grad4)" filter="url(#blr3)" />
+    // <circle id="earth_circle" cx="81" cy="140" r="6" fill="url(#grad5)" filter="url(#blr3)" />
+    // <circle id="mars_circle" cx="98" cy="140" r="3" fill="url(#grad6)" filter="url(#blr3)" />
+    // <circle id="jupiter_circle" cx="178" cy="140" r="71" fill="url(#grad7)" filter="url(#blr3)" />
+    // <circle id="saturn_circle" cx="318" cy="140" r="60" fill="url(#grad8)" filter="url(#blr3)" />
+    // <circle id="uranus_circle" cx="357" cy="140" r="25" fill="url(#grad9)" filter="url(#blr3)" />
+    // <circle id="neptune_circle" cx="416" cy="140" r="24" fill="url(#grad10)" filter="url(#blr3)" />
     if (!out_svg) {
         document.getElementById('sky_out').value = result;
         document.getElementById('sky_drag').outerHTML  = result;
@@ -115,38 +156,25 @@ function gen(out_svg="") {
     return false;
 }
 function genPT(out_svg="") {
-    result = '';
     const pcs = document.getElementById('pine_num').value;
-    console.log(pcs,out_svg);
-    switch (pcs) {
-        case "3":
-            result = `<svg xmlns="http://www.w3.org/2000/svg" width="125" height="250" id="pine_tree_preview">
-  <polygon points="62,80 32,120 92,120" fill="green"/>
-  <polygon points="62,100 22,150 102,150" fill="green"/>
-  <polygon points="62,120 12,190 112,190" fill="green"/>
-  <rect x="52" y="190" width="20" height="60" fill="saddlebrown"/>
-</svg>`;
-            break;
-        case "4":
-            result = `<svg xmlns="http://www.w3.org/2000/svg" width="125" height="250" id="pine_tree_preview">
-  <polygon points="62,75 32,104 92,104" fill="green"/>
-  <polygon points="62,90 22,130 102,130" fill="green"/>
-  <polygon points="62,105 12,165 112,165" fill="green"/>
-  <polygon points="62,120 2,197 122,197" fill="green"/>
-  <rect x="52" y="197" width="20" height="53" fill="saddlebrown"/>
-</svg>`;
-            break;
-        case "5":
-            result = `<svg xmlns="http://www.w3.org/2000/svg" width="125" height="250" id="pine_tree_preview">
-  <polygon points="62,50 32,90 92,90" fill="green"/>
-  <polygon points="62,68 26,114 98,114" fill="green"/>
-  <polygon points="62,88 18,142 106,142" fill="green"/>
-  <polygon points="62,105 8,173 116,173" fill="green"/>
-  <polygon points="62,116 0,204 124,204" fill="green"/>
-  <rect x="50" y="204" width="20" height="44" fill="saddlebrown"/>
-</svg>`;
-            break;
+    const fullWidth = 60 + (pcs-1) * 20;
+    const trunkH = 25 + pcs * 5;
+    const fullHeight = trunkH + 10 + pcs * 30;
+    const trunkW = 12 + pcs * 2;
+    const trunkX = fullWidth / 2 - trunkW / 2;
+    const trunkY = fullHeight - trunkH;
+    let result = `<svg xmlns="http://www.w3.org/2000/svg" width="${fullWidth}" viewBox="0 0 ${fullWidth} ${fullHeight}" style="background-color: white;" id="pine_tree_preview">`;
+    for(let i = 0; i < pcs; i++){
+        const triX1 = fullWidth / 2;
+        const triY1 = (i - 1) * 20 + 20;//i * 30;
+        const triX2 = fullWidth / 2 - 20 - i * 10;
+        const triY2 = 30 + (i - 1) * 30 + 40; //triY1 + 20;
+        const triX3 = fullWidth / 2 + 20 + i * 10;
+        const triY3 = 30 + (i - 1) * 30 + 40; //triY1 + 20;
+        result += `<polygon points="${triX1},${triY1} ${triX2},${triY2} ${triX3},${triY3}" fill="green"/>`;
     }
+    result += `  <rect x="${trunkX}" y="${trunkY}" width="${trunkW}" height="${trunkH}" fill="saddlebrown"/>`;
+    result += `</svg>`;
     document.getElementById('pine_tree_preview').outerHTML = result;
     document.getElementById(out_svg).value = result;
 }
