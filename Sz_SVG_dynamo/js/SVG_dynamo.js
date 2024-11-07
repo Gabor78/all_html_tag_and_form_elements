@@ -187,7 +187,9 @@ document.querySelector('button[onclick="genPT(\'pine_tree_out\')"]').addEventLis
     genPT('pine_tree_out');
 });
 
-genSM(
+function genSM(){
+
+}
 
 function regEvents() {
     /* Sun and Moon */
