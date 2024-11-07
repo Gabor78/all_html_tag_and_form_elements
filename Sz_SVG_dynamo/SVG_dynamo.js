@@ -187,6 +187,8 @@ document.querySelector('button[onclick="genPT(\'pine_tree_out\')"]').addEventLis
     genPT('pine_tree_out');
 });
 
+genSM(
+
 function regEvents() {
     /* Sun and Moon */
     const sunCheckbox = document.getElementById('sun');
