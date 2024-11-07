@@ -31,11 +31,11 @@
 			<ellipse cx="150" cy="145" rx="45" ry="130" fill="url(#ring-gradient)" transform="rotate(117 150 150)" />
 			</svg> -->
 
-			<label for="wdt">Width:</label>
+			<label for="wdt">SVG Width:</label>
 			<input type="number" id="wdt" name="wdt" min="1" max="5000" value="800">
 			<span class="units">px</span>
 
-			<label for="hgt">Height:</label>
+			<label for="hgt">SVG Height:</label>
 			<input type="number" id="hgt" name="hgt" min="1" max="5000" value="600">
 			<span class="units">px</span>
 			
@@ -45,26 +45,29 @@
 			
 			<label for="nos">The number of stars:</label>
 			<input type="number" id="nos" name="nos" min="1" max="5000" value="1900">
-			<span id="nos_value" class="units">pcs. (actually much more)</span>
+			<span id="nos_value" class="units">pcs. </span>
+			<span id="nos_v2">on the SVG... actually much more</span>
 			
-			<label for="sun">Sun</label>
+			<label for="sun">Sun (on/off)</label>
 			<input type="checkbox" id="sun" name="sun" value="sun" checked>
 			<label for="sun_diam">Diameter:</label>
 			<input type="number" id="sun_diam" name="sun_diam" min="10" max="70" value="50">
 			<span id="sun_diam_val" class="units">px</span>
 			<div id="sun_pos">
 				<span id="sunx">Sun pos. X: 360px</span>
-				<span id="suny">Sun pos. Y: 40px</span>
+				<span id="suny">Sun pos. Y: 40px</span><br>
+				<sub>Drag the Sun to any position!</sub>
 			</div>
 			
-			<label for="moon">Moon</label>
+			<label for="moon">Moon (on/off)</label>
 			<input type="checkbox" id="moon" name="moon" value="moon" checked>
 			<label for="moon_diam">Diameter:</label>
 			<input type="number" id="moon_diam" name="moon_diam" min="10" max="70" value="15">
 			<span id="moon_diam_val" class="units">px</span>
 			<div id="moon_pos">
 				<span id="moonx">Moon pos. X: 50px</span>
-				<span id="moony">Moon pos. Y: 80px</span>
+				<span id="moony">Moon pos. Y: 80px</span><br>
+				<sub>Drag the Moon to any position!</sub>
 			</div>
 			<button onclick="gen()">Generate sky</button>
 			
@@ -165,7 +168,7 @@
 		<h2>Image generator</h2>
 		<fieldset>
 			<legend>Pine tree</legend>
-			<label for="pine_num">The number of tringles:</label>
+			<label for="pine_num">The number of triangles:</label>
 			<input type="number" id="pine_num" name="pine_num" min="1" max="50" value="3">
 			<span class="units">pcs.</span>
 			<button onclick="genPT('pine_tree_out')">Generate pine tree</button>
@@ -217,12 +220,12 @@
 	<polygon points="50,40 10,100 90,100" fill="green"/>
 	<rect x="41" y="100" width="18" height="40" fill="saddlebrown"/>
 </svg>
-			</textarea>
-			<button onclick="copySvg('pine_tree_out')">Copy SVG file</button>
-			<button onclick="copySvgAsCss('pine_tree_out')">Copy as CSS rule</button>
-		</fieldset>
-		<fieldset>
-			<legend>Snowman</legend>
+</textarea>
+<button onclick="copySvg('pine_tree_out')">Copy SVG file</button>
+<button onclick="copySvgAsCss('pine_tree_out')">Copy as CSS rule</button>
+</fieldset>
+<fieldset>
+			<legend>Snowman - coming soon...</legend>
 			<label for="snm_num">The number of circles:</label>
 			<input type="number" id="snm_num" name="snm_num" min="1" max="5" value="3">
 			<span class="units">pcs.</span>
@@ -231,16 +234,24 @@
 				<circle r="50" cx="60" cy="190" fill="white" stroke="black" stroke-width="1"/>
 				<circle r="40" cx="60" cy="140" fill="white" stroke="black" stroke-width="1"/>
 				<circle r="35" cx="60" cy="90" fill="white" stroke="black" stroke-width="1"/>
-				<polygon points="60,120 52,90 68,90" fill="red"/>
+				<polygon points="95,100 57,97 61,87" fill="red"/>
+				<rect x="32" y="15" width="56" height="47" fill="black" id="hat"/>
+				<ellipse cx="61" cy="58" rx="45" ry="10" fill="black" id="hat_btm" />
+				<ellipse cx="49" cy="81" rx="5" ry="8" fill="black" id="eye_l" />
+				<ellipse cx="72" cy="79" rx="5" ry="8" fill="black" id="eye_r" />
+				<ellipse cx="68" cy="131" rx="4" ry="5" fill="black" id="button_1" />
+				<ellipse cx="74" cy="146" rx="4" ry="5" fill="black" id="button_2" />
+				<ellipse cx="78" cy="166" rx="4" ry="5" fill="black" id="button_3" />
+				<ellipse cx="77" cy="190" rx="4" ry="5" fill="black" id="button_4" />
 			</svg>
 			<textarea id="snowman_out" rows="10" cols="90" readonly><svg xmlns="http://www.w3.org/2000/svg" width="120" height="250">
-  <circle r="50" cx="50" cy="190" fill="white" stroke="black" stroke-width="1"/>
-  <circle r="40" cx="50" cy="140" fill="white" stroke="black" stroke-width="1"/>
-  <circle r="35" cx="50" cy="90" fill="white" stroke="black" stroke-width="1"/>
-  <polygon points="60,120 52,90 68,90" fill="red"/>
-</svg>
-			</textarea>
-			<button onclick="copySvg('snowman_out')">Copy SVG file</button>
+				<circle r="50" cx="50" cy="190" fill="white" stroke="black" stroke-width="1"/>
+				<circle r="40" cx="50" cy="140" fill="white" stroke="black" stroke-width="1"/>
+				<circle r="35" cx="50" cy="90" fill="white" stroke="black" stroke-width="1"/>
+				<polygon points="60,120 52,90 68,90" fill="red"/>
+			</svg>
+		</textarea>
+		<button onclick="copySvg('snowman_out')">Copy SVG file</button>
 			<button onclick="copySvgAsCss('snowman_out')">Copy as CSS rule</button>
 		</fieldset>
 	</form>
