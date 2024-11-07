@@ -229,20 +229,25 @@
 			<label for="snm_num">The number of circles:</label>
 			<input type="number" id="snm_num" name="snm_num" min="1" max="5" value="3">
 			<span class="units">pcs.</span>
-			<button onclick="gen('snowman_out')">Generate snowman</button>
+			<button onclick="genSM('snowman_out')">Generate snowman</button>
 			<svg xmlns="http://www.w3.org/2000/svg" width="120" height="250">
 				<circle r="50" cx="60" cy="190" fill="white" stroke="black" stroke-width="1"/>
 				<circle r="40" cx="60" cy="140" fill="white" stroke="black" stroke-width="1"/>
 				<circle r="35" cx="60" cy="90" fill="white" stroke="black" stroke-width="1"/>
-				<polygon points="95,100 57,97 61,87" fill="red"/>
+				<polygon points="108,98 57,97 61,87" fill="red"/>
 				<rect x="32" y="15" width="56" height="47" fill="black" id="hat"/>
 				<ellipse cx="61" cy="58" rx="45" ry="10" fill="black" id="hat_btm" />
 				<ellipse cx="49" cy="81" rx="5" ry="8" fill="black" id="eye_l" />
 				<ellipse cx="72" cy="79" rx="5" ry="8" fill="black" id="eye_r" />
+				<ellipse cx="52" cy="108" rx="3" ry="2" fill="black" id="mouth_1" />
+				<ellipse cx="62" cy="111" rx="3" ry="2" fill="black" id="mouth_2" />
+				<ellipse cx="72" cy="110" rx="3" ry="2" fill="black" id="mouth_3" />
+				<ellipse cx="80" cy="104" rx="3" ry="2" fill="black" id="mouth_4" />
 				<ellipse cx="68" cy="131" rx="4" ry="5" fill="black" id="button_1" />
 				<ellipse cx="74" cy="146" rx="4" ry="5" fill="black" id="button_2" />
 				<ellipse cx="78" cy="166" rx="4" ry="5" fill="black" id="button_3" />
 				<ellipse cx="77" cy="190" rx="4" ry="5" fill="black" id="button_4" />
+				<ellipse cx="74" cy="215" rx="4" ry="5" fill="black" id="button_5" />
 			</svg>
 			<textarea id="snowman_out" rows="10" cols="90" readonly><svg xmlns="http://www.w3.org/2000/svg" width="120" height="250">
 				<circle r="50" cx="50" cy="190" fill="white" stroke="black" stroke-width="1"/>

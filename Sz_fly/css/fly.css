@@ -38,15 +38,40 @@ html{
     transform: rotate(0);
     transition: transform 1s;
 }
+#up_btn,
+#dwn_btn{
+    width: 122px;
+    height: 130px;
+    margin: 5px;
+    cursor: pointer;
+    position: relative;
+    float: left;
+    font-size: 5em;
+    color: #0aa;
+    text-align: center;
+    border: 2px dotted #449;
+    left: 332px;
+    top: 0;
+}
+#dwn_btn{
+    left: 197px;
+    top: 200px;
+}
+#up_btn:hover ~ #ufo{
+    transform: translate(0, -40px);
+}
+#dwn_btn:hover ~ #ufo{
+    transform: translate(0, 40px);
+}
 #rgt_btn,
 #lft_btn{
-    width: 350px;
+    width: 330px;
     height: 330px;
     margin: 5px;
     cursor: pointer;
     position: absolute;
     font-size: 18em;
-    color: #227;
+    color: #0aa;
     text-align: center;
     border: 2px dotted #449;
 }
