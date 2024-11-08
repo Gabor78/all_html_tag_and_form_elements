@@ -166,17 +166,19 @@ function genPT(out_svg="") {
     let result = `<svg xmlns="http://www.w3.org/2000/svg" width="${fullWidth}" viewBox="0 0 ${fullWidth} ${fullHeight}" style="background-color: white;" id="pine_tree_preview">`;
     for(let i = 0; i < pcs; i++){
         const triX1 = fullWidth / 2;
-        const triY1 = (i - 1) * 20 + 20;//i * 30;
+        const triY1 = (i - 1) * 20 + 20;
         const triX2 = fullWidth / 2 - 20 - i * 10;
-        const triY2 = 30 + (i - 1) * 30 + 40; //triY1 + 20;
+        const triY2 = 30 + (i - 1) * 30 + 40;
         const triX3 = fullWidth / 2 + 20 + i * 10;
-        const triY3 = 30 + (i - 1) * 30 + 40; //triY1 + 20;
+        const triY3 = 30 + (i - 1) * 30 + 40;
         result += `<polygon points="${triX1},${triY1} ${triX2},${triY2} ${triX3},${triY3}" fill="green"/>`;
     }
     result += `  <rect x="${trunkX}" y="${trunkY}" width="${trunkW}" height="${trunkH}" fill="saddlebrown"/>`;
     result += `</svg>`;
     document.getElementById('pine_tree_preview').outerHTML = result;
     document.getElementById(out_svg).value = result;
+    regEvents();
+    return false;
 }
 document.querySelector('button[onclick="gen()"]').addEventListener('click', function(event) {
     event.preventDefault();
@@ -186,13 +188,94 @@ document.querySelector('button[onclick="genPT(\'pine_tree_out\')"]').addEventLis
     event.preventDefault();
     genPT('pine_tree_out');
 });
+document.querySelector('button[onclick="genSM(\'snowman_out\')"]').addEventListener('click', function(event) {
+    event.preventDefault();
+    genSM('snowman_out');
+});
+function genSM(out_svg="") {
+    const pcs = document.getElementById('snm_num').value;
+    const fullWidth = 60 + pcs * 20;
+    let fullHeight = 35;
+    let lastY = fullHeight;
+    for (let i = 0; i < pcs; i++) {
+        const circR = 25 + (pcs - i) * 10;
+        const circY = lastY + circR + (i > 0 ? 10 : 0);
+        lastY = circY;
+    }
+    fullHeight = lastY;
+    fullHeight += 55;
+    let result = `<svg xmlns="http://www.w3.org/2000/svg" width="${fullWidth}" viewBox="0 0 ${fullWidth} ${fullHeight}" id="snm_preview" >`;
+    lastY = fullHeight - 1;
+    for (let i = 0; i < pcs; i++) {
+        const circR = 25 + (pcs - i) * 10;
+        const circX = fullWidth / 2;
+        const circY = lastY - circR - (i > 0 ? 10 : 0);
+        lastY = circY;
+        result += `<circle r="${circR}" cx="${circX}" cy="${circY}" fill="white" stroke="black" stroke-width="1"/>`;
+    }
+    const hatX = fullWidth / 2 - 27;
+    const hat_btmX = fullWidth / 2;
+    result += `<rect x="${hatX}" y="0" width="56" height="55" fill="black" id="hat"/>
+    <ellipse cx="${hat_btmX}" cy="58" rx="45" ry="8" fill="black" id="hat_btm" />`;
+    if (pcs == 3) {
+    result += `<polygon points="108,98 57,97 61,87" fill="red"/>
+    <ellipse cx="49" cy="81" rx="5" ry="8" fill="black" id="eye_l" />
+    <ellipse cx="72" cy="79" rx="5" ry="8" fill="black" id="eye_r" />
+    <ellipse cx="52" cy="108" rx="3" ry="2" fill="black" id="mouth_1" />
+    <ellipse cx="62" cy="111" rx="3" ry="2" fill="black" id="mouth_2" />
+    <ellipse cx="72" cy="110" rx="3" ry="2" fill="black" id="mouth_3" />
+    <ellipse cx="80" cy="104" rx="3" ry="2" fill="black" id="mouth_4" />
+    <ellipse cx="68" cy="131" rx="4" ry="5" fill="black" id="button_1" />
+    <ellipse cx="74" cy="146" rx="4" ry="5" fill="black" id="button_2" />
+    <ellipse cx="78" cy="166" rx="4" ry="5" fill="black" id="button_3" />
+    <ellipse cx="77" cy="190" rx="4" ry="5" fill="black" id="button_4" />
+    <ellipse cx="74" cy="215" rx="4" ry="5" fill="black" id="button_5" />`;
+}
+    result += `</svg>`;
 
-function genSM(){
+    document.getElementById('snm_preview').outerHTML = result;
+    document.getElementById(out_svg).value = result;
+    regEvents();
+    return false;
+}
 
+function genSM_G(out_svg=""){
+    const pcs = document.getElementById('snm_num').value;
+    const fullWidth = 60 + pcs * 20; /* 10 - 205 195*/
+    const fullHeight = pcs * 35 + ((pcs - 1) * 10) * pcs + 55 + (pcs - 1) * 35;
+    let lastY = fullHeight - 1; /*186 216 246 276 306 */
+    const hatX = fullWidth / 2 - 29;
+    const hat_btmX = fullWidth / 2 - pcs;
+    let result = `<svg xmlns="http://www.w3.org/2000/svg" width="${fullWidth}" viewBox="0 0 ${fullWidth} ${fullHeight}" id="snm_preview" >`;
+    for(let i = 0; i < pcs; i++){
+        const circR = 25 + (pcs - i) * 10;
+        const circX = fullWidth / 2;
+        const circY = lastY - circR - i / 2 - i ;
+        lastY = circY;
+        result += `<circle r="${circR}" cx="${circX}" cy="${circY}" fill="white" stroke="black" stroke-width="1"/>`;
+    }
+    result += `<polygon points="108,98 57,97 61,87" fill="red"/>
+    <rect x="${hatX}" y="0" width="56" height="55" fill="black" id="hat"/>
+    <ellipse cx="${hat_btmX}" cy="58" rx="45" ry="8" fill="black" id="hat_btm" />
+    <ellipse cx="49" cy="81" rx="5" ry="8" fill="black" id="eye_l" />
+    <ellipse cx="72" cy="79" rx="5" ry="8" fill="black" id="eye_r" />
+    <ellipse cx="52" cy="108" rx="3" ry="2" fill="black" id="mouth_1" />
+    <ellipse cx="62" cy="111" rx="3" ry="2" fill="black" id="mouth_2" />
+    <ellipse cx="72" cy="110" rx="3" ry="2" fill="black" id="mouth_3" />
+    <ellipse cx="80" cy="104" rx="3" ry="2" fill="black" id="mouth_4" />
+    <ellipse cx="68" cy="131" rx="4" ry="5" fill="black" id="button_1" />
+    <ellipse cx="74" cy="146" rx="4" ry="5" fill="black" id="button_2" />
+    <ellipse cx="78" cy="166" rx="4" ry="5" fill="black" id="button_3" />
+    <ellipse cx="77" cy="190" rx="4" ry="5" fill="black" id="button_4" />
+    <ellipse cx="74" cy="215" rx="4" ry="5" fill="black" id="button_5" />`;
+    result += `</svg>`;
+    document.getElementById('snm_preview').outerHTML = result;
+    document.getElementById(out_svg).value = result;
+    regEvents();
+    return false;
 }
 
 function regEvents() {
-    /* Sun and Moon */
     const sunCheckbox = document.getElementById('sun');
     const moonCheckbox = document.getElementById('moon');
     const svg = document.getElementById('sky_drag');
