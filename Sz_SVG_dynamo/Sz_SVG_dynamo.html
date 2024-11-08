@@ -5,8 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>SVG generator</title>
-	<link rel="stylesheet" href="SVG_dynamo.css">
-	<script src="SVG_dynamo.js" defer></script> 
+	<link rel="stylesheet" href="css/SVG_dynamo.css">
+	<script src="js/SVG_dynamo.js" defer></script> 
 </head>
 <body>
 	<h1>SVG dynamo</h1>
@@ -14,23 +14,6 @@
 		<h2>Background-image generator</h2>
 		<fieldset>
 		<legend>Sky</legend>
-		<!-- <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 300 300">
-			<defs>
-				<radialGradient id="saturn-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-					<stop offset="0%" style="stop-color: #e5eaca; stop-opacity: 1" />
-					<stop offset="100%" style="stop-color: #dca882; stop-opacity: 1" />
-				</radialGradient>
-				<radialGradient id="ring-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-					<stop offset="0%" style="stop-color: #e8cba6; stop-opacity: 0.2" />
-					<stop offset="100%" style="stop-color: #8b5936; stop-opacity: 0.3" />
-				</radialGradient>
-			</defs>
-			<circle cx="155" cy="155" r="60" fill="url(#saturn-gradient)" />
-			<ellipse cx="150" cy="145" rx="25" ry="110" fill="url(#ring-gradient)" transform="rotate(117 150 150)" />
-			<ellipse cx="150" cy="145" rx="35" ry="120" fill="url(#ring-gradient)" transform="rotate(117 150 150)" />
-			<ellipse cx="150" cy="145" rx="45" ry="130" fill="url(#ring-gradient)" transform="rotate(117 150 150)" />
-			</svg> -->
-
 			<label for="wdt">SVG Width:</label>
 			<input type="number" id="wdt" name="wdt" min="1" max="5000" value="800">
 			<span class="units">px</span>
@@ -162,7 +145,7 @@
 			</svg>
 			<button onclick="copySvg('sky_out')">Copy SVG file</button>
 			<button onclick="copySvgAsCss('sky_out')">Copy as CSS rule</button>
-			<textarea id="sky_out" rows="25" cols="90" readonly>
+			<textarea id="sky_out" rows="25" cols="100" readonly>
 			</textarea>
 		</fieldset>
 		<h2>Image generator</h2>
@@ -177,66 +160,26 @@
 				<polygon points="50,20 20,70 80,70" fill="green"/>
 				<polygon points="50,40 10,100 90,100" fill="green"/>
 				<rect x="41" y="100" width="18" height="40" fill="saddlebrown"/>
-			</svg>			
-			<!--svg xmlns="http://www.w3.org/2000/svg" width="70" height="110" id="pine_tree_preview">
-				<polygon points="35,0 5,40 65,40" fill="green"/>
-				<polygon points="35,20 0,70 70,70" fill="green"/>
-				<rect x="27" y="70" width="16" height="40" fill="saddlebrown"/>
 			</svg>
-			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="145" id="pine_tree_preview">
-				<polygon points="50,0 20,40 80,40" fill="green"/>
-				<polygon points="50,20 10,70 90,70" fill="green"/>
-				<polygon points="50,40 0,100 100,100" fill="green"/>
-				<rect x="42" y="100" width="18" height="45" fill="saddlebrown"/>
-			</svg>
-			<svg xmlns="http://www.w3.org/2000/svg" width="120" height="180" id="pine_tree_preview">
-				<polygon points="60,0 30,40 90,40" fill="green"/>
-				<polygon points="60,20 20,70 100,70" fill="green"/>
-				<polygon points="60,40 10,100 110,100" fill="green"/>
-				<polygon points="60,60 0,130 120,130" fill="green"/>
-				<rect x="50" y="130" width="20" height="50" fill="saddlebrown"/>
-			</svg>
-			<svg xmlns="http://www.w3.org/2000/svg" width="140" height="210" id="pine_tree_preview">
-				<polygon points="70,0 40,40 100,40" fill="green"/>
-				<polygon points="70,20 30,70 110,70" fill="green"/>
-				<polygon points="70,40 20,100 120,100" fill="green"/>
-				<polygon points="70,60 10,130 130,130" fill="green"/>
-				<polygon points="70,80 0,160 140,160" fill="green"/>
-				<rect x="59" y="160" width="22" height="55" fill="saddlebrown"/>
-			</svg>
-			<svg xmlns="http://www.w3.org/2000/svg" width="160" height="250" id="pine_tree_preview">
-				<polygon points="80,0 50,40 110,40" fill="green"/>
-				<polygon points="80,20 40,70 120,70" fill="green"/>
-				<polygon points="80,40 30,100 130,100" fill="green"/>
-				<polygon points="80,55 20,130 140,130" fill="green"/>
-				<polygon points="80,70 10,160 150,160" fill="green"/>
-				<polygon points="80,90 0,190 160,190" fill="green"/>
-				<rect x="68" y="190" width="24" height="60" fill="saddlebrown"/>
-			</svg-->
-			<textarea id="pine_tree_out" rows="10" cols="90" readonly>
-<svg xmlns="http://www.w3.org/2000/svg" width="100" viewBox="0 0 100 140" style="background-color: white;" id="pine_tree_preview">
-	<polygon points="50,0 30,40 70,40" fill="green"/>
-	<polygon points="50,20 20,70 80,70" fill="green"/>
-	<polygon points="50,40 10,100 90,100" fill="green"/>
-	<rect x="41" y="100" width="18" height="40" fill="saddlebrown"/>
+			<textarea id="pine_tree_out" rows="10" cols="100" readonly><svg xmlns="http://www.w3.org/2000/svg" width="100" viewBox="0 0 100 140" style="background-color: white;" id="pine_tree_preview">
+  <polygon points="50,0 30,40 70,40" fill="green"/>
+  <polygon points="50,20 20,70 80,70" fill="green"/>
+  <polygon points="50,40 10,100 90,100" fill="green"/>
+  <rect x="41" y="100" width="18" height="40" fill="saddlebrown"/>
 </svg>
 </textarea>
 <button onclick="copySvg('pine_tree_out')">Copy SVG file</button>
 <button onclick="copySvgAsCss('pine_tree_out')">Copy as CSS rule</button>
 </fieldset>
 <fieldset>
-			<legend>Snowman - coming soon...</legend>
+			<legend>Snowman</legend>
 			<label for="snm_num">The number of circles:</label>
 			<input type="number" id="snm_num" name="snm_num" min="1" max="5" value="3">
 			<span class="units">pcs.</span>
 			<button onclick="genSM('snowman_out')">Generate snowman</button>
-			<svg xmlns="http://www.w3.org/2000/svg" width="120" height="250">
-				<circle r="50" cx="60" cy="190" fill="white" stroke="black" stroke-width="1"/>
-				<circle r="40" cx="60" cy="140" fill="white" stroke="black" stroke-width="1"/>
-				<circle r="35" cx="60" cy="90" fill="white" stroke="black" stroke-width="1"/>
-				<polygon points="108,98 57,97 61,87" fill="red"/>
-				<rect x="32" y="15" width="56" height="47" fill="black" id="hat"/>
-				<ellipse cx="61" cy="58" rx="45" ry="10" fill="black" id="hat_btm" />
+			<svg xmlns="http://www.w3.org/2000/svg" width="120" viewBox="0 0 120 239" id="snm_preview" ><circle r="55" cx="60" cy="183" fill="white" stroke="black" stroke-width="1"/><circle r="45" cx="60" cy="133" fill="white" stroke="black" stroke-width="1"/><circle r="35" cx="60" cy="88" fill="white" stroke="black" stroke-width="1"/><polygon points="108,98 57,97 61,87" fill="red"/>
+				<rect x="33" y="0" width="56" height="55" fill="black" id="hat"/>
+				<ellipse cx="61" cy="58" rx="45" ry="8" fill="black" id="hat_btm" />
 				<ellipse cx="49" cy="81" rx="5" ry="8" fill="black" id="eye_l" />
 				<ellipse cx="72" cy="79" rx="5" ry="8" fill="black" id="eye_r" />
 				<ellipse cx="52" cy="108" rx="3" ry="2" fill="black" id="mouth_1" />
@@ -249,16 +192,29 @@
 				<ellipse cx="77" cy="190" rx="4" ry="5" fill="black" id="button_4" />
 				<ellipse cx="74" cy="215" rx="4" ry="5" fill="black" id="button_5" />
 			</svg>
-			<textarea id="snowman_out" rows="10" cols="90" readonly><svg xmlns="http://www.w3.org/2000/svg" width="120" height="250">
-				<circle r="50" cx="50" cy="190" fill="white" stroke="black" stroke-width="1"/>
-				<circle r="40" cx="50" cy="140" fill="white" stroke="black" stroke-width="1"/>
-				<circle r="35" cx="50" cy="90" fill="white" stroke="black" stroke-width="1"/>
-				<polygon points="60,120 52,90 68,90" fill="red"/>
-			</svg>
+			<textarea id="snowman_out" rows="10" cols="100" readonly><svg xmlns="http://www.w3.org/2000/svg" width="120" viewBox="0 0 120 239" id="snm_preview" >
+  <circle r="55" cx="60" cy="183" fill="white" stroke="black" stroke-width="1"/>
+  <circle r="45" cx="60" cy="133" fill="white" stroke="black" stroke-width="1"/>
+  <circle r="35" cx="60" cy="88" fill="white" stroke="black" stroke-width="1"/>
+  <polygon points="108,98 57,97 61,87" fill="red"/>
+  <rect x="33" y="0" width="56" height="55" fill="black" id="hat"/>
+  <ellipse cx="61" cy="58" rx="45" ry="8" fill="black" id="hat_btm" />
+  <ellipse cx="49" cy="81" rx="5" ry="8" fill="black" id="eye_l" />
+  <ellipse cx="72" cy="79" rx="5" ry="8" fill="black" id="eye_r" />
+  <ellipse cx="52" cy="108" rx="3" ry="2" fill="black" id="mouth_1" />
+  <ellipse cx="62" cy="111" rx="3" ry="2" fill="black" id="mouth_2" />
+  <ellipse cx="72" cy="110" rx="3" ry="2" fill="black" id="mouth_3" />
+  <ellipse cx="80" cy="104" rx="3" ry="2" fill="black" id="mouth_4" />
+  <ellipse cx="68" cy="131" rx="4" ry="5" fill="black" id="button_1" />
+  <ellipse cx="74" cy="146" rx="4" ry="5" fill="black" id="button_2" />
+  <ellipse cx="78" cy="166" rx="4" ry="5" fill="black" id="button_3" />
+  <ellipse cx="77" cy="190" rx="4" ry="5" fill="black" id="button_4" />
+  <ellipse cx="74" cy="215" rx="4" ry="5" fill="black" id="button_5" /></svg>
 		</textarea>
 		<button onclick="copySvg('snowman_out')">Copy SVG file</button>
-			<button onclick="copySvgAsCss('snowman_out')">Copy as CSS rule</button>
+		<button onclick="copySvgAsCss('snowman_out')">Copy as CSS rule</button>
 		</fieldset>
 	</form>
+	<a href="Sz_SVG_card_dynamo.html" title="not yet...">.</a>
 </body>
 </html>
