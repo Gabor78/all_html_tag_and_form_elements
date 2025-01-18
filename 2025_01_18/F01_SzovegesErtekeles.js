@@ -6,7 +6,7 @@
 //5 --> jeles
 <script>
     let jegy = prompt("Add meg az osztályzatot!");
-    else if(jegy==1) document.write("elégtelem"); //ez van a leírásban
+    if(jegy==1) document.write("elégtelem"); //ez van a leírásban
     else if(jegy==2) document.write("Elégséges");
     else if(jegy==3) document.write("Közepes");
     else if(jegy==4) document.write("Jó");
