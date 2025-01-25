@@ -55,9 +55,9 @@ document.write("<br><br>");
 let e = Number(prompt("Kérek egy számot!"));
 let f = Number(prompt("Kérem az osztót!"));
 if (e % f == 0) {
-	document.write(`${e} osztja ${f}-t maradék nélkül` + "<br><br>");
+	document.write(`${f} osztja ${e}-t maradék nélkül` + "<br><br>");
 } else {
-	document.write(`${e} NEM osztja ${f}-t maradék nélkül` + "<br><br>");
+	document.write(`${f} NEM osztja ${e}-t maradék nélkül` + "<br><br>");
 }
 
 //6. feladat
