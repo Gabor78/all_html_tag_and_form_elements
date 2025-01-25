@@ -20,7 +20,7 @@ document.write(`${a} a ${b}. hatványon (${a}^${b}) vagyis: ${a}<sup>${b}</sup> 
 let alsoHatar = Number(prompt("Kérem az intervallum alsó határát!"));
 let felsoHatar = Number(prompt("Kérem az intervallum felső határát!"));
 if(alsoHatar > felsoHatar) {
-	document.write(`${alsoHatar} nagyobb, mint ${felsoHatar}` + "<br><br>");
+	document.write(`${alsoHatar} nagyobb, mint ${felsoHatar} - nem intervallum` + "<br><br>");
 } else if(alsoHatar == felsoHatar) {
 	document.write(`${alsoHatar} = ${felsoHatar} - nem intervallum` + "<br><br>");
 } else {
@@ -37,8 +37,8 @@ if(alsoHatar > felsoHatar) {
 	if (d <= alsoHatar) {
 		d = d + 2;
 	}
+	document.write(`[${alsoHatar},${felsoHatar}] intervallumban páros szám: ` + d + "<br><br>");
 }
-document.write(`[${alsoHatar},${felsoHatar}] intervallumban páros szám: ` + d + "<br><br>");
 
 //4. feladat
 let kor = Number(prompt("Kérek egy életkort 1-120 között!"));
