@@ -34,15 +34,15 @@ document.write("A megadott életkor: " + kor + "<br>");
 if (kor >= 0 && kor < 6) {
 	document.write("Kisgyermekkor");
 } else if (kor >= 6 && kor <= 12) {
-	document.write("Gyermekkor:");
+	document.write("Gyermekkor");
 } else if (kor >= 12 && kor <= 16) {
-	document.write("Serdülőkor:");
+	document.write("Serdülőkor");
 } else if (kor >= 16 && kor <= 20) {
-	document.write("Ifjúkor:");
+	document.write("Ifjúkor");
 } else if (kor >= 20 && kor <= 30) {
 	document.write("Fiatal felnőtt kor");
 } else if (kor >= 30 && kor <= 60) {
-	document.write("Felnőtt kor:");
+	document.write("Felnőtt kor");
 } else if (kor >= 60 && kor <= 120) {
 	document.write("Aggkor");
 } else {
