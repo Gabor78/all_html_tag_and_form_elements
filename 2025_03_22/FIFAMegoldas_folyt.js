@@ -27,7 +27,7 @@ const csapatAdat = [
 ];
 
 function ParseDataObj(dataObj){
-	const objectsArr = [];
+	const objectDataArr = [];
 	for(let i = 0; i < dataObj.length; i++){
 		let oneObject = {};
 		const splittedDataArr = dataObj[i].split(";");
@@ -35,9 +35,9 @@ function ParseDataObj(dataObj){
 		oneObject.place = Number(splittedDataArr[1]);
 		oneObject.change = Number(splittedDataArr[2]);
 		oneObject.score = Number(splittedDataArr[3]);
-		objectsArr.push(oneObject);
+		objectDataArr.push(oneObject);
 	}
-	return objectsArr;
+	return objectDataArr;
 }
 
 const dreamTeam = ParseDataObj(csapatAdat);
