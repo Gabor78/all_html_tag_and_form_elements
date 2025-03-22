@@ -26,21 +26,21 @@ const csapatAdat = [
 "Uruguay;6;-1;1639"
 ];
 
-function ParseData(data){
+function ParseDataObj(dataObj){
 	const objectsArr = [];
-	for(let i = 0; i < data.length; i++){
+	for(let i = 0; i < dataObj.length; i++){
 		let oneObject = {};
-		const splittedData = data[i].split(";");
-		oneObject.name = splittedData[0];
-		oneObject.place = Number(splittedData[1]);
-		oneObject.change = Number(splittedData[2]);
-		oneObject.score = Number(splittedData[3]);
+		const splittedDataArr = dataObj[i].split(";");
+		oneObject.name = splittedDataArr[0];
+		oneObject.place = Number(splittedDataArr[1]);
+		oneObject.change = Number(splittedDataArr[2]);
+		oneObject.score = Number(splittedDataArr[3]);
 		objectsArr.push(oneObject);
 	}
 	return objectsArr;
 }
 
-const dreamTeam = ParseData(csapatAdat);
+const dreamTeam = ParseDataObj(csapatAdat);
 console.log(dreamTeam);
 
 //F01 - Adja meg aktuálisan hány csapat szerepel a ranglistán
