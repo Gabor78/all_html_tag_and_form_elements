@@ -26,7 +26,7 @@ const csapatAdat = [
 "Uruguay;6;-1;1639"
 ];
 
-function ParseDataObj(dataObj){
+function ParseTeamsData(dataObj){
 	const objectDataArr = [];
 	for(let i = 0; i < dataObj.length; i++){
 		let oneObject = {};
@@ -40,22 +40,22 @@ function ParseDataObj(dataObj){
 	return objectDataArr;
 }
 
-const dreamTeam = ParseDataObj(csapatAdat);
+const dreamTeam = ParseTeamsData(csapatAdat);
 console.log(dreamTeam);
 
 //F01 - Adja meg aktuálisan hány csapat szerepel a ranglistán
-function SummTeams(teamsArr){
+function CountTeams(teamsArr){
 	return teamsArr.length;
 }
 
-function SummTeamsWriteOut(SummTeams){
-	document.write("Aktuálisan " + SummTeams + " csapat szerepel a ranglistán<br><br>");
+function ShowCountTeams(CountTeams){
+	document.write("Aktuálisan " + CountTeams + " csapat szerepel a ranglistán<br><br>");
 }
 
-SummTeamsWriteOut(SummTeams(dreamTeam));
+ShowCountTeams(CountTeams(dreamTeam));
 
 //F02 - Írja ki mennyi a résztvevő csapatok átlagpontszáma
-function AverageScore(teamsArr){
+function CalculateAverageScore(teamsArr){
 	let summScore = 0;
 	let averageScore = 0;
 	for(let i = 0; i < teamsArr.length; i++){
@@ -65,11 +65,11 @@ function AverageScore(teamsArr){
 	return averageScore;
 }
 
-function AverageScoreWriteOut(averageScore){
+function ShowCalculateAverageScore(averageScore){
 	document.write("A résztvevő csapatok átlagpontszáma " + averageScore + "<br><br>");
 }
 
-AverageScoreWriteOut(AverageScore(dreamTeam));
+ShowCalculateAverageScore(CalculateAverageScore(dreamTeam));
 
 //F03 - Listázza ki azokat a csapatokat, akik az átlagnál több pontot értek el!
 function ListTeamsThatMorePointsThanAverage(teamsArr,averageScore){
@@ -82,7 +82,7 @@ function ListTeamsThatMorePointsThanAverage(teamsArr,averageScore){
 	return teamsThatMorePointsThanAverage;
 }
 
-function ListTeamsThatMorePointsThanAverageWriteOut(teamsThatMorePointsThanAverage){
+function ShowListTeamsThatMorePointsThanAverage(teamsThatMorePointsThanAverage){
 	document.write("Azok a csapatok, akik az átlagnál több pontot értek el:");
 	document.write("<table border='1'><tr><th>Csapat neve</th><th>Csapat helyezése</th><th>Csapat helyének változása</th><th>Csapat Pontszama</th></tr>")
 	for(let i = 0; i < teamsThatMorePointsThanAverage.length; i++){
@@ -96,7 +96,7 @@ function ListTeamsThatMorePointsThanAverageWriteOut(teamsThatMorePointsThanAvera
 	document.write("</table><br>");
 }
 
-ListTeamsThatMorePointsThanAverageWriteOut(ListTeamsThatMorePointsThanAverage(dreamTeam,AverageScore(dreamTeam)));
+ShowListTeamsThatMorePointsThanAverage(ListTeamsThatMorePointsThanAverage(dreamTeam,CalculateAverageScore(dreamTeam)));
 
 //F04 - Írja ki a legtöbbet javító csapat adatait: Helyezés, CsapatNeve, Pontszáma
 function TeamThatImprovedTheMost(teamsArr){
@@ -113,14 +113,14 @@ function TeamThatImprovedTheMost(teamsArr){
 	return teamThatImprovedTheMost;
 }
 
-function TeamThatImprovedTheMostWriteOut(teamThatImprovedTheMost){
+function ShowTeamThatImprovedTheMost(teamThatImprovedTheMost){
 	document.write("A legtöbbet javító csapat adatai:<br>");
 	document.write("Helyezés: " + teamThatImprovedTheMost.place + "<br>");
 	document.write("Név: " + teamThatImprovedTheMost.name + "<br>");
 	document.write("Pontszám: " + teamThatImprovedTheMost.score + "<br><br>");
 }
 
-TeamThatImprovedTheMostWriteOut(TeamThatImprovedTheMost(dreamTeam));
+ShowTeamThatImprovedTheMost(TeamThatImprovedTheMost(dreamTeam));
 
 //F05 - Határozza meg a adatok közöt megtalálható-e Magyarország csapata!
 function CanItBeFound(teamsArr,teamName){
@@ -133,7 +133,7 @@ function CanItBeFound(teamsArr,teamName){
 	return canItBeFound;
 }
 
-function CanItBeFoundWriteOut(teamsArr,teamName){
+function ShowCanItBeFound(teamsArr,teamName){
 	if(CanItBeFound(teamsArr,teamName)){
 		document.write(teamName + " megtalálható a csapatok között<br><br>");
 	} else {
@@ -141,13 +141,13 @@ function CanItBeFoundWriteOut(teamsArr,teamName){
 	}
 }
 
-CanItBeFoundWriteOut(dreamTeam,"Magyarország");
+ShowCanItBeFound(dreamTeam,"Magyarország");
 
-CanItBeFoundWriteOut(dreamTeam,"Anglia");
+ShowCanItBeFound(dreamTeam,"Anglia");
 
-CanItBeFoundWriteOut(dreamTeam,"Oceánia");
+ShowCanItBeFound(dreamTeam,"Oceánia");
 
-CanItBeFoundWriteOut(dreamTeam,"Belgium");
+ShowCanItBeFound(dreamTeam,"Belgium");
 
 //F06 - Készítsen statisztikát a helyezések változása (Valtozas) alapján csoportosítva a csapatok számáról
 //Csak azok a helyezésváltozások jelenjenek meg a képernyőn, amelyek esetében a csapatok száma több mint egy volt!
@@ -188,7 +188,7 @@ function NumberOfChanges(teamsArr, ratesOfChanges){
 let numberOfChanges = NumberOfChanges(dreamTeam, typesOfChanges);
 console.log(numberOfChanges);
 
-function NumberOfChangesWriteOut(numberOfChanges, typesOfChanges){
+function ShowNumberOfChanges(numberOfChanges, typesOfChanges){
 	document.write("Statisztika:<br>");
 	for(let i = 0; i < numberOfChanges.length; i++){
 		if(numberOfChanges[i] > 1){
@@ -197,7 +197,7 @@ function NumberOfChangesWriteOut(numberOfChanges, typesOfChanges){
 	}
 }
 
-NumberOfChangesWriteOut(numberOfChanges, typesOfChanges);
+ShowNumberOfChanges(numberOfChanges, typesOfChanges);
 
 //V2
 document.write("<br>V2:<br>");
@@ -214,7 +214,7 @@ function StatisticsBasedOnChangesInRankings(teamsArr){
 	return changeStat;
 }
 
-function StatisticsBasedOnChangesInRankingsWriteOut(changeStat){
+function ShowStatisticsBasedOnChangesInRankings(changeStat){
 	document.write("Statisztika a helyezések változása alapján csoportosítva, ahol a csapatok száma több mint egy:<br>");
 	for (let change in changeStat) {
         if (changeStat[change] > 1) {
@@ -228,4 +228,4 @@ function StatisticsBasedOnChangesInRankingsWriteOut(changeStat){
 	}
 }
 
-StatisticsBasedOnChangesInRankingsWriteOut(StatisticsBasedOnChangesInRankings(dreamTeam));
+ShowStatisticsBasedOnChangesInRankings(StatisticsBasedOnChangesInRankings(dreamTeam));
