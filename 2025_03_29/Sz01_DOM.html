@@ -96,8 +96,8 @@
     </div>
 	
 	<script>
-	let osszesElem = document.getElementsByTagName("*").length;
-	console.log("A DOM-ban található összes csomópont száma: " + osszesElem);
+	let osszesElem = document.getElementsByTagName("*");
+	console.log("A DOM-ban található összes csomópont száma: " + osszesElem.length);
 
 	let regFormTáblázat = document.querySelector("#RegFormTáblázat");
 	console.log("A regFormTáblázat szélessége: " + regFormTáblázat.clientWidth + "px");
