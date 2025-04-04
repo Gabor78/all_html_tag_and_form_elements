@@ -132,26 +132,26 @@
 		let behuzasVonallal = " - ".repeat(melyseg);
 		let behuzasTerkozzel = "   ".repeat(melyseg);
 		if (elem.nodeType === 1) {
-				console.log(`${melyseg}. 📌${behuzasVonallal}  <${elem.tagName.toLowerCase()}>`);
+				console.log(`   ${melyseg}. 📌${behuzasVonallal}  <${elem.tagName.toLowerCase()}>`);
 				if (elem.id != "") {
 					if (elem.tagName.toLowerCase() == "label") {
-						console.log(`${behuzasTerkozzel}        🦯 textContent: "${elem.textContent}"`);
+						console.log(`   ${behuzasTerkozzel}        🦯 textContent: "${elem.textContent}"`);
 					}
-					console.log(`${behuzasTerkozzel}        ️🆔 #ID: ${elem.id}`);
-					console.log(`${behuzasTerkozzel}        🖌️ className: ${elem.className}`);
+					console.log(`   ${behuzasTerkozzel}        ️🆔 #ID: ${elem.id}`);
+					console.log(`   ${behuzasTerkozzel}        🖌️ className: ${elem.className}`);
 					
 					if (elem.tabIndex > 0) {
-						console.log(`${behuzasTerkozzel}        ℹ️️ tabIndex: ${elem.tabIndex}`);
+						console.log(`   ${behuzasTerkozzel}        ℹ️️ tabIndex: ${elem.tabIndex}`);
 					}
 					if (elem.tagName.toLowerCase() == "input")
 						if (!elem.checkValidity()) {
-							console.log(`${behuzasTerkozzel}        ❌ [${elem.id}] Érvénytelen: ${elem.validationMessage}`);
+							console.log(`   ${behuzasTerkozzel}        ❌ [${elem.id}] Érvénytelen: ${elem.validationMessage}`);
 						} else {
-							console.log(`${behuzasTerkozzel}        ✅ [${elem.id}] Érvényes`);
+							console.log(`   ${behuzasTerkozzel}        ✅ [${elem.id}] Érvényes`);
 						}
-					console.log(`${behuzasTerkozzel}        🔸 szülő elem: <${elem.parentNode.tagName.toLowerCase()}>`);
+					console.log(`   ${behuzasTerkozzel}        🔸 szülő elem: <${elem.parentNode.tagName.toLowerCase()}>`);
 					if (elem.firstElementChild) {
-						console.log(` ${behuzasTerkozzel}       🔹 gyermek elem: <${elem.firstElementChild.tagName.toLowerCase()}>`);
+						console.log(`    ${behuzasTerkozzel}       🔹 gyermek elem: <${elem.firstElementChild.tagName.toLowerCase()}>`);
 					}
 				}
 				for (let i = 0; i < elem.children.length; i++) {
