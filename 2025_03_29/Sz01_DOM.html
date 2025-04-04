@@ -120,11 +120,15 @@
 	let regisztralokGomb = document.querySelector("#RegisztralokGomb");
 	console.log("📏 A Regisztrálok gomb távolsága a szülő elem (RegFormTáblázat) tetejétől: " + regisztralokGomb.scrollWidth + "px");
 
-	console.log("");
-	console.log("DOM FA STRUKTÚRA (Szint 📌 - Csomópont):");
+	function DOMSzerkezetKiirasa(elem, melyseg){
+		console.log("");
+		console.log("🌳 DOM FA-SZERKEZET 🌳");
+		console.log("Szint 📌 - Csomópont:");
+		DOMSzerkezet(document.body, 0);
+	}
 	DOMSzerkezetKiirasa(document.body, 0);
 
-	function DOMSzerkezetKiirasa(elem, melyseg) {
+	function DOMSzerkezet(elem, melyseg) {
 		let behuzasVonallal = " - ".repeat(melyseg);
 		let behuzasTerkozzel = "   ".repeat(melyseg);
 		if (elem.nodeType === 1) {
@@ -151,7 +155,7 @@
 					}
 				}
 				for (let i = 0; i < elem.children.length; i++) {
-					DOMSzerkezetKiirasa(elem.children[i], melyseg + 1);
+					DOMSzerkezet(elem.children[i], melyseg + 1);
 				}
 		}
 	}
