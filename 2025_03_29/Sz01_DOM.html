@@ -110,7 +110,7 @@
 			LegmelyebbDOMElem(elem.children[i], melyseg + 1);
 		}
 	}
-	LegmelyebbDOMElem(document.body, 0);
+	LegmelyebbDOMElem(document.body, 1);
 	console.log("✏️ A DOM legnagyobb mélysége: " + legnagyobbMelyseg);
 
 	let regFormTáblázat = document.querySelector("#RegFormTáblázat");
@@ -121,9 +121,9 @@
 		console.log("");
 		console.log("🌳 DOM FA-SZERKEZET 🌳");
 		console.log("Szint 📌 - Csomópont:");
-		DOMSzerkezet(document.body, 0);
+		DOMSzerkezet(document.body, 1);
 	}
-	DOMSzerkezetKiirasa(document.body, 0);
+	DOMSzerkezetKiirasa(document.body, 1);
 
 	function DOMSzerkezet(elem, melyseg) {
 		let behuzasVonallal = " - ".repeat(melyseg);
@@ -158,7 +158,7 @@
 	}
 
     </script>
-	<input type="button" onclick="DOMSzerkezetKiirasa(document.body, 0)" value="Teszt">
+	<input type="button" onclick="DOMSzerkezetKiirasa(document.bodys, 1)" value="Teszt">
 </body>
 
 </html>
