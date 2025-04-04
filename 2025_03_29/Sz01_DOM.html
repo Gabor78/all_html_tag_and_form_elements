@@ -136,9 +136,15 @@
 					console.log(`${behuzasTerkozzel}        ️🆔 #ID: ${elem.id}`);
 					console.log(`${behuzasTerkozzel}        🖌️ className: ${elem.className}`);
 					
-					if(elem.tabIndex > 0) {
+					if (elem.tabIndex > 0) {
 						console.log(`${behuzasTerkozzel}        ℹ️️ tabIndex: ${elem.tabIndex}`);
 					}
+					if (elem.tagName.toLowerCase() == "input")
+						if (!elem.checkValidity()) {
+							console.log(`${behuzasTerkozzel}        ❌ [${elem.id}] Érvénytelen: ${elem.validationMessage}`);
+						} else {
+							console.log(`${behuzasTerkozzel}        ✅ [${elem.id}] Érvényes`);
+						}
 					console.log(`${behuzasTerkozzel}        🔸 szülő elem: <${elem.parentNode.tagName.toLowerCase()}>`);
 					if (elem.firstElementChild) {
 						console.log(` ${behuzasTerkozzel}       🔹 gyermek elem: <${elem.firstElementChild.tagName.toLowerCase()}>`);
@@ -151,6 +157,7 @@
 	}
 
     </script>
+	<input type="button" onclick="DOMSzerkezetKiirasa(document.body, 0)" value="Teszt">
 </body>
 
 </html>
