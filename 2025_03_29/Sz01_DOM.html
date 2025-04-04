@@ -102,15 +102,15 @@
 	console.log("📦 A DOM-ban található összes csomópontok száma: " + osszesElem.length);
 	
 	let legnagyobbMelyseg = 0;
-	function LegmelyebbDOMElem(elem, melyseg = 0) {
+	function LegmelyebbDOMElem(elem, melyseg) {
 		if (melyseg > legnagyobbMelyseg) {
 			legnagyobbMelyseg = melyseg;
 		}
-		for (let gyerek of elem.children) {
-			LegmelyebbDOMElem(gyerek, melyseg + 1);
+		for (let i = 0; i < elem.children.length; i++) {
+			LegmelyebbDOMElem(elem.children[i], melyseg + 1);
 		}
 	}
-	LegmelyebbDOMElem(document.body);
+	LegmelyebbDOMElem(document.body, 0);
 	console.log("✏️ A DOM legnagyobb mélysége: " + legnagyobbMelyseg);
 
 	let regFormTáblázat = document.querySelector("#RegFormTáblázat");
@@ -122,30 +122,30 @@
 
 	console.log("");
 	console.log("DOM FA STRUKTÚRA (Szint 📌 - Csomópont):");
-	DOMSzerkezetKiirasa(ADokumentumTeste);
+	DOMSzerkezetKiirasa(ADokumentumTeste, 0);
 
-	function DOMSzerkezetKiirasa(node, melyseg = 0) {
+	function DOMSzerkezetKiirasa(elem, melyseg) {
 		let behuzasVonallal = " - ".repeat(melyseg);
 		let behuzasTerkozzel = "   ".repeat(melyseg);
-		if (node.nodeType === 1) {
-				console.log(`${melyseg}. 📌${behuzasVonallal}  <${node.tagName.toLowerCase()}>`);
-				if (node.id != "") {
-					if (node.tagName.toLowerCase() == "label") {
-						console.log(`${behuzasTerkozzel}        🦯 textContent: "${node.textContent}"`);
+		if (elem.nodeType === 1) {
+				console.log(`${melyseg}. 📌${behuzasVonallal}  <${elem.tagName.toLowerCase()}>`);
+				if (elem.id != "") {
+					if (elem.tagName.toLowerCase() == "label") {
+						console.log(`${behuzasTerkozzel}        🦯 textContent: "${elem.textContent}"`);
 					}
-					console.log(`${behuzasTerkozzel}        ️🆔 #ID: ${node.id}`);
-					console.log(`${behuzasTerkozzel}        🖌️ className: ${node.className}`);
+					console.log(`${behuzasTerkozzel}        ️🆔 #ID: ${elem.id}`);
+					console.log(`${behuzasTerkozzel}        🖌️ className: ${elem.className}`);
 					
-					if(node.tabIndex > 0) {
-						console.log(`${behuzasTerkozzel}        ℹ️️ tabIndex: ${node.tabIndex}`);
+					if(elem.tabIndex > 0) {
+						console.log(`${behuzasTerkozzel}        ℹ️️ tabIndex: ${elem.tabIndex}`);
 					}
-					console.log(`${behuzasTerkozzel}        🔸 szülő elem: <${node.parentNode.tagName.toLowerCase()}>`);
-					if (node.firstElementChild) {
-						console.log(` ${behuzasTerkozzel}       🔹 gyermek elem: <${node.firstElementChild.tagName.toLowerCase()}>`);
+					console.log(`${behuzasTerkozzel}        🔸 szülő elem: <${elem.parentNode.tagName.toLowerCase()}>`);
+					if (elem.firstElementChild) {
+						console.log(` ${behuzasTerkozzel}       🔹 gyermek elem: <${elem.firstElementChild.tagName.toLowerCase()}>`);
 					}
 				}
-				for (let i = 0; i < node.children.length; i++) {
-					DOMSzerkezetKiirasa(node.children[i], melyseg + 1);
+				for (let i = 0; i < elem.children.length; i++) {
+					DOMSzerkezetKiirasa(elem.children[i], melyseg + 1);
 				}
 		}
 	}
