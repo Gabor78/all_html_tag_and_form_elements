@@ -10,7 +10,7 @@
             color: white;
 			width: 100%;
 			height: 100%;
-			background: radial-gradient(circle, yellow, black);
+			background: #44A08D;
         }
 
         #ugraloFelirat {
@@ -19,77 +19,89 @@
             left: 50%;
             width: 60px;
             height: 60px;
-			padding-top: 15px;
-            font-size: 20px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+            font-size: 17px;
+			line-height: 15px;
+			font-weight: bold;
             text-align: center;
-			color: brown;
+			color: red;
             border-radius: 50%;
             cursor: none;
-			background: radial-gradient(circle, yellow, black);
+			background: radial-gradient(circle, #44A08D, #12696B);
 			animation: 1.2s mozog cubic-bezier(0.5, 0, 0.5, 1) infinite;
 			opacity: 0.5;
+			box-shadow: 0 5px 8px rgba(0,0,0,0.35);
+			transition: box-shadow 0.3s ease;
         }
 
         #ugraloFelirat::before, 
 		#ugraloFelirat::after {
 			content: "";
 			position: absolute;
-			width: 50px;
+			width: 120px;
 			height: 10px;
 			opacity: 0.5;
 		}
 		
 		#ugraloFelirat::before{
-			left: -49px;
+			left: -119px;
 			top: 25px;
 			transform: rotate(-60deg);
-            background: linear-gradient(45deg, yellow, black);
+            background: linear-gradient(45deg, #44A08D, #12696B);
 			animation: 0.3s mozog2 linear infinite;
 		} 
 		#ugraloFelirat::after{
-			right: -48px;
+			right: -118px;
 			top: 25px;
 			transform: rotate(60deg);
-            background: linear-gradient(90deg, black, yellow);
+            background: linear-gradient(45deg, #12696B, #44A08D);
 			animation: 0.3s mozog3 linear infinite;
 		}
 
 		@keyframes mozog {
 			0%{
-				border-radius: 15% 15% 10% 10%;
-				transform: translateY(0);
+				border-radius: 35% 35% 40% 40%;
+				transform: translateY(10px);
 			}
 			50%{
-				border-radius: 20% 20% 50% 50%;
-				transform: translateY(-30px);
+				border-radius: 40% 40% 50% 50%;
+				transform: translateY(-32px);
+				box-shadow: 0 35px 12px rgba(0,0,0,0.2);
 			}
 			100%{
-				border-radius: 15% 15% 10% 10%;
-				transform: translateY(0);
+				border-radius: 35% 35% 40% 40%;
+				transform: translateY(10px);
 			}
 		}
 
 		@keyframes mozog2 {
 			0%{
 				transform: translateY(0) rotate(0deg);
+				height: 20px;
 			}
 			50%{
 				transform: translateY(-5px) rotate(15deg);
+				height: 3px;
 			}
 			100%{
 				transform: translateY(0) rotate(0deg);
+				height: 20px;
 			}
 		}
 		
 		@keyframes mozog3 {
 			0%{
 				transform: translateY(0) rotate(0deg);
+				height: 20px;
 			}
 			50%{
 				transform: translateY(-5px) rotate(-15deg);
+				height: 3px;
 			}
 			100%{
 				transform: translateY(0) rotate(0deg);
+				height: 20px;
 			}
 		}
 
@@ -99,7 +111,7 @@
             left: 50%;
             width: 50px;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.75);
+            background-color: rgba(170, 0, 0, 0.75);
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
         }
@@ -110,7 +122,7 @@
             width: 100px;
 			font-size: 25px;
             text-align: center;
-            background-color: rgba(200, 0, 0, 0.8);
+            background-color: rgba(180, 0, 0, 0.8);
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
         }
@@ -120,11 +132,11 @@
 <body>
     <div id="szamlalo">0</div>
     <div id="visszaszamlalo">&nbsp;</div>
-    <div id="ugraloFelirat">0 - 0<br> O</div>
+    <div id="ugraloFelirat">""""<br>O&nbsp;&nbsp;O<br>"<br>TT</div>
 
     <script>
 		let klikkSzamlalo = 0;
-		let ido = 60;
+		let ido = 6;
 		let ugraloFelirat = document.querySelector("#ugraloFelirat");
         ugraloFelirat.addEventListener("click", ugras);
 
@@ -137,7 +149,8 @@
 				ugraloFelirat.style.left = randomLeftErtek + "px";
 				ugraloFelirat.style.width = (60 - klikkSzamlalo * 2) + "px";
 				ugraloFelirat.style.height = (60 - klikkSzamlalo * 2) + "px";
-				ugraloFelirat.style.fontSize = (20 - klikkSzamlalo / 2) + "px";
+				ugraloFelirat.style.fontSize = (17 - klikkSzamlalo / 2) + "px";
+				ugraloFelirat.style.lineHeight = (15 - klikkSzamlalo / 2) + "px";
 				
 				document.querySelector("#szamlalo").innerHTML = klikkSzamlalo;
 			}
@@ -151,9 +164,11 @@
 			} else {
 				ugraloFelirat.style.backgroundColor = "red";
 				ugraloFelirat.style.width = "150px";
+				ugraloFelirat.style.height = "50px";
 				ugraloFelirat.style.top = "50%";
 				ugraloFelirat.style.left = "47%";
 				ugraloFelirat.style.fontSize = "20px";
+				ugraloFelirat.style.paddingTop = "35px";
 				ugraloFelirat.innerHTML = "Lejárt az idő!";
 			}
 		}
