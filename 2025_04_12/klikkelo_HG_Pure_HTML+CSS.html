@@ -214,8 +214,8 @@
         function ugras() {
             if (ido > 0) {
 				klikkSzamlalo++;
-				let randomTopErtek = Math.round(Math.random() * window.innerHeight);
-				let randomLeftErtek = Math.round(Math.random() * window.innerWidth);
+				let randomTopErtek = Math.round(Math.random() * window.innerHeight - 30);
+				let randomLeftErtek = Math.round(Math.random() * window.innerWidth - 30);
 				ugraloFelirat.style.top = randomTopErtek + "px";
 				ugraloFelirat.style.left = randomLeftErtek + "px";
 				ugraloFelirat.style.width = (60 - klikkSzamlalo * 2) + "px";
