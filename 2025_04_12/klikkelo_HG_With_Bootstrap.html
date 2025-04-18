@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title>Klikkelő játék</title>
+    <style>
+		html {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+
+        body {
+			background: #44A08D;
+        }
+
+		@keyframes villan {
+			0% {
+				opacity: 0.75;
+				transform: scale(1);
+			}
+			100% {
+				opacity: 0;
+				transform: scale(3);
+			}
+		}
+
+		.animacio {
+			animation: villan 1s ease-out;
+		}
+		
+        #ugraloFelirat {
+            width: 60px;
+            height: 95px;
+			font-size: 17px;
+			background: radial-gradient(circle, #44A08D, #12696B);
+			animation: 1.2s mozogTest cubic-bezier(0.5, 0, 0.5, 1) infinite;
+			opacity: 0.5;
+			box-shadow: 0 5px 8px rgba(0,0,0,0.35);
+			transition: box-shadow 0.3s ease;
+            cursor: none;
+			--szarnySzelesseg: 120px;
+			--szarnySzelessegNegativ: -118px;
+			--szarnyMagassag: 25px;
+        }
+
+        #ugraloFelirat::before, 
+		#ugraloFelirat::after {
+			content: "";
+			position: absolute;
+			width: var(--szarnySzelesseg);
+			top: var(--szarnyMagassag);
+			border: 0;
+			height: 10px;
+			opacity: 0.5;
+		}
+		
+		#ugraloFelirat::before{
+			left: var(--szarnySzelessegNegativ);
+			transform: translateY: -20px;
+			transform: rotate(-60deg);
+            background: linear-gradient(45deg, #44A08D, #12696B);
+			animation: 0.3s mozogBal linear infinite;
+		} 
+		#ugraloFelirat::after{
+			right: var(--szarnySzelessegNegativ);
+			transform: translateY: 20px;
+			transform: rotate(60deg);
+            background: linear-gradient(45deg, #12696B, #44A08D);
+			animation: 0.3s mozogJobb linear infinite;
+		}
+
+		@keyframes mozogTest {
+			0%{
+				border-radius: 35% 35% 40% 40%;
+				transform: translateY(10px);
+			}
+			50%{
+				border-radius: 40% 40% 50% 50%;
+				transform: translateY(-32px);
+				box-shadow: 0 35px 12px rgba(0,0,0,0.2);
+			}
+			100%{
+				border-radius: 35% 35% 40% 40%;
+				transform: translateY(10px);
+			}
+		}
+
+		@keyframes mozogBal {
+			0%{
+				transform: translateY(0) rotate(0deg);
+				height: 20px;
+			}
+			50%{
+				transform: translateY(-5px) rotate(15deg);
+				height: 3px;
+			}
+			100%{
+				transform: translateY(0) rotate(0deg);
+				height: 20px;
+			}
+		}
+		
+		@keyframes mozogJobb {
+			0%{
+				transform: translateY(0) rotate(0deg);
+				height: 20px;
+			}
+			50%{
+				transform: translateY(-5px) rotate(-15deg);
+				height: 3px;
+			}
+			100%{
+				transform: translateY(0) rotate(0deg);
+				height: 20px;
+			}
+		}
+
+        #pontSzamlalo {
+			width: 50px;
+        }
+        #pontSzamlalo::after {
+			content: "<=== ez itt a pontszám |=+=+=+=| az meg az idő ===>";
+			font-size: 11px;
+			position: absolute;
+			left: 70px;
+            width: 290px;
+		}
+        #visszaszamlalo {
+            width: 50px;
+        }
+		
+    </style>
+</head>
+
+<body class="text-white w-100 h-100 m-0">
+	<div id="ugraloFelirat" class="position-absolute top-50 start-50 opacity-50 p-2 fw-bold text-danger text-center rounded-50">""""<br>O&nbsp;&nbsp;O<br>"<br>TT</div>
+    <div id="pontSzamlalo" class="position-fixed top-0 start-50 translate-middle-x bg-danger text-white text-center rounded-bottom shadow fs-7">0</div>
+    <div id="visszaszamlalo" class="position-fixed top-0 end-0 bg-danger text-white text-center rounded-bottom shadow fs-4">&nbsp;</div>
+    <div id="kezdodikFelirat" class="position-absolute top-50 start-50 text-danger display-1 fw-bold">3</div>
+
+    <script>
+		let klikkSzamlalo = 0;
+		let ido = 62;
+		let kezdodikFelirat = document.querySelector("#kezdodikFelirat");
+		let visszaszamolKezdesig = 3;
+		let visszaszamlalo = document.querySelector("#visszaszamlalo");
+		let ugraloFelirat = document.querySelector("#ugraloFelirat");
+        ugraloFelirat.addEventListener("click", ugras);
+		
+		function kezdodik(){
+			kezdodikFelirat.innerHTML = visszaszamolKezdesig;
+			ugraloFelirat.classList.add("invisible");
+			visszaszamlalo.classList.add("invisible");
+			kezdodikFelirat.classList.add("visible");
+			ugraloFelirat.style.fontSize = "17px";
+			ugraloFelirat.style.lineHeight = "15px";
+			ugraloFelirat.style.height = "95px";
+			if (visszaszamolKezdesig > 0) {
+				kezdodikFelirat.classList.remove('animacio');
+				kezdodikFelirat.offsetWidth; //ez a trück azért kell, hogy újra lefusson az anim
+				kezdodikFelirat.classList.add('animacio');
+				visszaszamolKezdesig--;
+				setTimeout(kezdodik, 1000);
+			} else {
+				ugraloFelirat.classList.remove("invisible");
+				ugraloFelirat.classList.add("visible");
+				kezdodikFelirat.classList.remove("visible");
+				kezdodikFelirat.classList.add("invisible");
+				visszaszamlalo.classList.remove("invisible");
+				visszaszamlalo.classList.add("visible");
+			}
+		}
+		kezdodik();
+
+        function ugras() {
+            if (ido > 0) {
+				klikkSzamlalo++;
+				let randomTopErtek = Math.round(Math.random() * window.innerHeight - 30);
+				let randomLeftErtek = Math.round(Math.random() * window.innerWidth - 30);
+				ugraloFelirat.classList.remove("top-0");
+				ugraloFelirat.classList.remove("start-50");
+				ugraloFelirat.style.top = randomTopErtek + "px";
+				ugraloFelirat.style.left = randomLeftErtek + "px";
+				ugraloFelirat.style.width = (60 - klikkSzamlalo * 2) + "px";
+				ugraloFelirat.style.height = (95 - klikkSzamlalo * 2) + "px";
+				ugraloFelirat.style.fontSize = (17 - klikkSzamlalo / 2) + "px";
+				ugraloFelirat.style.lineHeight = (15 - klikkSzamlalo / 2) + "px";
+				ugraloFelirat.style.setProperty('--szarnySzelesseg', (120 - klikkSzamlalo * 2) + 'px');
+				ugraloFelirat.style.setProperty('--szarnySzelessegNegativ', (-118 + klikkSzamlalo * 2) + 'px');
+				ugraloFelirat.style.setProperty('--szarnyMagassag', (25 - klikkSzamlalo) + 'px');
+				
+				document.querySelector("#pontSzamlalo").innerHTML = klikkSzamlalo;
+			}
+        }
+
+		function visszaszamolJatekIdo(){
+			if (ido > 0) {
+				ido -= 1;
+				document.querySelector("#visszaszamlalo").innerHTML = ido;
+			} else {
+				ugraloFelirat.style.backgroundColor = "red";
+				ugraloFelirat.style.width = "150px";
+				ugraloFelirat.style.height = "80px";
+				ugraloFelirat.style.top = "50%";
+				ugraloFelirat.style.left = "47%";
+				ugraloFelirat.style.fontSize = "17px";
+				ugraloFelirat.style.paddingTop = "13px";
+				ugraloFelirat.style.lineHeight = "25px";
+				
+				ugraloFelirat.style.setProperty('--szarnySzelesseg', '120px');
+				ugraloFelirat.style.setProperty('--szarnySzelessegNegativ', '-118px');
+				ugraloFelirat.style.setProperty('--szarnyMagassag', '25px');
+				
+				ugraloFelirat.innerHTML = "Lejárt az idő!<br>Újrakezdés: F5";
+			}
+		}
+		setInterval(visszaszamolJatekIdo, 1000);
+		
+		const kurzorStilusok = ["alias","all-scroll","auto","cell","col-resize","context-menu","copy","crosshair","default","e-resize","ew-resize",
+			"grab","grabbing","help","move","n-resize","ne-resize","nesw-resize","ns-resize","nw-resize","nwse-resize","no-drop","none","not-allowed",
+			"pointer","progress","row-resize","s-resize","se-resize","sw-resize","text","w-resize","wait","zoom-in","zoom-out"
+		];
+		
+		function kurzorCsere() {
+			let ujKurzor = kurzorStilusok[Math.floor(Math.random() * kurzorStilusok.length)];
+			document.body.style.cursor = ujKurzor;
+		}
+
+		setInterval(kurzorCsere, 200);
+
+    </script>
+
+</body>
+
+</html>
