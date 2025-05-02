@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F01 - Aktuális szöveghossz</title>
+</head>
+<body>
+    <input type="text" id="szamolandoSzoveg" placeholder="Ide írd a szöveget!">
+    <p id="karakterszamKijelzo">Karakterek száma: 0</p>
+    <script>
+        let karakterszamKijelzo = document.querySelector("#karakterszamKijelzo");
+        szamolandoSzoveg.addEventListener("input", SzamlaloFrissites);
+
+        function SzamlaloFrissites(){
+            let karakterekszama = document.querySelector("#szamolandoSzoveg").value.length;
+            karakterszamKijelzo.innerHTML = "Karakterek száma: " + karakterekszama;
+        }
+    </script>
+</body>
+</html>

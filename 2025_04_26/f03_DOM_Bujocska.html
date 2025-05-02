@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F03 - Bújócska</title>
+    <style>
+        #macskaKep {
+            margin: 10%;
+            animation-name: elojon;
+            animation-duration: 5s;
+            animation-fill-mode: both;
+        }
+        @keyframes elbujik {
+            from{
+                opacity: 100;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        @keyframes elojon {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 100;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="KepKapcsoloGomb">Cica kép ki</button><br>
+    <img src="hidingCat.jpg" id="macskaKep" width="103">
+    <script>
+        KepKapcsoloGomb.addEventListener("click", Kepvalto);
+        function Kepvalto(){
+            if(document.querySelector("#macskaKep").style.animationName == "elojon"){
+                document.querySelector("#macskaKep").style.animationName = "elbujik";
+                document.querySelector("#KepKapcsoloGomb").innerHTML = "Cica kép be";
+            } else {
+                document.querySelector("#macskaKep").style.animationName = "elojon";
+                document.querySelector("#KepKapcsoloGomb").innerHTML = "Cica kép ki";
+            }
+
+        }
+    </script>
+</body>
+</html>

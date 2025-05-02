@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F02 - Kirajzoló</title>
+    <style>
+        #kirajzoltElem{
+            width: 100px;
+            height: 100px;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <label>Szélesség (px):</label>
+    <input type="number" placeholder="Szélesség" id="Szelesseg">
+    <br>
+    <label>Magasság (px):</label>
+    <input type="number" placeholder="Magasság" id="Magassag">
+    <br>
+    <button id="KirajzolGomb">Kirajzol</button>
+    <div id="kirajzoltElem"></div>
+    <script>
+        KirajzolGomb.addEventListener("click", Kirajzol);
+        function Kirajzol(){
+            let ujSzelesseg = document.querySelector("#Szelesseg").value;
+            let ujMagassag = document.querySelector("#Magassag").value;
+            let kirajzoltElem = document.querySelector("#kirajzoltElem");
+            kirajzoltElem.style.width = ujSzelesseg + "px";
+            kirajzoltElem.style.height = ujMagassag + "px";
+        }
+    </script>
+</body>
+</html>

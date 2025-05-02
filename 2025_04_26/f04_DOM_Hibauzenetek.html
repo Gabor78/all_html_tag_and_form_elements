@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F04 - Hibaüzenetek</title>
+    <style>
+        #Hibauzenetek{
+            width: 80%;
+            margin: 10px 0;
+        }
+        label{
+            width: 180px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="Hibauzenetek"></div>
+    <label for="emailCim">E-mail cím:</label>
+    <input type="email" id="emailCim">
+    <br>
+    <label for="emailCimMegerosit">E-mail cím megerősítése:</label>
+    <input type="email" id="emailCimMegerosit">
+    <br>
+    <button id="ellenorzesGomb">Ellenőrzés</button>
+    <script>
+        ellenorzesGomb.addEventListener("click", emailCimekEllenorzese);
+        function emailCimekEllenorzese(){
+            let emailCim = document.querySelector("#emailCim").value;
+            let emailCimMegerosit = document.querySelector("#emailCimMegerosit").value;
+            Hibauzenetek.style.backgroundColor = "red";
+            let minta = /^[0-9a-z\.-]+@([0-9a-z-]+\.)+[a-z]{2,4}$/i;
+            if(emailCim == "" && emailCimMegerosit == ""){
+                Hibauzenetek.innerHTML = "Nincs kitöltve egyik mező sem!";
+            }
+            else if(emailCim == ""){
+                Hibauzenetek.innerHTML = "Nincs kitöltve az e-mail mező!";
+            }
+            else if(emailCimMegerosit == ""){
+                Hibauzenetek.innerHTML = "Nincs kitöltve az e-mail megerősítése mező!";
+            }
+            else if(!minta.test(emailCim)){
+                Hibauzenetek.innerHTML = "Nem megfelelő az e-mail cím formátuma!";
+            }
+            else if(emailCim != emailCimMegerosit){
+                Hibauzenetek.innerHTML = "A két mező tartalma nem egyezik!";
+            }
+            else {
+                Hibauzenetek.style.backgroundColor = "green";
+                Hibauzenetek.innerHTML = "Adatok rögzítése sikeres!";
+            }
+        }
+    </script>
+</body>
+</html>
