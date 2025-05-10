@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telekocsi</title>
+    <link rel="stylesheet" href="telekocsi.css">
+</head>
+<body>
+    <div class="tartalom">
+        <h1>Telekocsi!</h1>
+        <div class="menu">
+            <ul>
+                <li><a href="telekocsi.html">Bemutatkozás</a></li>
+                <li><a href="#">Sofőröknek</a></li>
+                <li><a href="#">Utasoknak</a></li>
+                <li><a href="#">Bejelentkezés</a></li>
+                <li><a href="regisztracio.html">Regisztráció</a></li>
+            </ul>
+        </div>
+        <h2>Regisztráció</h2>
+        <div id="form">
+            <label for="nev">Név:</label>
+            <input type="text" id="nev">
+            <br>
+            <label for="email">E-mail cím:</label>
+            <input type="text" id="email">
+            <br>
+            <label for="jelszo">Jelszó:</label>
+            <input type="password" id="jelszo">
+            <br>
+            <label for="jelszoIsmet">Jelszó ismét:</label>
+            <input type="password" id="jelszoIsmet">
+            <br>
+            <button id="MentesGomb">Mentés</button>
+        </div>
+    </div>
+<script>
+    MentesGomb.addEventListener("click", Ellenorzes);
+
+    function Ellenorzes() {
+        if(document.querySelector("#jelszo").value == "") {
+            alert("A jelszó nincs kitöltve!");
+        }
+        else if (document.querySelector("#jelszo").value != document.querySelector("#jelszoIsmet").value) {
+            alert("A két jelszó nem egyezik!");
+        }
+    }
+</script>
+</body>
+</html>
