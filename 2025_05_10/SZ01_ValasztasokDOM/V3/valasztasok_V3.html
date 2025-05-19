@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Választási eredmények</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+	<style>
+		select, input, .btn {
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container mt-2">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <td colspan="2"><h1>Választási statisztika</h1></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button type="button" id="kepviselokSzamaButton" class="btn btn-sm btn-primary">Képviselők száma</button></td>
+                    <td id="kepviselokSzamaKijelzo"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="partValasztoSelect">
+                            <option value="0">Válasszon pártot!</option>
+                        </select>
+                        <br>
+                        <button type="button" id="partKepviselokSzamaButton" class="btn btn-sm btn-primary mt-2">Pártot képviselők száma</button></td>
+                    <td id="partKepviselokSzamaKijelzo"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="kepviselojeloltVezeteknev">Vezetéknév:</label>
+                        <br>
+                        <input type="text" id="kepviselojeloltVezeteknev">
+                        <br>
+                        <label for="kepviselojeloltUtonev">Utónév:</label>
+                        <br>
+                        <input type="text" id="kepviselojeloltUtonev">
+                        <br>
+                        <button type="button" id="kepviseloInfoButton" class="btn btn-sm btn-primary mt-2">Képviselő info</button>
+                    </td>
+                    <td id="kepviseloInfoKijelzo"></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="szavazatokAranyaButton" class="btn btn-sm btn-primary">Szavazatok aránya</button></td>
+                    <td id="szavazatokAranyaKijelzo"></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="szavazatokMennyisegeButton" class="btn btn-sm btn-primary">Szavazatok mennyisége</button></td>
+                    <td id="szavazatokMennyisegeKijelzo"></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="legtobbSzavazatButton" class="btn btn-sm btn-primary">Legtöbb szavazat</button></td>
+                    <td id="legtobbSzavazatKijelzo"></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="nyertesekButton" class="btn btn-sm btn-primary">Nyertesek</button></td>
+                    <td id="nyertesekKijelzo"></td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+
+    <script src="szavazatok.js"></script>
+    <script src="valasztasok_V3.js"></script>
+</body>
+</html>
