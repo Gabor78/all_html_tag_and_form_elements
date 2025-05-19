@@ -92,7 +92,7 @@ function szavazatokPartokkent() {
         for (j = 0; j < szavazatokPartokkent.length; j++) {
             if (szavazatokPartokkent[j].part === szavazatok[i].part) {
                 szavazatokPartokkent[j].szavazat += szavazatok[i].szavazat;
-            vanEIlyenPart = true;
+				vanEIlyenPart = true;
             }
         }
         if (!vanEIlyenPart) {
