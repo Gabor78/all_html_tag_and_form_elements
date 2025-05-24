@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F04 - Hibaüzenetek</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #Hibauzenetek{
+            width: 80%;
+            margin: 10px 0;
+        }
+        label{
+            width: 180px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="Hibauzenetek"></div>
+    <label for="emailCim">E-mail cím:</label>
+    <input type="email" id="emailCim">
+    <br>
+    <label for="emailCimMegerosit">E-mail cím megerősítése:</label>
+    <input type="email" id="emailCimMegerosit">
+    <br>
+    <button id="ellenorzesGomb">Ellenőrzés</button>
+    <script>
+        $(document).ready(function () {
+            $("#Hibauzenetek").css("background-color", "red");
+            $("#ellenorzesGomb").click(function () {
+                let minta = /^[0-9a-z\.-]+@([0-9a-z-]+\.)+[a-z]{2,4}$/i;
+                if ($("#emailCim").val() == "" && $("#emailCimMegerosit").val() == ""){
+                    $("#Hibauzenetek").text("Nincs kitöltve egyik mező sem!");
+                }
+                else if ($("#emailCim").val() == ""){
+                    $("#Hibauzenetek").text("Nincs kitöltve az e-mail mező!");
+                }
+                else if ($("#emailCimMegerosit").val() == ""){
+                    $("#Hibauzenetek").text("Nincs kitöltve az e-mail megerősítése mező!");
+                }
+                else if (!minta.test($("#emailCim").val())){
+                    $("#Hibauzenetek").text("Nem megfelelő az e-mail cím formátuma!");
+                }
+                else if ($("#emailCim").val() != $("#emailCimMegerosit").val()){
+                    $("#Hibauzenetek").text("A két mező tartalma nem egyezik!");
+                }
+                else {
+                    $("#Hibauzenetek").css("background-color", "green");
+                    $("#Hibauzenetek").text("Adatok rögzítése sikeres!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

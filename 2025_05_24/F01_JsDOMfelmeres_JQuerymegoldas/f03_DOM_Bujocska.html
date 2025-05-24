@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F03 - Bújócska</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #macskaKep {
+            margin: 3%;
+        }
+    </style>
+</head>
+<body>
+    <button id="KepKapcsoloGomb">Cica kép ki</button><br>
+    <img src="hidingCat.jpg" id="macskaKep" width="103">
+    <script>
+        $(document).ready(function () {
+            $("#KepKapcsoloGomb").click(function () {
+                $("#macskaKep").fadeToggle(5000);
+                if ($("#KepKapcsoloGomb").text() == "Cica kép ki") {
+                    $("#KepKapcsoloGomb").text("Cica kép be");
+                }
+                else {
+                    $("#KepKapcsoloGomb").text("Cica kép ki");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
