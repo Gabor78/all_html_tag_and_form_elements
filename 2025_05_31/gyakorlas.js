@@ -244,9 +244,9 @@ function DecimalisOktalis(decimalisSzam) {
     var oktalisSzam = "";
     var absDecimaliSzam = Math.abs(decimalisSzam);
     while (absDecimaliSzam > 0) {
-        var aktualisKarakter = absDecimaliSzam % 2;
+        var aktualisKarakter = absDecimaliSzam % 8;
         oktalisSzam = oktalisKarakterek[aktualisKarakter] + oktalisSzam;
-        absDecimaliSzam = Math.floor(absDecimaliSzam / 2);
+        absDecimaliSzam = Math.floor(absDecimaliSzam / 8);
     }
     if (decimalisSzam < 0) {
         oktalisSzam = "-" + oktalisSzam;

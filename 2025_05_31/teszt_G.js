@@ -238,7 +238,7 @@ const tesztek = [
     {
         tesztNeve: "Decimális -> Oktális",
         adatBe: 33,
-        elvartEredmeny: "100001",
+        elvartEredmeny: "41",
         fuggvenyhivas: DecimalisOktalis
     },
     {
