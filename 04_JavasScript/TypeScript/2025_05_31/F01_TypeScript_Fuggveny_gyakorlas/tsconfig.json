@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "moduleDetection": "force",
+    "target": "es2017",
+    "lib": ["dom", "es7"]
+  }
+}
