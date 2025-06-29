@@ -91,6 +91,7 @@ function PrimE(szam: number): boolean {
 			osztokSzama++;
 		}
 	}
+	return osztokSzama === 2;
 }
 
 function PrimekSzama(vizsgaltTomb: number[]): number {
