@@ -1,0 +1,35 @@
+<h1>Adatkötés - Databinding</h1>
+<br>
+<p>Angularban az adat- és eseménykötéseket különböző zárójelek segítségével hozzuk létre. 
+    Ezekkel adatokat kapcsolunk össze a komponens (forrás) és a nézet (sablon) között.</p>
+<p>A kötés célja lehet:</p>
+<ul>
+    <li>egy változó értékének megjelenítése (egyszerű adat átadás)</li>
+    <li>egy tulajdonság meghatározása (például egy HTML attribútum vagy DOM elem tulajdonsága), vagy</li>
+    <li>egy esemény kezelése (például gombnyomás vagy beviteli mező változása).</li>
+</ul>
+<hr>
+<h3>Az adatfolyam iránya</h3>
+<p>A használt zárójelek határozzák meg az adat irányát:</p>
+<ul>
+    <li><span ngNonBindable>{{}}</span> - Interpoláció (Komponens → Nézet) <br>Szöveg vagy szám értékének megjelenítése a sablonban. (pl.: <span ngNonBindable>{{valamiValtozo}}</span> egyszerű hivatkozás)</li>
+    <li>[] - Tulajdonságkötés (Komponens → Nézet) <br>Egyirányú kötés a komponensből a nézet felé (pl.: [title]="kepCimke" tulajdonságkötés).</li>
+    <li>() - Eseménykötés (Nézet → Komponens) <br>Egyirányú kötés a nézetből a komponens felé (pl.: (click)="valamiFunction()" kattintás eseményre kötés).</li>
+    <li>[()] - Kétirányú kötés (Komponens ↔ Nézet) <br>Ahol az adat a komponens és a nézet között szinkronban marad (pl. [(ngModel)]="valamiValtozo" űrlapmezőre kötés).</li>
+</ul>
+<hr>
+<h3>Interpoláció - Egyszerű hivatkozás</h3>
+<p>Szöveg:<br>{{szoveg}}</p>
+<hr>
+<h3>Property binding - Tulajdonság hivatkozás</h3>
+<p>Pl. src, alt, title, width attr.:<br>
+<img [src]="kepLink" [alt]="kepAlternativSzoveg" [title]="kepCimke"></p>
+<hr>
+<h3>Event binding - Esemény hivatkozás</h3>
+<p>Click:<br><button class="btn btn-success" (click)="koszontes()">Köszöntés</button></p>
+<hr>
+<h3>Kétirányú adatkötés (Two-way Data binding)</h3>
+<p>Az A oldal mérete: <input type="number" id="aOldal" [(ngModel)]="aOldal" min="1" class="">
+<p>A négyzet oldalának mérete: {{aOldal}}</p>
+<p>A négyzet kerülete: {{aOldal*4}}</p>
+<p>A négyzet területe: {{aOldal*aOldal}}</p>

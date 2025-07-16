@@ -1,0 +1,38 @@
+<h1>ngFor[Tömbök]</h1>
+<p>Első elem a tömben tomb[0]: {{bevasarloLista[0]}}</p>
+<p>Utolsó elem a tömben tomb[tomb.length - 1]: {{bevasarloLista[bevasarloLista.length - 1]}}</p>
+<p>Teljes tömb:</p>
+<ul>
+    <li *ngFor="let termek of bevasarloLista">
+        {{termek}}
+    </li>
+</ul>
+
+<h1>ngFor[Objektumok]</h1>
+<p>interfaceElem.helyezes: {{interfaceElem.helyezes}}</p>
+<ul>
+    <li *ngFor="let versenyEredmeny of helsinki">
+        {{versenyEredmeny.sportag}}/{{versenyEredmeny.versenyszam}}: {{versenyEredmeny.helyezes}}. helyezés ({{versenyEredmeny.csapatMeret}} sportoló)
+    </li>
+</ul>
+
+<h1>Objektum tömb táblázatba</h1>
+<table class="table table-dark table-sm table-hover table-striped text-center">
+    <caption>Olimpia</caption>
+    <thead>
+        <tr>
+            <th>Helyezés</th>
+            <th>Sportolók száma</th>
+            <th>Sportág</th>
+            <th>Versenyszám</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let versenyEredmeny of helsinki">
+            <td>{{versenyEredmeny.helyezes}}</td>
+            <td>{{versenyEredmeny.csapatMeret}}</td>
+            <td>{{versenyEredmeny.sportag}}</td>
+            <td>{{versenyEredmeny.versenyszam}}</td>
+        </tr>
+    </tbody>
+</table>

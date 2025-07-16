@@ -1,0 +1,8 @@
+<h1>ngFor</h1>
+<p>Összeadás</p>
+<input type="number" id="aSzam" [(ngModel)]="aSzam" value="1">
+<input type="number" id="bSzam" [(ngModel)]="bSzam" value="1">
+<p>{{aSzam}} + {{bSzam}} = {{aSzam+bSzam}}</p>
+<button type="button" class="btn btn-dark w-50" (click)="Eredmenymentes()">Mentés</button>
+<p>Korábbi műveletek:</p>
+<p *ngFor="let eredmeny of eredmenyek">{{eredmeny}}</p>

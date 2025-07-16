@@ -1,0 +1,33 @@
+<h1>Pizza rendelés</h1>
+<label for="meret" class="m-1"><h3>1. Mértet:</h3></label>
+<select id="meret" class="m-1" (change)="MeretValto($event)">
+    <option *ngFor="let meret of meretek" [value]="meret.nev">
+        {{meret.nev}}
+    </option>
+</select>
+<hr>
+<h3 class="m-1">2. Feltétek</h3>
+<div class="m-1" *ngFor="let kat of feltetelKategoriak">
+    <h4>{{ kat.kategoria }}:</h4>
+
+  <label *ngFor="let feltet of kat.feltetek" class="m-3">
+    <input
+        type="checkbox"
+        [value]="feltet.nev"
+        [checked]="vanAFeltet(feltet)"
+        (change)="FeltetValto($event, feltet)"
+    >
+    {{ feltet.nev }} +{{ feltet.ar }} Ft
+    </label><br>
+</div>
+<hr>
+<h3 class="m-1">3. Megrendelés</h3>
+<p>Kiválasztott méret:<br>
+<b>{{megrendeltMeret.nev}}</b></p>
+<p>Kiválasztott feltétek:</p>
+<ul>
+    <li *ngFor="let megrndeltFeltet of megrendeltFeltetek">{{megrndeltFeltet.nev}} +{{megrndeltFeltet.ar}}</li>
+</ul>
+<hr>
+<p>Végösszeg:<br>
+{{osszeg}}</p>
