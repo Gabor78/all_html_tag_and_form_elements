@@ -1,0 +1,34 @@
+<h1>Adatkötések</h1>
+<p>szovegValtozo: {{szovegValtozo}}</p>
+<hr>
+<p>Tömb:</p>
+<ul>
+    <li *ngFor="let szoveg of szovegTomb">{{szoveg}}</li>
+</ul>
+<table>
+    <thead>
+        <tr>
+            <th>Nev</th>
+            <th>Hossz</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let gyumi of szovegTomb">
+            <td>{{gyumi}}</td>
+            <td>{{gyumi.length}}</td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<p>Számok:</p>
+<input type="number" id="a" [(ngModel)]="a">
+<input type="number" id="b" [(ngModel)]="b">
+<input type="number" id="c" [(ngModel)]="c">
+<input type="number" id="d" [(ngModel)]="d">
+<input type="number" id="e" [(ngModel)]="e">
+<p>{{a}}</p>
+<p>{{b}}</p>
+<p>{{c}}</p>
+<p>{{d}}</p>
+<p>{{e}}</p>
+<p>{{a + b + c + d + e}}</p>

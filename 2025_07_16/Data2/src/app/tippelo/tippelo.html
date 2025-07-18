@@ -1,0 +1,24 @@
+<h1>Tippelő játék</h1>
+<p>Generáltam egy véletlen számot 1 és 10 között. Tippelj melyik az, vagy generálj új számot!</p>
+<label for="randomMin">Min:</label>
+<input type="number" id="randomMin" [(ngModel)]="randomMin" [max]="randomMax">
+<br>
+<label for="randomMax">Max:</label>
+<input type="number" id="randomMax" [(ngModel)]="randomMax" [min]="randomMin">
+<br>
+<button (click)="generalas()" class="m-2">Generálás</button>
+<br>
+<label for="tipp">Add meg a tipped:</label>
+<input type="number" id="tipp" [(ngModel)]="tipp" min="1" max="10">
+<br>
+<button (click)="tippCheck()" class="m-2">Tipp ellenőrzése!</button>
+<button (click)="reset()" class="m-2">Reset</button>
+<h4 [class]="classNev">{{ visszajelzes }}&nbsp;</h4>
+<hr>
+<h3>Aktuális tippek:</h3>
+<p>Összesen: {{ tippek.length }} db.</p>
+<p>Tételesen: {{ tippek.join(', ') }}</p>
+<hr>
+<h3>Korábbi tippek száma a találatig:</h3>
+<p>{{ tippekHistory.join(', ') }}</p>
+<br><br><br><br><br><br>({{randomSzam}})
