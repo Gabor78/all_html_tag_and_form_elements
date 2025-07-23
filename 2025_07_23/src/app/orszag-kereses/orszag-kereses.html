@@ -1,0 +1,7 @@
+<h2>Csatlakozott-e adott ország az Európai Unióhoz? Igen/Nem?</h2>
+<p class="my-5 fs-4">Az Európai Unióhoz <b>{{csatlakozottEKiir}}</b> csatlakozott <b>{{orszagKeresKiir}}</b>.</p>
+<p>
+    <label for="orszagKeres" title="Tessék megdani az országot!" class="mr-2">Ország megadása: </label>
+    <input type="text" id="orszagKeres" class="m-2" [(ngModel)]="orszagKeres" placeholder="Kanada">
+    <button type="button" class="btn btn-primary mb-2" id="ellenorzesBtn" (click)="orszagKeresFunc()">Ellenőrzés</button>
+</p>

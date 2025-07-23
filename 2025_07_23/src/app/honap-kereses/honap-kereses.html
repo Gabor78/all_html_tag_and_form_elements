@@ -1,0 +1,8 @@
+<h2>Volt-e adott hónapban csatlakozás az Európai Unióhoz? Igen/Nem?</h2>
+<p class="{{className}}">Az Európai Unióhoz <b>{{tortentE}}</b> csatlakozás <b>{{ honapok[valasztottHonapIndex] }}</b> hónapban.</p>
+<p>
+    <label for="honapok" class="mr-2 mt-2">Hónap kiválasztása: </label>
+    <select id="honapok" [(ngModel)]="valasztottHonapIndex" (change)="frissitTortentE()">
+        <option *ngFor="let honap of honapok; let i = index" [ngValue]="i">{{honap}}</option>
+    </select>
+</p>

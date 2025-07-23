@@ -1,0 +1,30 @@
+.eublue {
+    color: #003399 !important;
+}
+.euyellow {
+    color: #FFCC00 !important;
+    margin-right: 3px;
+    padding: 0 10px 0 10px;
+}
+.euyellow::before {
+    content: "★ ";
+}
+.nobefore::before {
+    content: "";
+}
+.euyellow:hover {
+    color: #FFFFFF !important;
+}
+.euBg, .topBg {
+    /*background-color: #d6eaf8 !important;*/
+    background-color: #003399 !important;
+}
+.bottomBg {
+    background-color: #f5f5f5;
+}
+.euflag {
+    border: 1px solid #FFCC00;
+}
+.euflag:hover {
+    border: 1px solid #FFFFFF;
+}

@@ -1,0 +1,16 @@
+<h2>Hány ország csatlakozott adott évben az Európai Unióhoz?</h2>
+<p class="my-5 fs-4">Az Európai Unióhoz <b>{{evSzam}}</b>-ban <b>{{evKeresettOrszagokSzama}}</b> ország csatlakozott.</p>
+<p>
+    <label for="evSzam" title="Tessék megdani az évet!" class="mr-2">Év megadása (1958-2013 között) szabadon: </label>
+    <input type="number" id="evSzam" class="m-2" min="1958" max="2013" [(ngModel)]="evSzam">
+</p>
+<p>
+    <label for="evSzam" title="Tessék megdani az évet!" class="mr-2">Vagy év kiválassztása: </label>
+    <select id="evSzam" class="m-2" [(ngModel)]="evSzam">
+        <option *ngFor="let csatlakozasEv of csatlakozasEvek" [ngValue]="csatlakozasEv">{{csatlakozasEv}}</option>
+    </select>
+</p>
+<p>Név szerint:</p>
+<ol class=" euBg euyellow">
+    <li *ngFor="let tagOrszag of evKeresettOrszagok" class="fw-light lh-sm fs-6">{{tagOrszag.orszag}}</li>
+</ol>

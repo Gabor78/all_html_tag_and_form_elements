@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary topBg mb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand euyellow nobefore" href="https://hu.wikipedia.org/wiki/Eur%C3%B3pai_Uni%C3%B3" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/45px-Flag_of_Europe.svg.png" alt="Európai Unió" width="45" class="euflag"> Európai Unió</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link euyellow" aria-current="page" href="#" routerLink="/tagok-szama">Tagok száma</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link euyellow" href="#" routerLink="/ev-kereses">Év szerinti keresés</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link euyellow" href="#" routerLink="/orszag-kereses">Ország szerinti keresés</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link euyellow" href="#" routerLink="/honap-kereses">Hónap szerinti keresés</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link euyellow" href="#" routerLink="/utolso-csatlakozas">Utolsó csatlakozás</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link euyellow" href="#" routerLink="/orszag-statisztika">Ország statisztika</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet />
+</div>

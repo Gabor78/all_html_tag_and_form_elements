@@ -1,0 +1,8 @@
+<h2>Hány tagja van az Európai Uniónak?</h2>
+<p class="my-5 eublue fs-4">
+    Az Európai Uniónak <b>{{EuropaiUnio.length}}</b> tagja van.
+</p>
+<p>Név szerint:</p>
+<ol class="euBg euyellow">
+    <li *ngFor="let tagOrszag of EuropaiUnio" class="fw-light lh-sm fs-6">{{tagOrszag.orszag}}</li>
+</ol>
