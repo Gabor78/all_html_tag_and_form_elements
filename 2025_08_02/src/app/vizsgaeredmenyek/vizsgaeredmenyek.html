@@ -1,0 +1,54 @@
+<h2 class="w-100 text-center">Vizsgaeredmények feladat</h2>
+
+<h3>Adatok megjelenítése</h3>
+<div class="form-group my-2">
+    <label for="tanuloNeveInput">Tanuló neve</label>
+    <input type="text" id="tanuloNeveInput" [(ngModel)]="tanuloNeveInput" class="form-control">
+</div>
+<div class="form-group my-2">
+    <label for="tanuloEmailInput">Tanuló e-mail címe</label>
+    <input type="text" id="tanuloEmailInput" [(ngModel)]="tanuloEmailInput" class="form-control">
+</div>
+<div class="form-group my-2">
+    <label for="tesztReszInput">Teszt vizsgarész eredménye (%)</label>
+    <input type="number" id="tesztReszInput" [(ngModel)]="tesztReszInput" class="form-control">
+</div>
+<div class="form-group my-2">
+    <label for="gyakorlatiReszInput">Gyakorlati feladatsor vizsgarész eredménye (%)</label>
+    <input type="number" id="gyakorlatiReszInput" [(ngModel)]="gyakorlatiReszInput" class="form-control">
+</div>
+<div class="form-group my-2">
+    <label for="vizsgaEredmenyeInput">Vizsga sikeressége</label>
+    <input type="text" id="vizsgaEredmenyeInput" [(ngModel)]="vizsgaEredmenyeInput" class="form-control">
+</div>
+<button class="btn btn-success w-100 my-3" (click)="Mentes()">Adatok feltöltése</button>
+
+<h3>Vizsgaadatok szűrő mező</h3>
+<h3>Szűrés:</h3>
+<div class="form-group mb-3">
+    <label for="kereso">Keresési feltétel</label>
+    <input type="text" id="kereso" [(ngModel)]="kereso" class="form-control">
+</div>
+
+<table class="table table-success table-striped table-sm table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Tanuló neve</th>
+            <th>Tanuló e-mail címe</th>
+            <th>Elméleti "teszt" eredménye(%)</th>
+            <th>Gyakorlati "feladatsor" eredménye(%)</th>
+            <th>Vizsga eredménye</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vizsgazoAdatai of vizsgazokAdatai">
+            <ng-container *ngIf="Kereses(vizsgazoAdatai)">
+                <td>{{vizsgazoAdatai.nev}}</td>
+                <td>{{vizsgazoAdatai.email}}</td>
+                <td>{{vizsgazoAdatai.teszt_vizsgaresz}}</td>
+                <td>{{vizsgazoAdatai.gyakorlat_vizsgaresz}}</td>
+                <td>{{vizsgazoAdatai.vizsga_eredmeny}}</td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>
